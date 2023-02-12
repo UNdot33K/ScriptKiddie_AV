@@ -114,7 +114,7 @@ the above steps).
 
 
 That's all for now i hope you enjoy using it, let me know about any comments
-you might have and or suggestions or code improvments!!
+you might have and or suggestions or code improvments.
 
 
 
