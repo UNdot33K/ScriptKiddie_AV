@@ -6,10 +6,11 @@
 # About
 
 
-My project started when i was in search of a simple FIM/RIM that meets my needs.
-Unfortunately, most of the programs i found either lacked the features i needed or were
-too complex and geared towards business purposes. That's why i decided to create my
-own. Now, i want to share it on GitHub so that others can benefit from its functions. 
+My project started while i was studying IT Security, i was in search of a simple 
+FIM/RIM that meets my needs. Unfortunately, most of the programs i found either 
+lacked the features i needed or were too complex and geared towards business 
+purposes. That's why i decided to create my own. Now, i want to share it on 
+GitHub so that others can benefit from its functions. 
 
 If anyone wants to take the project to the next level, they are welcome to
 do so. It's a collaborative effort, and together we can enhance its capabilities.
