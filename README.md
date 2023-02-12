@@ -19,7 +19,7 @@ do so. It's a collaborative effort, and together we can enhance its capabilities
 
 
 As the name implies Simple FIM/RIM_AV (file integrity monitoring / registry integrity 
-monitoring),it's a "tool" or more precisely it's a batch file script which can automate 
+monitoring),is a "tool" or more precisely it's a batch file script which can automate 
 checks for file integrity issues and it can also be used alongside with any antivirus 
 to enhance system protection.
 
@@ -54,8 +54,8 @@ Windows 7, 10, 11.
 
 
 The choice of the file hash utility is not critical there are also other well respected doing
-similar job or they have more features, although script editing is required, you might also 
-implement the windows:
+similar job or they have more features, although script editing is required. You might also 
+be able to implement the windows:
 
 "certutil -hashfile <file> MD5" 
 
