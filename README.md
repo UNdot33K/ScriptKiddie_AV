@@ -106,7 +106,7 @@ STEPS:
   
 3. RUN WITH HIGHEST PRIVILEGES
   
-4. ACTIONS [browse for "data.bat"]
+4. ACTIONS [browse for "script.bat"]
   
 5. TRIGGERS [START TASK AT LOGON]
   
