@@ -5,9 +5,9 @@ This is a file and Windows registry integrity checker to use alongside with your
 # About
 
 
-My project started when I was in search of a simple FIM/RIM that meets my needs.
-Unfortunately, most of the programs I found either lacked the features I needed or were
-too complex and geared towards business purposes. That's why I decided to create my
+My project started when i was in search of a simple FIM/RIM that meets my needs.
+Unfortunately, most of the programs i found either lacked the features i needed or were
+too complex and geared towards business purposes. That's why i decided to create my
 own. Now, i want to share it on GitHub so that others can benefit from its functions. 
 
 If anyone wants to take the project to the next level, they are welcome to
