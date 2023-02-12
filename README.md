@@ -27,7 +27,7 @@ to enhance system protection.
 Although there are various similar tools, the highlight of this one is, that it can
 also check the Windows registry, certain registry hives are considered usual malware 
 target, so it can check them and report any changes and also after finishing file integrity
-check and registry integrity check, on specifiC days of the month it can call, the Windows 
+check and registry integrity check, on specific days of the month it can call the Windows 
 "Malware Removal Tool" (MRT) to scan the hard disk, so also it automates some antivirus 
 security of your system. I couldn't find exactly what i wanted in similar tools so i've 
 made my own in this perspective.
