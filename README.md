@@ -99,25 +99,24 @@ time you're starting Windows, by using windows task scheduler:
 
 STEPS:
 
-Press Start > search > task scheduler
+1. Press Start > search > task scheduler
   
-Action > Create task [fill the name "FIM_AV"]
+2. Action > Create task [fill the name "FIM_AV"]
   
-RUN WITH HIGHEST PRIVILEGES
+3. RUN WITH HIGHEST PRIVILEGES
   
-ACTIONS [browse for "data.bat"]
+4. ACTIONS [browse for "data.bat"]
   
-TRIGGERS [START TASK AT LOGON]
+5. TRIGGERS [START TASK AT LOGON]
   
-Settings ["allow task run on demand"]
+6. Settings ["allow task run on demand"]
   
-on the desktop create shortcut and add:
+7. on the desktop create shortcut and add:
   
-schtasks /run /TN "FIM_AV
+8. schtasks /run /TN "FIM_AV"
   
-Press Start > search > shell:startup
-  
-and place there your created lnk.
+9. Press Start > search > shell:startup
+   and place there your created lnk.
 
 (To make things easier, probably i'll include a batch file to the repository doing all 
 the above steps).
