@@ -63,8 +63,8 @@ be able to implement the windows:
 
 so you can do the hashes in your own way or use the "md5deep" or any other utility. Consider 
 though,if the utility you're going to use, meets your expectations, some utilities might create 
-hashes based only on the size of the file, not using other aspects such as file creation, 
-modification and last accessed timestamps.
+hashes based only on the size of the file, not using other aspects and file attributes such as 
+file creation, modification and last accessed timestamps.
 
 
 ** Using Python i tried to create my own file hash utility, but i had issues accessing every 
