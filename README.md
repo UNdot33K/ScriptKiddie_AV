@@ -1,9 +1,9 @@
 # Simple-RIM-FIM_AV
 This is a file and Windows registry integrity checker to use alongside with your antivirus program. 
 
-========
-About
-========
+
+# About
+
 
 My project started when I was in search of a simple FIM/RIM that meets my needs.
 Unfortunately, most of the programs I found either lacked the features I needed or were
@@ -14,9 +14,9 @@ If anyone wants to take the project to the next level, they are welcome to
 do so. It's a collaborative effort, and together we can enhance its capabilities.
 
 
-===========
-Functions
-===========
+
+# Functions
+
 
 As the name implies Simple FIM/RIM_AV (file integrity monitoring / registry integrity 
 monitoring),it's a "tool" or more precisely it's a batch file script which can automate 
@@ -33,9 +33,9 @@ made my own in this perspective.
 
 
 
-==========
-Structure
-==========
+
+# Structure
+
 
 As a "tool" it mainly consists of 3 executables, a batch file which coordinates the procedures, 
 a freeware utility from Nirsoft called "HashMyFiles" which can be found here: 
@@ -68,9 +68,9 @@ right knowledge, but also any proposal for new features or any improvements for 
 might send, are appreciated!
 
 
-===========
-How to use
-===========
+
+# How to use
+
 
 For users who want to try, although they don't have much knowledge on how to do it, i'll 
 summarize the steps needed so they can setup everything correctly:
@@ -119,9 +119,9 @@ you might have and or suggestions or code improvments!!
 
 
 
-=========
-LICENSE
-=========
+
+# LICENSE
+  
 
 The MIT License
 
