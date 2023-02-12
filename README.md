@@ -65,7 +65,7 @@ so you can do the hashes in your own way or use the "md5deep" or any other utili
 ** Using Python i tried to create my own file hash utility, but i had issues accessing every 
 file due to windows system restrictions. This is something you could help if you have the 
 right knowledge, but also any proposal for new features or any improvements for the code you 
-might send, are appreciated!
+might send, is appreciated!
 
 
 
