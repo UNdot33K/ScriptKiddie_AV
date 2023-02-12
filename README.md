@@ -20,7 +20,7 @@ do so. It's a collaborative effort, and together we can enhance its capabilities
 # Functions
 
 
-As the name implies Simple FIM/RIM_AV (file integrity monitoring / registry integrity 
+As the name implies Simple FIM-RIM_AV (file integrity monitoring - registry integrity 
 monitoring),is a "tool" or more precisely it's a batch file script which can automate 
 checks for file integrity issues and it can also be used alongside with any antivirus 
 to enhance system protection.
@@ -46,13 +46,13 @@ files, the other executable "cmp" it's a script writen in Python, which compares
 the "HashMyFiles"utility and if there are any differences, notifies you with a message and a 
 "beep" sound and saves the compared hashed files results so you can take a look at it later on.
 
-Other than the parent directory containing all the above, additionally 2 subdirectories are 
+Other than the parent directory containing all the above, 2 additional subdirectories are 
 required to be created, one is called "hashes", where hashed files results are saved and 
 the other is called "Results" where the comparison results are saved.
 
 -- the batch file should be edited so you can change the file paths set at the top of the
-script to reflect your system's file paths!! -- and then it is expected to work on
-Windows 7, 10, 11. 
+script to reflect your system's file paths!! and then it is expected to work on
+Windows 7, 10, 11. --
 
 
 The choice of the file hash utility is not critical there are also other well respected doing
@@ -61,14 +61,14 @@ be able to implement the windows:
 
 "certutil -hashfile <file> MD5" 
 
-so you can do the hashes in your own way or use the "md5deep" or any other utility, 
-consider though,if the utility you're going to use, meets your expectations, some
-utilities might create hashes based only on the size of the file, not using other
-aspects such as file creation, modification and last accessed timestamp.
+so you can do the hashes in your own way or use the "md5deep" or any other utility, consider 
+though,if the utility you're going to use, meets your expectations, some utilities might create 
+hashes based only on the size of the file, not using other aspects such as file creation, 
+modification and last accessed timestamp.
 
 
 ** Using Python i tried to create my own file hash utility, but i had issues accessing every 
-file due to windows system restrictions. This is something you could help if you have the 
+file due to windows system restrictions. This is something you could help, if you have the 
 right knowledge, but also any proposal for new features or any improvements to the code you 
 might send, is appreciated!
 
@@ -80,10 +80,9 @@ might send, is appreciated!
 For users who want to try, although they don't have much knowledge on how to do it, i'll 
 summarize the steps needed so they can setup everything correctly:
 
-First you need to have python 3.8 or higher with "pyinstaller" (advanced users may use other 
-compilers such as cx_freeze, or any other) installed so you can compile the 
-cmp.py After downloading Python, open a command line window with administrator
-privileges and type:
+First you need to have python 3.8 or higher with "pyinstaller" installed (advanced users may 
+use other compilers such as cx_freeze, or any other) so you can compile the cmp.py After 
+downloading Python, open a command line window with administrative privileges and type:
 
 "pip install pyinstaller"
 
@@ -127,8 +126,8 @@ the above steps).
 
 
 
-That's all for now i hope you enjoy using it, let me know about any comments
-you might have and or suggestions or code improvments.
+That's all for now i hope you enjoy using it, let me know your comments and or suggestions 
+or code improvments.
 
 
 
