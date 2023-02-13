@@ -57,15 +57,15 @@ Windows 7, 10, 11. --
 
 
 The choice of the file hash utility is not critical, there are also other doing similar job or 
-they have more features, although script editing is required to be used. You can also try more 
-simple implementations such as the windows:
+they have more features, although script editing is required. You can also try more simple 
+implementations using the windows included utility:
 
 "certutil -hashfile <file> MD5" 
 
 so you can do the hashes in your own way, or use the "md5deep" or any other utility. Consider 
 though, if the utility you're going to use, meets your expectations, some utilities might create 
 hashes based on the size of the file, without providing any other data to make a more reliable 
-integrity checks, although since the MS-DOS era it is known that viruses might be able to also 
+integrity checks, although since the MS-DOS era it is known that many viruses were also able to 
 modify file attributes file creation timestamp, as well as the file size, so it can appear normal.
 
 
@@ -95,9 +95,9 @@ reason you can't find the executable you have just created, use windows search f
 Note: the Python directory and the \scripts folder, must be in path, in order to run
 pip. For example in the command prompt Use:
   
-set path=C:\your-python-installation-path
+set path=c:\your-python-installation-path ; set path=c:\ your-python-scripts-folder
 
-cmp.exe HashMyFiles.exe (or HMF.exe you can rename it to be more compact) and the batch
+cmp.exe, HashMyFiles.exe (or HMF.exe you can rename it to be more compact) and the batch
 file script should be in the same parent folder.
 
 After everything is set, you can automate the process even more, by making it load every 
