@@ -63,7 +63,7 @@ simple implementations such as the windows:
 "certutil -hashfile <file> MD5" 
 
 so you can do the hashes in your own way, or use the "md5deep" or any other utility. Consider 
-though,if the utility you're going to use, meets your expectations, some utilities might create 
+though, if the utility you're going to use, meets your expectations, some utilities might create 
 hashes based on the size of the file, without providing any other data to make a more reliable 
 integrity checks, although since the MS-DOS era it is known that viruses might be able to also 
 modify file attributes file creation timestamp, as well as the file size, so it can appear normal.
@@ -78,9 +78,7 @@ might send, is appreciated!
 
 # How to use
 
-
-For users who want to try, although they don't have much knowledge on how to do it, i'll 
-summarize the steps needed so they can setup everything correctly:
+I'll summarize the steps needed so you can setup everything correctly:
 
 First you need to have python 3.8 or higher with "pyinstaller" installed (advanced users 
 may use other compilers such as cx_freeze, or any other) so you can compile the cmp.py 
@@ -95,7 +93,7 @@ reason you can't find the executable you have just created, use windows search f
 "cmp.exe"
 
 Note: the Python directory and the \scripts folder, must be in path, in order to run
-pip. For example in the command prompt Use: " set path=C:\ <your-python-path> "
+pip. For example in the command prompt Use: "set path=C:\your-python-installation-path"
 
 
 cmp.exe HashMyFiles.exe (or HMF.exe you can rename it to be more compact) and the batch
@@ -130,7 +128,7 @@ STEPS:
 the above steps).
   
   
-IMPORTANT: When running FIM-RIM_AV for the first time do the following: click on the
+IMPORTANT: When running FIM-RIM_AV for the first time, do the following: click on the
 HashMyFiles.exe utility (or whatever you named it) and from the menu uncheck every
 encoding other than CRC32, then run the data.bat and after it finishes, visit the
 Hashes folder and rename every file in similar way e.g: Hashes_exe0.txt to Hashes_exe.txt
