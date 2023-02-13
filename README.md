@@ -26,12 +26,12 @@ checks for file integrity issues and it can also be used alongside with any anti
 to enhance system protection.
 
 Although there are various similar tools, the highlight of this one is, that it can
-also check the Windows registry, certain registry hives are considered usual malware 
-target, so it can check them and report any changes, also after finishing file integrity
-checks and registry integrity check, on specific days of the month it can call the Windows 
-"Malware Removal Tool" (MRT) to scan the hard disk, so also it automates some antivirus 
-security of your system. I couldn't find exactly what i wanted in similar tools so i've 
-made my own in this perspective.
+also check the Windows registry. Certain registry hives are considered usual malware 
+target, so it can check them and report any changes, also after finishing file & registry 
+integrity checks, on specific days of the month it can call the Windows "Malware Removal 
+Tool" (MRT) to scan the hard disk, so also it automates some antivirus security of your 
+system. I couldn't find exactly what i wanted in similar tools so i've made my own in 
+this perspective.
 
 
 
@@ -42,10 +42,10 @@ made my own in this perspective.
 As a tool it mainly consists of 3 executables, a batch file which coordinates the procedures, 
 a freeware utility from Nirsoft called "HashMyFiles" which can be found here: 
 https://www.nirsoft.net/utils/hash_my_files.html and it is responsible to create hashes based on 
-the file size and also provide the file attributes in the output file, the other executable "cmp" 
-it's a script written in Python, which compares the results of the "HashMyFiles" utility and if 
-there are any differences, notifies you with a message and a beep sound and saves the compared 
-hashed files results so you can take a look at it later on.
+the file size and also provide the file attributes in the output file. The other executable "cmp" 
+is written in Python, which compares the results of the "HashMyFiles" utility and if there are 
+any differences, notifies you with a message and a beep sound and saves the compared hashed files 
+results so you can take a look at it later on.
 
 Other than the parent directory containing all the above, 2 additional subdirectories are 
 required to be created, one is called "hashes", where hashed files results are saved and 
@@ -78,14 +78,14 @@ might send, is appreciated!
 
 # How to use
 
-I'll summarize the steps needed so you can setup everything correctly:
+I'll summarize some of the needed steps so you can setup everything correctly:
 
 First you need to have python 3.8 or higher with "pyinstaller" installed (advanced users 
 may use other compilers such as cx_freeze, or any other) so you can compile the cmp.py 
 After downloading Python, open a command line window with administrative privileges and 
 type:
 
-"pip install pyinstaller"
+pip install pyinstaller
 
 After pyinstaller is installed, you can run "pyinstaller --onefile cmp.py" in the same
 directory as the one you keep the cmp.py so you can create the executable. If for any 
