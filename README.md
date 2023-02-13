@@ -27,8 +27,8 @@ to enhance system protection.
 
 Although there are various similar tools, the highlight of this one is, that it can
 also check the Windows registry, certain registry hives are considered usual malware 
-target, so it can check them and report any changes and also after finishing file integrity
-check and registry integrity check, on specific days of the month it can call the Windows 
+target, so it can check them and report any changes, also after finishing file integrity
+checks and registry integrity check, on specific days of the month it can call the Windows 
 "Malware Removal Tool" (MRT) to scan the hard disk, so also it automates some antivirus 
 security of your system. I couldn't find exactly what i wanted in similar tools so i've 
 made my own in this perspective.
@@ -39,12 +39,13 @@ made my own in this perspective.
 # Structure
 
 
-As a "tool" it mainly consists of 3 executables, a batch file which coordinates the procedures, 
+As a tool it mainly consists of 3 executables, a batch file which coordinates the procedures, 
 a freeware utility from Nirsoft called "HashMyFiles" which can be found here: 
-https://www.nirsoft.net/utils/hash_my_files.html and it is responsible to create hashes for your 
-files, the other executable "cmp" it's a script writen in Python, which compares the results of 
-the "HashMyFiles"utility and if there are any differences, notifies you with a message and a 
-"beep" sound and saves the compared hashed files results so you can take a look at it later on.
+https://www.nirsoft.net/utils/hash_my_files.html and it is responsible to create hashes based on 
+the file size and also provide the file attributes in the output file,the other executable "cmp" 
+it's a script written in Python, which compares the results of the "HashMyFiles" utility and if 
+there are any differences, notifies you with a message and a beep sound and saves the compared 
+hashed files results so you can take a look at it later on.
 
 Other than the parent directory containing all the above, 2 additional subdirectories are 
 required to be created, one is called "hashes", where hashed files results are saved and 
@@ -55,16 +56,17 @@ script to reflect your system's file paths!! and then it is expected to work on
 Windows 7, 10, 11. --
 
 
-The choice of the file hash utility is not critical there are also other well respected doing
-similar job or they have more features, although script editing is required. You might also 
-be able to implement the windows:
+The choice of the file hash utility is not critical, there are also other doing similar job or 
+they have more features, although script editing is required to be used. You can also try more 
+simple implementations such as the windows:
 
 "certutil -hashfile <file> MD5" 
 
-so you can do the hashes in your own way or use the "md5deep" or any other utility. Consider 
+so you can do the hashes in your own way, or use the "md5deep" or any other utility. Consider 
 though,if the utility you're going to use, meets your expectations, some utilities might create 
-hashes based only on the size of the file, not using other aspects and file attributes such as 
-file creation, modification and last accessed timestamps.
+hashes based on the size of the file, without providing any other data to make a more reliable 
+integrity checks, although since the MS-DOS era it is known that viruses might be able to also 
+modify file attributes file creation timestamp, as well as the file size, so it can appear normal.
 
 
 ** Using Python i tried to create my own file hash utility, but i had issues accessing every 
@@ -80,18 +82,20 @@ might send, is appreciated!
 For users who want to try, although they don't have much knowledge on how to do it, i'll 
 summarize the steps needed so they can setup everything correctly:
 
-First you need to have python 3.8 or higher with "pyinstaller" installed (advanced users may 
-use other compilers such as cx_freeze, or any other) so you can compile the cmp.py After 
-downloading Python, open a command line window with administrative privileges and type:
+First you need to have python 3.8 or higher with "pyinstaller" installed (advanced users 
+may use other compilers such as cx_freeze, or any other) so you can compile the cmp.py 
+After downloading Python, open a command line window with administrative privileges and 
+type:
 
 "pip install pyinstaller"
 
-After pyinstaller is installed you can run "pyinstaller --onefile cmp.py" in the same
-directory as the one you keep the cmp.py so you can create the executable. If for any reason
-you can't find the executable you have just created, use windows search for "cmp.exe"
+After pyinstaller is installed, you can run "pyinstaller --onefile cmp.py" in the same
+directory as the one you keep the cmp.py so you can create the executable. If for any 
+reason you can't find the executable you have just created, use windows search for 
+"cmp.exe"
 
 Note: the Python directory and the \scripts folder, must be in path, in order to run
-pip. 
+pip. For example in the command prompt Use: " set path=C:\ <your-python-path> "
 
 
 cmp.exe HashMyFiles.exe (or HMF.exe you can rename it to be more compact) and the batch
@@ -124,6 +128,12 @@ STEPS:
 
 (To make things easier, probably i'll include a batch file to the repository doing all 
 the above steps).
+  
+  
+IMPORTANT: When running FIM-RIM_AV for the first time do the following: click on the
+HashMyFiles.exe utility (or whatever you named it) and from the menu uncheck every
+encoding other than CRC32, then run the data.bat and after it finishes, visit the
+Hashes folder and rename every file in similar way e.g: Hashes_exe0.txt to Hashes_exe.txt
 
 
 
