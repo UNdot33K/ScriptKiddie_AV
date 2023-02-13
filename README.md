@@ -63,11 +63,11 @@ implementations using the windows included utility:
 "certutil -hashfile <file> SHA1 / MD5 / etc" 
 
 so you can do the hashes in your own way, or use the "md5deep" or any other utility. Consider 
-though, if the utility you're going to use, meets your expectations, some utilities might be too
-slow depending the algorithm used or create hashes, without providing any other data to make a more 
-reliable integrity checks, although since the MS-DOS era it is known that many viruses were also 
-able to modify file attributes file creation timestamp, as well as the file size, so it can 
-appear normal.
+though, if the utility you're going to use, meets your expectations, some utilities might be 
+too slow depending the algorithm used, or create hashes without providing any other data to 
+make a more extensive integrity check, although since the MS-DOS era it is known that many 
+viruses were also able to modify file attributes file creation timestamp, as well as the file 
+size, so it can appear normal.
 
 
 ** Using Python i tried to create my own file hash utility, but i had issues accessing every 
