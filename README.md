@@ -93,8 +93,9 @@ reason you can't find the executable you have just created, use windows search f
 "cmp.exe"
 
 Note: the Python directory and the \scripts folder, must be in path, in order to run
-pip. For example in the command prompt Use: "set path=C:\your-python-installation-path"
-
+pip. For example in the command prompt Use:
+  
+set path=C:\your-python-installation-path
 
 cmp.exe HashMyFiles.exe (or HMF.exe you can rename it to be more compact) and the batch
 file script should be in the same parent folder.
