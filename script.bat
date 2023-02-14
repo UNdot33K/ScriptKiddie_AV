@@ -21,20 +21,17 @@
 
 
 ECHO ********************************************************************
-ECHO [Simple FIM-RIM_AV] v0.9beta (prerelease) Is Running, Please Wait...
+ECHO [Simple FIM-RIM_AV] v0.91beta (prerelease) Is Running, Please Wait...
 ECHO (c)Copyright 2023 --Un.33K--
 ECHO ********************************************************************
 
 set "file_types=exe dll bat sys ini"
-set "dest=C:\Users\S1\Desktop\FIM_AV\HMF\Hashes"
-set "hmf=C:\Users\S1\Desktop\AV\HMF\"
-set "results=C:\Users\S1\Desktop\FIM_AV\HMF\Results"
-set "crc=C:\Users\S1\Desktop\AV\HMF\HMF.exe"
-set "comp=C:\Users\S1\Desktop\FIM_AV\HMF\CMP.exe"
+set "dest=%userprofile%\Desktop\FIM_AV\HMF\Hashes"
+set "hmf=%userprofile%\Desktop\AV\HMF\"
+set "results=%userprofile%\Desktop\FIM_AV\HMF\Results"
+set "crc=%userprofile%\Desktop\AV\HMF\HMF.exe"
+set "comp=%userprofile%\Desktop\FIM_AV\HMF\CMP.exe"
 
-
-
-@echo off
 
 for %%f in (%file_types%) do ( 
     ECHO.
@@ -78,8 +75,6 @@ for %%a in (
     reg export "HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\%%~a" temp.tmp /y > nul
     type temp.tmp >> Hashes_reg0.txt
 )
-
-
   
 
 for %%a in (
@@ -94,7 +89,6 @@ for %%a in (
       reg export "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\%%~a" temp.tmp /y > nul
       type temp.tmp >> Hashes_reg0.txt
 )
-
 
 
 for %%a in (
