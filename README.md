@@ -21,7 +21,7 @@ do so. It's a collaborative effort, and together we can enhance its capabilities
 
 
 As the name implies Simple FIM-RIM_AV (file integrity monitoring - registry integrity 
-monitoring),is a "tool" or more precisely it's a batch file script which can automate 
+monitoring), is a "tool" or more precisely it's a batch file script which can automate 
 checks for file integrity issues and it can also be used alongside with any antivirus 
 to enhance system protection.
 
@@ -42,23 +42,23 @@ this perspective.
 As a tool it mainly consists of 3 executables, a batch file which coordinates the procedures, 
 a freeware utility from Nirsoft called "HashMyFiles" which can be found here: 
 https://www.nirsoft.net/utils/hash_my_files.html and it is responsible to create hashes based on 
-the file size and also provide the file attributes in the output file. The other executable "cmp" 
-is written in Python, which compares the results of the "HashMyFiles" utility and if there are 
-any differences, notifies you with a message and a beep sound and saves the compared hashed files 
-results so you can take a look at it later on.
+and also provide the file attributes in the output file. The other executable "cmp" is written in 
+Python, which compares the results of the "HashMyFiles" utility and if there are any differences, 
+notifies you with a message and a beep sound and saves the compared hashed files results so you 
+can take a look at it later on.
 
-Other than the parent directory containing all the above, 2 additional subdirectories are 
-required to be created, one is called "hashes", where hashed files results are saved and 
+Other than the parent directory "FIM_AV" containing all the above, 2 additional subdirectories 
+are required to be created, one is called "hashes", where hashed files results are saved and 
 the other is called "Results" where the comparison results are saved.
 
--- the batch file should be edited so you can change the file paths set at the top of the
-script to reflect your system's file paths!! and then it is expected to work on
+-- the batch file should be edited only if you want to use different folder names, in that case
+you can change the file paths set at the top of the script and then it is expected to work on
 Windows 7, 10, 11. --
 
 
 The choice of the file hash utility is not critical, there are also other doing similar job or 
-they have more features, although script editing is required. You can also try more simple 
-implementations using the windows included utility:
+they have more features, although script writting skills are required. You can try implementations 
+using the windows included utility:
 
 "certutil -hashfile <file> SHA1 / MD5 / etc" 
 
