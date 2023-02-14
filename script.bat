@@ -152,7 +152,7 @@ if not exist %flagFile% (
   )
 
   for %%b in (exe dll bat sys ini reg) do (
-    ren Hashes_%%b1.txt Hashes_%%b.txt
+    ren Hashes_%%b0.txt Hashes_%%b.txt
   )
 
   MRT.EXE /F:Y
