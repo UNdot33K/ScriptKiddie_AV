@@ -58,7 +58,7 @@ Windows 7, 10, 11. --
 
 
 The choice of the file hash utility is not critical, there are also other doing similar job or 
-they have more features, although script writting skills are required. You can try implementations 
+they have more features, although script editing skills are required. You can try implementations 
 using the windows included utility:
 
 "certutil -hashfile (file) SHA1 / MD5 / etc" 
