@@ -1,4 +1,4 @@
-# Simple-RIM-FIM_AV
+# Simple-FIM-RIM_AV
 
 ## This is a files & Windows registry integrity checker to use alongside with your antivirus program. 
 
