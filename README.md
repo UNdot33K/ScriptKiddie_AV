@@ -41,7 +41,7 @@ this perspective.
 
 As a tool it mainly consists of 3 executables, a batch file which coordinates the procedures, 
 a freeware utility from Nirsoft called "HashMyFiles" which can be found here: 
-https://www.nirsoft.net/utils/hash_my_files.html and it is responsible to create hashesand also 
+https://www.nirsoft.net/utils/hash_my_files.html and it is responsible to create hashes and also 
 provide the file attributes in the output file. The other executable "cmp" is written in Python, 
 which compares the results of the "HashMyFiles" utility and if there are any differences, notifies 
 you with a message and a beep sound and saves the compared hashed files results so you can take 
