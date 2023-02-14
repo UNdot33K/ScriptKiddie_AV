@@ -26,11 +26,11 @@ ECHO Copyright (c) 2023 --Un.33K--
 ECHO ********************************************************************
 
 set "file_types=exe dll bat sys ini"
-set "dest=%userprofile%\Desktop\FIM_AV\Hashes"
-set "hmf=%userprofile%\Desktop\FIM_AV\"
-set "results=%userprofile%\Desktop\FIM_AV\Results"
-set "crc=%userprofile%\Desktop\FIM_AV\HMF.exe"
-set "comp=%userprofile%\Desktop\FIM_AV\CMP.exe"
+set "dest=%userprofile%\Desktop\FR_AV\Hashes"
+set "hmf=%userprofile%\Desktop\FR_AV\"
+set "results=%userprofile%\Desktop\FR_AV\Results"
+set "crc=%userprofile%\Desktop\FR_AV\HMF.exe"
+set "comp=%userprofile%\Desktop\FR_AV\CMP.exe"
 
 
 for %%f in (%file_types%) do ( 
