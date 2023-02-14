@@ -47,7 +47,7 @@ which compares the results of the "HashMyFiles" utility and if there are any dif
 you with a message and a beep sound and saves the compared hashed files results so you can take 
 a look at it later on.
 
-Other than the parent directory "FIM_AV" containing all the above, 2 additional subdirectories 
+Other than the parent directory "FR_AV" containing all the above, 2 additional subdirectories 
 are required to be created, one is called "hashes", where hashed files results are saved and 
 the other is called "Results" where the comparison results are saved.
 
