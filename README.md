@@ -1,6 +1,6 @@
 # Simple-FIM-RIM_AV
 
-## This is a files & Windows registry integrity checker to use alongside with your antivirus program. 
+## Files & Windows registry integrity checker to use alongside with your antivirus program. 
 
 
 # About
@@ -61,7 +61,7 @@ The choice of the file hash utility is not critical, there are also other doing 
 they have more features, although script writting skills are required. You can try implementations 
 using the windows included utility:
 
-"certutil -hashfile <file> SHA1 / MD5 / etc" 
+"certutil -hashfile (file) SHA1 / MD5 / etc" 
 
 so you can do the hashes in your own way, or use the "md5deep" or any other utility. Consider 
 though, if the utility you're going to use, meets your expectations, some utilities might be 
