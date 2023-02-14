@@ -19,7 +19,6 @@
 
 @echo off
 
-
 ECHO ********************************************************************
 ECHO [Simple FIM-RIM_AV] v0.91beta (prerelease) Is Running, Please Wait...
 ECHO Copyright (c) 2023 --Un.33K--
@@ -32,7 +31,6 @@ set "results=%userprofile%\Desktop\FR_AV\Results"
 set "crc=%userprofile%\Desktop\FR_AV\HMF.exe"
 set "comp=%userprofile%\Desktop\FR_AV\CMP.exe"
 
-
 for %%f in (%file_types%) do ( 
     ECHO.
     ECHO Checking: %%f
@@ -42,12 +40,9 @@ for %%f in (%file_types%) do (
     %comp% "%dest%\Hashes_%%f.txt" "%dest%\Hashes_%%f0.txt" "%results%\Res_%%f.txt"
 )
 
-
 cd %dest%\
 
-
 del Hashes_reg0.txt
-
 
 :: Loop through each specified registry key and export it to a temporary file
 
@@ -110,7 +105,6 @@ for %%a in (
     type temp.tmp >> Hashes_reg0.txt
 )
 
-
 del temp.tmp
 
 :: Compare the exported registry keys
@@ -144,7 +138,6 @@ if /I "%day%" == "27" goto MRT
 if /I "%day%" == "30" goto MRT
 goto rflag
 
-
 :MRT
 
 set flagFile=flag
@@ -174,6 +167,4 @@ if not exist %flagFile% (
 :rflag
 del flag 2 > NUL
 
-
 :end
-
