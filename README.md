@@ -28,7 +28,7 @@ Although there are various similar tools, the highlight of this one is, that it 
 also check the Windows registry. Certain registry hives are considered usual malware 
 target, so it can check and report any changes. On specific days of the month after 
 finishing file & registry integrity checks, it can call the Windows "Malware Removal 
-Tool" (MRT) to scan the hard disk, so also it automates some antivirus security of your 
+Tool" (MRT) to scan your hard disk, so also it automates some antivirus security of your 
 system. I couldn't find exactly what i wanted in similar tools so i've made my own in 
 this perspective.
 
@@ -66,9 +66,9 @@ using the windows included utility:
 so you can do the hashes in your own way, or use the "md5deep" or any other utility. Consider 
 though, if the utility you're going to use, meets your expectations, some utilities might be 
 too slow depending the algorithm used, or create hashes without providing any other data to 
-make a more extensive integrity check, although since the MS-DOS era it is known that many 
-viruses were also able to modify file attributes file creation timestamp, as well as the file 
-size, so it can appear normal.
+make a more extensive integrity check. Since the MS-DOS era it is known that many viruses were 
+also able to modify file attributes file creation timestamp, as well as the file size, so it 
+can appear normal.
 
 
 ** Using Python i tried to create my own file hash utility, but i had issues accessing every 
