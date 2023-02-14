@@ -22,15 +22,15 @@
 
 ECHO ********************************************************************
 ECHO [Simple FIM-RIM_AV] v0.91beta (prerelease) Is Running, Please Wait...
-ECHO (c)Copyright 2023 --Un.33K--
+ECHO Copyright (c) 2023 --Un.33K--
 ECHO ********************************************************************
 
 set "file_types=exe dll bat sys ini"
-set "dest=%userprofile%\Desktop\FIM_AV\HMF\Hashes"
-set "hmf=%userprofile%\Desktop\AV\HMF\"
-set "results=%userprofile%\Desktop\FIM_AV\HMF\Results"
-set "crc=%userprofile%\Desktop\AV\HMF\HMF.exe"
-set "comp=%userprofile%\Desktop\FIM_AV\HMF\CMP.exe"
+set "dest=%userprofile%\Desktop\FIM_AV\Hashes"
+set "hmf=%userprofile%\Desktop\FIM_AV\"
+set "results=%userprofile%\Desktop\FIM_AV\Results"
+set "crc=%userprofile%\Desktop\FIM_AV\HMF.exe"
+set "comp=%userprofile%\Desktop\FIM_AV\CMP.exe"
 
 
 for %%f in (%file_types%) do ( 
