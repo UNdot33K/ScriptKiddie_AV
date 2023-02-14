@@ -20,15 +20,14 @@ do so. It's a collaborative effort, and together we can enhance its capabilities
 # Functions
 
 
-As the name implies Simple FIM-RIM_AV (file integrity monitoring - registry integrity 
-monitoring), is a "tool" or more precisely it's a batch file script which can automate 
-checks for file integrity issues and it can also be used alongside with any antivirus 
-to enhance system protection.
+Simple FR_AV (File Integrity Monitoring - Registry Integrity Monitoring), is a "tool" 
+or more precisely it's a batch file script which can automate checks for file integrity 
+issues and it can also be used alongside with any antivirus to enhance system protection.
 
 Although there are various similar tools, the highlight of this one is, that it can
 also check the Windows registry. Certain registry hives are considered usual malware 
-target, so it can check them and report any changes, also after finishing file & registry 
-integrity checks, on specific days of the month it can call the Windows "Malware Removal 
+target, so it can check and report any changes. On specific days of the month after 
+finishing file & registry integrity checks, it can call the Windows "Malware Removal 
 Tool" (MRT) to scan the hard disk, so also it automates some antivirus security of your 
 system. I couldn't find exactly what i wanted in similar tools so i've made my own in 
 this perspective.
@@ -45,7 +44,7 @@ https://www.nirsoft.net/utils/hash_my_files.html and it is responsible to create
 provide the file attributes in the output file. The other executable "cmp" is written in Python, 
 which compares the results of the "HashMyFiles" utility and if there are any differences, notifies 
 you with a message and a beep sound and saves the compared hashed files results so you can take 
-a look at it later on. Looking at the logs it's not mandatory, unless there's suspicion, in such
+a look at it later on. Looking at the logs it's not mandatory, unless there's a suspicion, in such
 case using Winmerge which you can find here: https://www.winmerge.org can make an othewise dubious 
 procedure... very fun and easy!
 
