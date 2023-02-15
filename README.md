@@ -87,7 +87,9 @@ compile the cmp.py (advanced users may use other compilers such as cx_freeze,
 or any other). After downloading Python from here: https://www.python.org/downloads/ 
 open a command line window with administrative privileges and type:
 
+
 pip install pyinstaller
+
 
 Note: the Python directory and the \scripts folder, must be in path, in order to run
 pip. For example in the command prompt Use:
@@ -97,6 +99,7 @@ set path=c:\your-python-installation-path ; set path=c:\ your-python-scripts-fol
 After pyinstaller is installed, navigate to your Desktop's folder location, (in the 
 same directory as the one you keep the cmp.py) so you can create the executable and 
 run: 
+
 
 pyinstaller --onefile cmp.py
 
