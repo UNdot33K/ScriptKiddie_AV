@@ -83,8 +83,8 @@ I'll summarize some of the needed steps so you can setup everything correctly:
 
 First you need to have python 3.8 or higher with "pyinstaller" installed (advanced users 
 may use other compilers such as cx_freeze, or any other) so you can compile the cmp.py 
-After downloading Python, open a command line window with administrative privileges and 
-type:
+After downloading Python from here: https://www.python.org/downloads/ open a command line 
+window with administrative privileges and type:
 
 pip install pyinstaller
 
@@ -158,11 +158,8 @@ open for you the files that you should examine.
 - Some code improvements (tweaks).
 
 
-
 That's all for now i hope you enjoy using it, let me know your comments and or suggestions 
 or code improvments.
-
-
 
 
 # LICENSE
