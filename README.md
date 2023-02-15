@@ -143,7 +143,8 @@ Hashes_res_exe0.txt to Hashes_res_exe.txt).
 
 There was a major update, so the script jumped from version v0.91.2 to v1.0.0b yay!!
 the little code of the script went around 20% larger, still in beta though, meaning 
-still has to be thoroughly tested by more people.
+still has to be thoroughly tested by more people and still the documentation is
+larger than the code!! ^^
 
 So what's new: this version makes full use of the "WinMerge" which seems to me it's 
 an amazing tool for the job, you can use it and literally make a manual compare of two 
@@ -153,7 +154,7 @@ CMP still is needed, as it informs you if there are any differences for you to c
 then the script will ask you if you want to see the differences and it will automatically
 open for you the files that you should examine.
 
-- WineMerge it is automatically called and opens the output files with the detected changes.
+- WinMerge it is automatically called and opens the output files with the detected changes.
 - There was a name change for the output files
 - Some code improvements (tweaks).
 
