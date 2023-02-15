@@ -25,11 +25,11 @@ ECHO Copyright (c) 2023 --Un.33K--
 ECHO ******************************************************
 
 set "file_types=exe dll bat sys ini"
-set "dest=%userprofile%\Desktop\My_AV\HMF\Hashes"
-set "hmf=%userprofile%\Desktop\My_AV\HMF\"
-set "results=%userprofile%\Desktop\My_AV\HMF\Results"
-set "crc=%userprofile%\Desktop\My_AV\HMF\HMF.exe"
-set "comp=%userprofile%\Desktop\My_AV\HMF\CMP_GR.exe"
+set "dest=%userprofile%\Desktop\FR_AV\Hashes"
+set "hmf=%userprofile%\Desktop\FR_AV\"
+set "results=%userprofile%\Desktop\FR_AV\Results"
+set "crc=%userprofile%\Desktop\FR_AV\HMF.exe"
+set "comp=%userprofile%\Desktop\FR_AV\CMP.exe"
 
 for %%f in (%file_types%) do ( 
     ECHO.
@@ -43,8 +43,6 @@ for %%f in (%file_types%) do (
 cd %dest%\
 
 del Hashes_res_reg0.txt
-
-CD C:\Users\S1\Desktop\My_AV\HMF\Hashes
 
 :: Loop through each specified registry key and export it to a temporary file
 
@@ -193,7 +191,6 @@ if not exist %flagFile% (
     ren Hashes_res_%%b0.txt Hashes_res_%%b.txt
   )
 
-:: start MRT.EXE /F:Y
   MRT.EXE /F:Y
   cd %hmf%
   echo > flag
