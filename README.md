@@ -58,9 +58,7 @@ Windows 7, 10, 11. --
 
 The choice of the file hash utility is not critical, there are many doing similar job or they have 
 more features. You can try implementations using the Windows included utility so you can do the 
-hashes in your own way:
-
-certutil -hashfile (file) SHA1 / MD5 / etc
+hashes in your own way "certutil -hashfile (file) SHA1 / MD5 / etc"
 
 or you can use the "md5deep" or any other utility, although script editing skills are required.  
 Consider though, if the utility you're going to use, meets your expectations, some utilities 
@@ -81,25 +79,35 @@ might send, is appreciated!
 
 I'll summarize some of the needed steps so you can setup everything correctly:
 
-First you need to have python 3.8 or higher with "pyinstaller" installed (advanced users 
+Press the green button which says "code" and download the zip with the files of 
+the repository and unzip the files on your desktop.
+
+You need to have python 3.8 or higher with "pyinstaller" installed (advanced users 
 may use other compilers such as cx_freeze, or any other) so you can compile the cmp.py 
 After downloading Python from here: https://www.python.org/downloads/ open a command line 
 window with administrative privileges and type:
 
 pip install pyinstaller
 
-After pyinstaller is installed, you can run "pyinstaller --onefile cmp.py" in the same
-directory as the one you keep the cmp.py so you can create the executable. If for any 
-reason you can't find the executable you have just created, use windows search for 
-"cmp.exe"
-
 Note: the Python directory and the \scripts folder, must be in path, in order to run
 pip. For example in the command prompt Use:
   
 set path=c:\your-python-installation-path ; set path=c:\ your-python-scripts-folder
 
-cmp.exe, HashMyFiles.exe (or HMF.exe you can rename it to be more compact) and the batch
-file script should be in the same parent folder.
+After pyinstaller is installed, navigate to your Desktop's folder location, (in the 
+same directory as the one you keep the cmp.py) so you can create the executable and 
+run: 
+
+pyinstaller --onefile cmp.py
+
+. 
+"Build" and "Dist" folders are created, take out the cmp.exe, create a folder on your 
+desktop named "FR_AV" and place it there, if for any reason you can't find the executable 
+you have just created, use windows search for "cmp.exe"
+
+
+cmp.exe, HashMyFiles.exe (or HMF.exe you should rename it to be more compact and also
+work with the script) and the batch file script should be in the same parent folder.
 
 After everything is set, you can automate the process even more, by making it load every 
 time you're starting Windows, by using windows task scheduler:
