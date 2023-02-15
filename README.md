@@ -63,13 +63,13 @@ hashes in your own way "certutil -hashfile (file) SHA1 / MD5 / etc"
 or you can use the "md5deep" or any other utility, although script editing skills are required.  
 Consider though, if the utility you're going to use, meets your expectations, some utilities 
 might be too slow depending the algorithm used, or create hashes without providing any other 
-data to make a more extensive integrity check. Since the MS-DOS era it is known that many 
-viruses were also able to modify file attributes file creation timestamp, as well as the file 
+data to make a more extensive integrity check. Since the MS-DOS era, it is known, that many 
+viruses were also able to modify file attributes, file creation timestamp, as well as the file 
 size, so it can appear normal.
 
 
 ** Using Python i tried to create my own file hash utility, but i had issues accessing every 
-file due to windows system restrictions. This is something you could help, if you have the 
+file due to windows system restrictions. This is something you could help if you have the 
 right knowledge, but also any proposal for new features or any improvements to the code you 
 might send, is appreciated!
 
@@ -82,10 +82,10 @@ I'll summarize some of the needed steps so you can setup everything correctly:
 Press the green button which says "code" and download the zip with the files of 
 the repository and unzip the files on your desktop.
 
-You need to have python 3.8 or higher with "pyinstaller" installed (advanced users 
-may use other compilers such as cx_freeze, or any other) so you can compile the cmp.py 
-After downloading Python from here: https://www.python.org/downloads/ open a command line 
-window with administrative privileges and type:
+You need to have python 3.8 or higher with "pyinstaller" installed, so you can 
+compile the cmp.py (advanced users may use other compilers such as cx_freeze, 
+or any other). After downloading Python from here: https://www.python.org/downloads/ 
+open a command line window with administrative privileges and type:
 
 pip install pyinstaller
 
