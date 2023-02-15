@@ -43,10 +43,9 @@ utility from Nirsoft called "HashMyFiles" which can be found here:
 https://www.nirsoft.net/utils/hash_my_files.html and it is responsible to create hashes and also 
 provide the file attributes in the output file. The other executable "cmp" is written in Python, 
 which compares the results of the "HashMyFiles" utility and if there are any differences, notifies 
-you with a message and a beep sound and saves the compared hashed files results so you can take 
-a look at it later on. Looking at the logs it is not mandatory, unless there's a suspicion, in such
-case using Winmerge which you can find here: https://www.winmerge.org can make an othewise dubious 
-procedure... very fun and easy!
+you with a message and a beep sound and saves the compared hashed files results. Looking at the logs 
+it is not mandatory, unless there's a suspicion, in such case using Winmerge which you can find 
+here: https://www.winmerge.org can make an othewise dubious procedure... very fun and easy!
 
 Other than the "FR_AV" parent directory containing all the above, 2 additional subdirectories 
 are required to be created, one is called "hashes", where hashed files results are saved and 
@@ -57,18 +56,18 @@ you can change the file paths set at the top of the script and then it is expect
 Windows 7, 10, 11. --
 
 
-The choice of the file hash utility is not critical, there are also other doing similar job or 
-they have more features, although script editing skills are required. You can try implementations 
-using the windows included utility:
+The choice of the file hash utility is not critical, there are many doing similar job or they have 
+more features. You can try implementations using the Windows included utility so you can do the 
+hashes in your own way:
 
-"certutil -hashfile (file) SHA1 / MD5 / etc" 
+certutil -hashfile (file) SHA1 / MD5 / etc
 
-so you can do the hashes in your own way, or use the "md5deep" or any other utility. Consider 
-though, if the utility you're going to use, meets your expectations, some utilities might be 
-too slow depending the algorithm used, or create hashes without providing any other data to 
-make a more extensive integrity check. Since the MS-DOS era it is known that many viruses were 
-also able to modify file attributes file creation timestamp, as well as the file size, so it 
-can appear normal.
+or you can use the "md5deep" or any other utility, although script editing skills are required.  
+Consider though, if the utility you're going to use, meets your expectations, some utilities 
+might be too slow depending the algorithm used, or create hashes without providing any other 
+data to make a more extensive integrity check. Since the MS-DOS era it is known that many 
+viruses were also able to modify file attributes file creation timestamp, as well as the file 
+size, so it can appear normal.
 
 
 ** Using Python i tried to create my own file hash utility, but i had issues accessing every 
