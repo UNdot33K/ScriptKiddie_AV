@@ -44,7 +44,7 @@ https://www.nirsoft.net/utils/hash_my_files.html and it is responsible to create
 provide the file attributes in the output file. The other executable "cmp" is written in Python, 
 which compares the results of the "HashMyFiles" utility and if there are any differences, notifies 
 you with a message and a beep sound and saves the compared hashed files results so you can take 
-a look at it later on. Looking at the logs it's not mandatory, unless there's a suspicion, in such
+a look at it later on. Looking at the logs it is not mandatory, unless there's a suspicion, in such
 case using Winmerge which you can find here: https://www.winmerge.org can make an othewise dubious 
 procedure... very fun and easy!
 
@@ -132,15 +132,35 @@ the above steps).
   
   
 IMPORTANT: When running FIM-RIM_AV for the first time, do the following: click on the
-HashMyFiles.exe utility (or whatever you named it) and from the menu uncheck every
-encoding other than CRC32, then run the data.bat and after it finishes, visit the
-Hashes folder and rename every file in similar way e.g: Hashes_exe0.txt to Hashes_exe.txt
+HashMyFiles.exe utility (or whatever you named it) and from the menu go "options" and
+"hash types" and uncheck every encoding other than CRC32, then run the data.bat and after 
+it finishes, visit the Hashes folder and rename every file in similar way e.g: 
+Hashes_exe0.txt to Hashes_exe.txt (watch out v1.0.0 files must be ranamed from: 
+Hashes_res_exe0.txt to Hashes_res_exe.txt).
+
+
+# Version 1.0.0b 
+
+There was a major update, so the script jumped from version v0.91.2 to v1.0.0b yay!!
+the little code of the script went around 20% larger, still in beta though, meaning 
+still has to be thoroughly tested by more people.
+
+So what's new: this version makes full use of the "WinMerge" which seems to me it's 
+an amazing tool for the job, you can use it and literally make a manual compare of two 
+files in less than a few seconds!! , (many times faster than the cmp.exe can do).
+
+CMP still is needed, as it informs you if there are any differences for you to check,
+then the script will ask you if you want to see the differences and it will automatically
+open for you the files that you should examine.
+
+- WineMerge it is automatically called and opens the output files with the detected changes.
+- There was a name change for the output files
+- Some code improvements (tweaks).
 
 
 
 That's all for now i hope you enjoy using it, let me know your comments and or suggestions 
 or code improvments.
-
 
 
 
