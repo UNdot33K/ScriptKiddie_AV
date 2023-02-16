@@ -129,7 +129,7 @@ STEPS:
   
 6. SETTINGS [Allow task run on demand]
   
-7. On the desktop create a shortcut fro the "script.bat" 
+7. On the desktop create a shortcut for the "script.bat" 
   
 8. Press Start > search > shell:startup [ENTER]
 
