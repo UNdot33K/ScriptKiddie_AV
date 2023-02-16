@@ -201,6 +201,6 @@ if not exist %flagFile% (
 )
 
 :rflag
-del flag 2>NUL
+del flag 2 > NUL
 
 :end
