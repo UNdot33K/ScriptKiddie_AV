@@ -19,7 +19,7 @@
 
 
 :: Task Scheduler Script
-:: Run this, using administrative priviledges!! 
+:: Run this using administrative priviledges!! 
 :: to remove task: schtasks /delete /tn "FR_AV" /f
 
 @echo off
@@ -36,11 +36,11 @@ C:\Windows\System32\schtasks /create /sc onevent /mo "*[System[(EventID=42)]]" /
 
 
 :: Creates and Copies the FR_AV .lnk to Startup folder so it can run FR_AV every 
-time you're starting Windows. 
+:: time you're starting Windows. 
 mklink "%userprofile%\Desktop\FR_AV.lnk" "%userprofile%\Desktop\FR_AV\script.bat"
 
 
-:: Alternative way to place the .link in case it is needed.
+:: Alternative way to place the .lnk in case it is needed.
 :: copy /y "FR_AV.lnk" "%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\Startup\"
 
 copy /y "FR_AV.lnk" "%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup\"
