@@ -105,8 +105,10 @@ pyinstaller --onefile cmp.py
 
 
 "Build" and "Dist" folders are created, take out the cmp.exe, create a folder on your 
-desktop named "FR_AV" and place it there, if for any reason you can't find the executable 
-you have just created, use windows search for "cmp.exe".
+desktop named "FR_AV" and place it there, inside "FR_AV" create two more folders and 
+name them "Hashes" and "Results", if for any reason you can't find the executable 
+you have just created, use windows search for "cmp.exe". After you copy your cmp.exe,
+python folders "Build" and "Dist" aren't needed and you can delete them.
 
 
 cmp.exe, HashMyFiles.exe (or HMF.exe you should rename it to be more compact and also
