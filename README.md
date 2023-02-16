@@ -94,7 +94,7 @@ pip install pyinstaller
 Note: the Python directory and the \scripts folder, must be in path, in order to run
 pip. For example in the command prompt Use:
   
-set path=c:\your-python-installation-path ; set path=c:\ your-python-scripts-folder
+set path=c:\your-python-installation-path;set path=c:\ your-python-installation-scripts-folder
 
 After pyinstaller is installed, navigate to your Desktop's folder location, (in the 
 same directory as the one you keep the cmp.py) so you can create the executable and 
@@ -103,7 +103,7 @@ run:
 
 pyinstaller --onefile cmp.py
 
-. 
+
 "Build" and "Dist" folders are created, take out the cmp.exe, create a folder on your 
 desktop named "FR_AV" and place it there, if for any reason you can't find the executable 
 you have just created, use windows search for "cmp.exe".
@@ -119,26 +119,25 @@ STEPS:
 
 1. Press Start > search > task scheduler
   
-2. Action > Create task [fill the name "FIM_AV"]
+2. ACTIONS > CREATE TASK [Fill the name "FR_AV"]
   
 3. RUN WITH HIGHEST PRIVILEGES
   
 4. ACTIONS [browse for "script.bat"]
   
-5. TRIGGERS [START TASK AT LOGON]
+5. TRIGGERS [Start task on workstation unlock]
   
-6. Settings ["allow task run on demand"]
+6. SETTINGS [Allow task run on demand]
   
-7. on the desktop create shortcut and add:
+7. On the desktop create a shortcut fro the "script.bat" 
   
-8. schtasks /run /TN "FIM_AV"
-  
-9. Press Start > search > shell:startup [ENTER]
+8. Press Start > search > shell:startup [ENTER]
 
-   and place there your created lnk.
+9. Place there your created lnk.
 
-(To make things easier, probably i'll include a batch file to the repository doing all 
-the above steps).
+Note: You can use the tasksch.bat included in the repository, which will do all above 
+procedure and also include a .lnk in the StartUp folder so it can load FR_AV, every time 
+you're starting Windows.
   
   
 IMPORTANT: When running FIM-RIM_AV for the first time, do the following: click on the
