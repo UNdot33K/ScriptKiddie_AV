@@ -57,7 +57,7 @@ for %%a in (
      Classes\Protocols 
      Policies
 ) do (
-    reg export "HKEY_LOCAL_MACHINE\Software\%%a" temp.tmp /y > nul
+    reg export "HKEY_LOCAL_MACHINE\Software\%%a" temp.tmp /y >nul
     type temp.tmp >> Hashes_reg0.txt
 )
 
@@ -67,7 +67,7 @@ for %%a in (
      Run 
      RunOnce
 ) do (
-    reg export "HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\%%~a" temp.tmp /y > nul
+    reg export "HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\%%~a" temp.tmp /y >nul
     type temp.tmp >> Hashes_reg0.txt
 )
   
@@ -81,7 +81,7 @@ for %%a in (
      "Windows\CurrentVersion\Run" 
      "Windows\CurrentVersion\RunOnce" 
 ) do (
-      reg export "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\%%~a" temp.tmp /y > nul
+      reg export "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\%%~a" temp.tmp /y >nul
       type temp.tmp >> Hashes_reg0.txt
 )
 
@@ -90,7 +90,7 @@ for %%a in (
      hivelist 
      "Session Manager\KnownDLLs" 
 ) do (
-    reg export "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\%%~a" temp.tmp /y > nul
+    reg export "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\%%~a" temp.tmp /y >nul
     type temp.tmp >> Hashes_reg0.txt
 )
 
@@ -101,7 +101,7 @@ for %%a in (
      StandardProfile
       
 ) do (
-    reg export "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SharedAccess\Parameters\FirewallPolicy\%%a" temp.tmp /y > nul
+    reg export "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SharedAccess\Parameters\FirewallPolicy\%%a" temp.tmp /y >nul
     type temp.tmp >> Hashes_reg0.txt
 )
 
