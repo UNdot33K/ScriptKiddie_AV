@@ -138,10 +138,11 @@ STEPS:
 9. Place there your created lnk.
 
 Note: The install.bat included in the repository does all the above and asks your
-permission in every step. Althouh it may or many not be able to donwload the utilities
+permission in every step, althouh it may or many not be able to donwload the utilities
 and it that case it will notify you so you can do manually that step too.
   
-IMPORTANT: When running FIM-RIM_AV for the first time, do the following: click on the
+IMPORTANT: run istall.bat using elevated privileges (right click the file and run as
+administrator). When running FIM-RIM_AV for the first time, do the following: click on the
 HashMyFiles.exe utility (or whatever you named it) and from the menu go "options" and
 "hash types" and uncheck every encoding other than CRC32, then run the data.bat and after 
 it finishes, visit the Hashes folder and rename every file in similar way e.g: 
