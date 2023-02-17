@@ -47,12 +47,12 @@ you with a message and a beep sound and saves the compared hashed files results.
 it is not mandatory, unless there's a suspicion, in such case using Winmerge which you can find 
 here: https://www.winmerge.org can make an othewise dubious procedure... very fun and easy!
 
-Other than the "FR_AV" parent directory containing all the above, 2 additional subdirectories 
-are required to be created, one is called "hashes", where hashed files results are saved and 
-the other is called "Results" where the comparison results are saved.
+The "FR_AV" directory contains 2 additional subdirectories under the parents directory, one is called 
+"hashes", where hashed files results are saved and the other is called "Results" where the comparison 
+results are saved.
 
 -- the batch file should be edited only if you want to use different folder names, in that case
-you can change the file paths set at the top of the script and then it is expected to work on
+you can change the paths set at the top of the script and then it is expected to work on
 Windows 7, 10, 11. --
 
 
@@ -67,7 +67,6 @@ data to make a more extensive integrity check. Since the MS-DOS era, it is known
 viruses were also able to modify file attributes, file creation timestamp, as well as the file 
 size, so it can appear normal.
 
-
 ** Using Python i tried to create my own file hash utility, but i had issues accessing every 
 file due to windows system restrictions. This is something you could help if you have the 
 right knowledge, but also any proposal for new features or any improvements to the code you 
@@ -77,10 +76,11 @@ might send, is appreciated!
 
 # How to use
 
-I'll summarize some of the needed steps so you can setup everything correctly:
+Although you can use the install.bat for most of the procedure needed, there are
+few steps which should be done manually.
 
 Press the green button which says "code" and download the zip with the files of 
-the repository and unzip the files on your desktop.
+the repository and unzip the folder on your desktop.
 
 You need to have python 3.8 or higher with "pyinstaller" installed, so you can 
 compile the cmp.py (advanced users may use other compilers such as cx_freeze, 
@@ -104,14 +104,14 @@ run:
 pyinstaller --onefile cmp.py
 
 
-"Build" and "Dist" folders are created, take out the cmp.exe, create a folder on your 
-desktop named "FR_AV" and place it there, inside "FR_AV" create two more folders and 
-name them "Hashes" and "Results", if for any reason you can't find the executable 
+"Build" and "Dist" folders are created, take out the cmp.exe, and place it in the
+folder named "FR_AV", if you choose to do everything manually, create two more folders 
+and name them "Hashes" and "Results", if for any reason you can't find the executable 
 you have just created, use windows search for "cmp.exe". After you copy your cmp.exe,
 python folders "Build" and "Dist" aren't needed and you can delete them.
 
 
-cmp.exe, HashMyFiles.exe (or HMF.exe you should rename it to be more compact and also
+cmp.exe, HashMyFiles.exe (or HMF.exe it should be renamed to be more compact and also
 work with the script) and the batch file script should be in the same parent folder.
 
 After everything is set, you can automate the process even more, by making it load every 
@@ -137,10 +137,9 @@ STEPS:
 
 9. Place there your created lnk.
 
-Note: You can use the tasksch.bat included in the repository, which will do all above 
-procedure and also include a .lnk in the StartUp folder so it can load FR_AV, every time 
-you're starting Windows.
-  
+Note: The install.bat included in the repository does all the above and asks your
+permission in every step. Althouh it may or many not be able to donwload the utilities
+and it that case it will notify you so you can do manually that step too.
   
 IMPORTANT: When running FIM-RIM_AV for the first time, do the following: click on the
 HashMyFiles.exe utility (or whatever you named it) and from the menu go "options" and
