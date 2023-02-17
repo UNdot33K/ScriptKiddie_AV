@@ -47,9 +47,8 @@ and a beep sound and saves the compared hashed files results. Looking at the log
 unless there's a suspicion, in such case using Winmerge which you can find here: https://www.winmerge.org 
 can make an othewise dubious procedure... very fun and easy!
 
-The "FR_AV" directory contains 2 additional subdirectories under the parent directory, one is called 
-"hashes", where hashed files results are saved and the other is called "Results" where the comparison 
-results are saved.
+The "FR_AV" parent directory contains 2 additional subdirectories, one is called "hashes", where hashed 
+files results are saved and the other is called "Results" where the comparison results are saved.
 
 -- the batch file should be edited only if you want to use different folder names, in that case
 you can change the paths set at the top of the script and then it is expected to work on
