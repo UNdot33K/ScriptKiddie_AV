@@ -38,7 +38,6 @@ md  %userprofile%\Desktop\FR_AV\Results 2>nul
 
 md  %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP 2>nul
 
-
 CD %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\
 
  
