@@ -44,7 +44,7 @@ https://www.nirsoft.net/utils/hash_my_files.html and it is responsible to create
 provide some other useful features. The other executable "cmp" is written in Python, which compares 
 the results of the "HashMyFiles" utility and if there are any differences, notifies you with a 
 message and a beep sound and saves the compared hashed files results. Considering there can be 
-also false alarms, Looking at the logs it is not mandatory, unless there's a suspicion, in such 
+also false alarms, often looking at the logs it is not mandatory, unless there's a suspicion, in such 
 case using Winmerge which you can find here: https://www.winmerge.org can make an othewise 
 dubious procedure... very fun and easy!
 
