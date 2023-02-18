@@ -32,7 +32,8 @@ def compare_files(file1, file2, outputfile):
         # Compare contents of file1 and file2
         if f1_contents != f2_contents:
             print('\a') # Make a beep sound
-            print(f"Files are not identical, differences written to {outputfile}")
+            print("Files are not identical, differences written") 
+            print(f"to {outputfile}")
 
             # Open file for writting in binary mode.
             with open(outputfile, 'wb') as outfile:
