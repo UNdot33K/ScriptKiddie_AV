@@ -42,7 +42,7 @@ for %%f in (%file_types%) do (
 
 cd %dest%\
 
-del Hashes_reg0.txt
+del Hashes_reg0.txt 2>nul
 
 :: Loop through each specified registry key and export it to a temporary file
 
@@ -119,9 +119,14 @@ ECHO System check successfully completed.
 
 timeout /t 10 > nul
 
-:: Get the current local date and time using the wmic command
-
 cd %hmf%
+
+if exist initial (
+  del initial
+  goto MRT
+)
+
+:: Get the current local date and time using the wmic command
 
 for /F "skip=1 tokens=2 delims==" %%a in ('wmic os get localdatetime /format:list') do set datetime=%%a
 set day=%datetime:~6,2%
@@ -140,10 +145,7 @@ goto rflag
 
 :MRT
 
-set flagFile=flag
-
-
-if not exist %flagFile% (
+if not exist flag (
 
   cd %dest%\
 
@@ -165,6 +167,6 @@ if not exist %flagFile% (
 )
 
 :rflag
-del flag 2 > NUL
+del flag 2>nul
 
 :end
