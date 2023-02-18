@@ -25,24 +25,47 @@ ECHO Copyright (c) 2023 --Un.33K--
 ECHO ********************************************************************
 
 set "file_types=exe dll bat sys ini"
-set "dest=%userprofile%\Desktop\FR_AV\Hashes"
-set "hmf=%userprofile%\Desktop\FR_AV\"
-set "results=%userprofile%\Desktop\FR_AV\Results"
-set "crc=%userprofile%\Desktop\FR_AV\HMF.exe"
-set "comp=%userprofile%\Desktop\FR_AV\CMP.exe"
+set "dest=%userprofile%\Desktop\SFR_AV\Hashes"
+set "hmf=%userprofile%\Desktop\SFR_AV\"
+set "results=%userprofile%\Desktop\SFR_AV\Results"
+set "crc=%userprofile%\Desktop\SFR_AV\HMF.exe"
+set "comp=%userprofile%\Desktop\SFR_AV\CMP.exe"
+
+:: Check if there are any installation issues
+
+cd %hmf%
+
+if not exist HMF.exe goto err
+if not exist CMP.exe goto err
+
+if not exist initial ( 
+   if not exist "%dest%\Hashes_exe.txt" (
+:err
+    echo.
+    echo Please run install.bat using administrative privileges.
+    pause
+    goto end
+    )
+)
+
+
+:: Main code
 
 for %%f in (%file_types%) do ( 
     ECHO.
     ECHO Checking: %%f
-    %crc% /wildcard "C:\*.%%f" 3 /CRC32 1 /stext "%dest%\Hashes_%%f0"
+    %crc% /wildcard "C:\*.%%f" 2 /CRC32 1 /stext "%dest%\Hashes_%%f0"
     type "%dest%\Hashes_%%f0" > "%dest%\Hashes_%%f0.txt"
     del "%dest%\Hashes_%%f0"
-    %comp% "%dest%\Hashes_%%f.txt" "%dest%\Hashes_%%f0.txt" "%results%\Res_%%f.txt"
+    if not exist initial (
+    %comp% "%dest%\Hashes_%%f.txt" "%dest%\Hashes_%%f0.txt" "%results%\res_%%f.txt"
+    )
+
 )
 
 cd %dest%\
-
 del Hashes_reg0.txt 2>nul
+
 
 :: Loop through each specified registry key and export it to a temporary file
 
@@ -109,15 +132,8 @@ del temp.tmp
 
 :: Compare the exported registry keys
 
-ECHO.
-ECHO Checking: Registry
-
-%comp% "%dest%\Hashes_reg.txt" "%dest%\Hashes_reg0.txt" "%results%\REGresults.txt"
-
-ECHO.				
-ECHO System check successfully completed.
-
-timeout /t 10 > nul
+echo.
+echo Checking: Registry
 
 cd %hmf%
 
@@ -125,6 +141,13 @@ if exist initial (
   del initial
   goto MRT
 )
+
+%comp% "%dest%\Hashes_reg.txt" "%dest%\Hashes_reg0.txt" "%results%\REGresults.txt"
+
+echo.				
+echo File integrity check, successfully completed.
+
+timeout /t 5 > nul
 
 :: Get the current local date and time using the wmic command
 
@@ -143,7 +166,6 @@ if /I "%day%" == "27" goto MRT
 if /I "%day%" == "30" goto MRT
 goto rflag
 
-
 :MRT
 
 if not exist flag (
@@ -151,7 +173,7 @@ if not exist flag (
   cd %dest%\
 
   for %%a in (Hashes_exe.txt Hashes_dll.txt Hashes_bat.txt Hashes_sys.txt Hashes_ini.txt Hashes_reg.txt) do (
-    del %%a
+    del %%a 2>nul
   )
 
   for %%b in (exe dll bat sys ini reg) do (
@@ -168,6 +190,7 @@ if not exist flag (
 )
 
 :rflag
+cd %hmf%
 del flag 2>nul
 
 :end
