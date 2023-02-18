@@ -20,21 +20,21 @@
 
 :: Installer - Task Scheduler Script
 :: Run this using administrative priviledges!! 
-:: to remove task: schtasks /delete /tn "FR_AV" /f
+:: to remove task: schtasks /delete /tn "SFR_AV" /f
 
 
 @CLS
-@echo off
+@ECHO OFF
 
 ECHO.
 ECHO Creating directory structure...
 ECHO.
 
-md  %userprofile%\Desktop\FR_AV 2>nul
+md  %userprofile%\Desktop\SFR_AV 2>nul
 
-md  %userprofile%\Desktop\FR_AV\Hashes 2>nul
+md  %userprofile%\Desktop\SFR_AV\Hashes 2>nul
 
-md  %userprofile%\Desktop\FR_AV\Results 2>nul
+md  %userprofile%\Desktop\SFR_AV\Results 2>nul
 
 md  %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP 2>nul
 
@@ -42,7 +42,7 @@ CD %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\
 
  
 ECHO.
-set /p choice="Please select version, 1 for [v1.0.0b] or 0 for [0.91.2b]: "
+set /p choice="Please select version, 0 for [0.95.2b] or 1 for [v1.2.1b] or: "
 ECHO.
 if /i "%choice%"=="1" goto v1
 if /i "%choice%"=="0" goto v091
@@ -52,9 +52,9 @@ if /i "%choice%"=="0" goto v091
 
 :: Creates initialization files to avoid cmp errors.
 
-set "dir=%userprofile%\Desktop\FR_AV\Hashes"
+set "dir=%userprofile%\Desktop\SFR_AV\Hashes"
 set "files=Hashes_res_exe.txt Hashes_res_dll.txt Hashes_res_bat.txt Hashes_res_ini.txt Hashes_res_sys.txt Hashes_res_reg.txt"
-echo initialization > %userprofile%\Desktop\FR_AV\initial
+echo initialization > %userprofile%\Desktop\SFR_AV\initial
 for %%f in (%files%) do echo initialization > "%dir%\%%f"
 
 
@@ -62,11 +62,11 @@ ECHO.
 ECHO Copying files...
 ECHO.
 
-copy /y %userprofile%\Desktop\Simple-FIM-RIM_AV-main\v1_0_0b\main.bat %userprofile%\Desktop\FR_AV\
+copy /y %userprofile%\Desktop\Simple-FIM-RIM_AV-main\v1_0_0b\main.bat %userprofile%\Desktop\SFR_AV\
 
-copy /y %userprofile%\Desktop\Simple-FIM-RIM_AV-main\LICENSE %userprofile%\Desktop\FR_AV\
+copy /y %userprofile%\Desktop\Simple-FIM-RIM_AV-main\LICENSE %userprofile%\Desktop\SFR_AV\
 
-copy /y %userprofile%\Desktop\Simple-FIM-RIM_AV-main\README.md %userprofile%\Desktop\FR_AV\
+copy /y %userprofile%\Desktop\Simple-FIM-RIM_AV-main\README.md %userprofile%\Desktop\SFR_AV\
 
 ECHO.
 set /p choice="Try to download and Install HashMyFiles? (y/n) "
@@ -85,7 +85,7 @@ IF EXIST %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\hashmyfiles-x64.zip (
     ECHO Please extract in the same folder the downloaded zip: "%userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\".
     pause
     ren HashMyFiles.exe HMF.exe
-    copy /y HMF.exe %userprofile%\Desktop\FR_AV\
+    copy /y HMF.exe %userprofile%\Desktop\SFR_AV\
 ) ELSE (
     ECHO.
     ECHO THE FILE WAS NOT DOWNLOADED, YOU MUST DOWNLOAD IT MANUALLY.
@@ -111,32 +111,30 @@ IF EXIST %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\WinMerge-2.16.28-Setu
     WinMerge-2.16.28-Setup.exe
 ) ELSE (
     ECHO.
-    ECHO  THE FILE WAS NOT DOWNLOADED, YOU MUST DOWNLOAD IT MANUALLY.
-    ECHO  https://www.WinMerge.org/
+    ECHO  -- ERROR: Could not download file, you should download it manually. --
+    ECHO     https://www.WinMerge.org/
     ECHO.
 )
 
 
 :V091
 
-
-set "dir=%userprofile%\Desktop\FR_AV\Hashes"
+set "dir=%userprofile%\Desktop\SFR_AV\Hashes"
 set "files=Hashes_exe.txt Hashes_dll.txt Hashes_bat.txt Hashes_ini.txt Hashes_sys.txt Hashes_reg.txt"
-echo initialization > %userprofile%\Desktop\FR_AV\initial
+echo initialization > %userprofile%\Desktop\SFR_AV\initial
 for %%f in (%files%) do echo initialization > "%dir%\%%f"
-
 
 ECHO.
 ECHO Copying files...
 ECHO.
-copy /y %userprofile%\Desktop\Simple-FIM-RIM_AV-main\*.* %userprofile%\Desktop\FR_AV\ >nul
-
+copy /y %userprofile%\Desktop\Simple-FIM-RIM_AV-main\*.* %userprofile%\Desktop\SFR_AV\ >nul
 
 ECHO.
 set /p choice="Try to download and install HashMyFiles? (y/n) "
 
 if /i "%choice%"=="y" goto HMF
 if /i "%choice%"=="n" goto taskQ
+
 
 :HMF
 
@@ -147,11 +145,11 @@ IF EXIST %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\hashmyfiles-x64.zip  
     ECHO Please extract in the same folder the downloaded zip: "%userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\".
     pause
     ren HashMyFiles.exe HMF.exe
-    copy /y HMF.exe %userprofile%\Desktop\FR_AV\
+    copy /y HMF.exe %userprofile%\Desktop\SFR_AV\
 ) ELSE (
     ECHO.
-    ECHO  THE FILE WAS NOT DOWNLOADED, YOU MUST DOWNLOAD IT MANUALLY.
-    ECHO  https://www.nirsoft.net/utils/ 
+    ECHO  -- ERROR: Could not download file, you should download it manually. --
+    ECHO     https://www.nirsoft.net/utils/ 
     ECHO.
 )
 
@@ -167,19 +165,19 @@ if /i "%choice%"=="n" goto py
 
 :taskCR
 
-:: Creates a new task for FR_AV to run after workstation unlock.
-C:\Windows\System32\schtasks /create /sc onevent /mo "*[System[(EventID=42)]]" /EC System /tn "FR_AV" /tr "%userprofile%\Desktop\FR_AV\main.bat"
+:: Creates a new task for SFR_AV to run after workstation unlock.
+C:\Windows\System32\schtasks /create /sc onevent /mo "*[System[(EventID=42)]]" /EC System /tn "SFR_AV" /tr "%userprofile%\Desktop\FR_AV\main.bat"
 
 
 
 :: Alternative way in case the first one doesn't work.
-:: C:\Windows\System32\schtasks /Create /SC ONEVENT /MO "*[System[(EventID=4624)]] and  *[EventData[Data[9]="7"]]" /EC Security /TN "FR_AV" /TR "\"%userprofile%\Desktop\FR_AV\script.bat"\" /F
+:: C:\Windows\System32\schtasks /Create /SC ONEVENT /MO "*[System[(EventID=4624)]] and  *[EventData[Data[9]="7"]]" /EC Security /TN "SFR_AV" /TR "\"%userprofile%\Desktop\FR_AV\script.bat"\" /F
 
 
 
-:: Creates and Copies the FR_AV .lnk to Startup folder so it can run FR_AV every 
+:: Creates and Copies the SFR_AV .lnk to Startup folder so it can run SFR_AV every 
 :: time you're starting Windows. 
-mklink "%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup\FR_AV.lnk" "%userprofile%\Desktop\FR_AV\main.bat"
+mklink "%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup\SFR_AV.lnk" "%userprofile%\Desktop\SFR_AV\main.bat"
 
 
 :: Alternative way to place the .lnk in case it is needed.
@@ -188,7 +186,6 @@ mklink "%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup\FR_AV.lnk" "%use
 :py
 
 @CLS
-
 ECHO ***************************************************************************
 ECHO **                                                                       **
 ECHO ** To avoid unexpected errors, the following steps should                **
@@ -201,14 +198,14 @@ ECHO ** You should also set the correct path to Python and \scripts           **
 ECHO ** installation. Open a command line window using administrative         ** 
 ECHO ** privileges and set the path:                                          **
 ECHO **                                                                       **
-ECHO ** Set path=c:\ enter-your-Python-installation-path ; set path=c:\enter  **
+ECHO ** Set path=c:\ enter-your-Python-installation-path ; set path=c:\ enter **
 ECHO ** -Python-installation-scripts-path                                     **
 ECHO **                                                                       **
 ECHO ** After setting the correct path you can run: pip install pyinstaller   **
-ECHO ** then you can compile the cmp.py using:                                **
-ECHO ** pyinstaller --onefile cmp.py                                          **
+ECHO ** then you can compile the CMP.py using:                                **
+ECHO ** pyinstaller --onefile CMP.py                                          **
 ECHO **                                                                       **
-ECHO ** cmp.exe must be placed in the FR_AV folder.                           **
+ECHO **          -- CMP.exe must be placed in the FR_AV folder. --            **
 ECHO **                                                                       **
 ECHO ***************************************************************************
 
