@@ -25,11 +25,11 @@ ECHO Copyright (c) 2023 --Un.33K--
 ECHO ******************************************************
 
 set "file_types=exe dll bat sys ini"
-set "dest=%userprofile%\Desktop\FR_AV\Hashes"
-set "hmf=%userprofile%\Desktop\FR_AV\"
-set "results=%userprofile%\Desktop\FR_AV\Results"
-set "crc=%userprofile%\Desktop\FR_AV\HMF.exe"
-set "comp=%userprofile%\Desktop\FR_AV\CMP.exe"
+set "dest=%userprofile%\Desktop\SFR_AV\Hashes"
+set "hmf=%userprofile%\Desktop\SFR_AV\"
+set "results=%userprofile%\Desktop\SFR_AV\Results"
+set "crc=%userprofile%\Desktop\SFR_AV\HMF.exe"
+set "comp=%userprofile%\Desktop\SFR_AV\CMP.exe"
 
 :: Check if there are any installation issues
 
@@ -59,9 +59,7 @@ for %%f in (%file_types%) do (
 
 )
 
-
 cd %dest%\
-
 del Hashes_res_reg0.txt 2>nul
 
 :: Loop through each specified registry key and export it to a temporary file
