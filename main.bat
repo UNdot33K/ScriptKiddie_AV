@@ -20,7 +20,7 @@
 @echo off
 
 ECHO ********************************************************************
-ECHO [Simple FIM-RIM_AV] v0.91.2 (pre-release) Is Running, Please Wait...
+ECHO [Simple FIM-RIM_AV] v0.95.2 (pre-release) Is Running, Please Wait...
 ECHO Copyright (c) 2023 --Un.33K--
 ECHO ********************************************************************
 
