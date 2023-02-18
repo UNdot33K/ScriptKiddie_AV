@@ -20,29 +20,50 @@
 @echo off
 
 ECHO ******************************************************
-ECHO [Simple FIM-RIM_AV] v1.0.0b Is Running, Please Wait...
+ECHO [Simple FIM-RIM_AV] v1.2.1b Is Running, Please Wait...
 ECHO Copyright (c) 2023 --Un.33K--
 ECHO ******************************************************
 
 set "file_types=exe dll bat sys ini"
-set "dest=%userprofile%\Desktop\FR_AV\Hashes"
-set "hmf=%userprofile%\Desktop\FR_AV\"
-set "results=%userprofile%\Desktop\FR_AV\Results"
-set "crc=%userprofile%\Desktop\FR_AV\HMF.exe"
-set "comp=%userprofile%\Desktop\FR_AV\CMP.exe"
+set "dest=%userprofile%\Desktop\SFR_AV\Hashes"
+set "hmf=%userprofile%\Desktop\SFR_AV\"
+set "results=%userprofile%\Desktop\SFR_AV\Results"
+set "crc=%userprofile%\Desktop\SFR_AV\HMF.exe"
+set "comp=%userprofile%\Desktop\SFR_AV\CMP.exe"
+
+
+:: Check if there are any installation issues
+
+cd %hmf%
+
+if not exist HMF.exe goto err
+if not exist CMP.exe goto err
+
+if not exist initial ( 
+   if not exist "%dest%\Hashes_res_exe.txt" (
+    echo.
+    echo Please run install.bat using administrative privileges.
+    pause
+    goto end
+    )
+)
+
+:: Main code
 
 for %%f in (%file_types%) do ( 
-    ECHO.
-    ECHO Checking: %%f
+    echo.
+    echo Checking: %%f
     %crc% /wildcard "C:\*.%%f" 3 /CRC32 1 /stext "%dest%\Hashes_res_%%f0"
     type "%dest%\Hashes_res_%%f0" > "%dest%\Hashes_res_%%f0.txt"
     del "%dest%\Hashes_res_%%f0"
+    if not exist initial (
     %comp% "%dest%\Hashes_res_%%f.txt" "%dest%\Hashes_res_%%f0.txt" "%results%\res_%%f.txt"
+    )
+
 )
-
 cd %dest%\
-
 del Hashes_res_reg0.txt 2>nul
+
 
 :: Loop through each specified registry key and export it to a temporary file
 
@@ -109,13 +130,22 @@ del temp.tmp
 
 :: Compare the exported registry keys
 
-ECHO.
-ECHO Checking: Registry
+echo.
+echo Checking: Registry
+
+cd %hmf%
+
+if exist initial ( 
+   del initial
+   goto MRT
+)
 
 %comp% "%dest%\Hashes_res_reg.txt" "%dest%\Hashes_res_reg0.txt" "%results%\res_reg.txt"
 
-ECHO.				
-ECHO File check successfully completed.
+echo.				
+echo File integrity check successfully completed.
+
+timeout /t 5 >nul
 
 cd %Results%
 
@@ -134,7 +164,7 @@ goto qt
 set "WinMerge_Path=%ProgramFiles(x86)%\WinMerge\WinMergeU.exe"
 if not exist "%WinMerge_Path%" set "WinMerge_Path=%ProgramFiles%\WinMerge\WinMergeU.exe"
 
-ECHO.
+echo.
 set /p choice="Would you like to see the differences found? (y/n)"
 
 if /i "%choice%"=="y" goto cp
@@ -155,13 +185,6 @@ del /Q *.*
 
 :qt
 
-cd %hmf%
-
-if exist initial (
-  del initial
-  goto MRT
-)
-
 :: Get the current local date and time using the wmic command
 
 for /F "skip=1 tokens=2 delims==" %%a in ('wmic os get localdatetime /format:list') do set datetime=%%a
@@ -179,15 +202,16 @@ if /I "%day%" == "27" goto MRT
 if /I "%day%" == "30" goto MRT
 goto rflag
 
-
 :MRT
+
+cd %hmf%
 
 if not exist flag (
 
   cd %dest%\
 
-  for %%a in (Hashes_res_exe.txt Hashes_res_dll.txt Hashes_res_bat.txt Hashes_res_sys.txt Hashes_res_ini.txt Hashes_res_reg.txt) do (
-    del %%a
+for %%a in (Hashes_res_exe.txt Hashes_res_dll.txt Hashes_res_bat.txt Hashes_res_sys.txt Hashes_res_ini.txt Hashes_res_reg.txt) do (
+    del %%a 2>nul
   )
 
   for %%b in (exe dll bat sys ini reg) do (
@@ -204,6 +228,7 @@ if not exist flag (
 )
 
 :rflag
+cd %hmf%
 del flag 2>nul
 
 :end
