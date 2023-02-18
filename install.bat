@@ -62,7 +62,7 @@ ECHO.
 ECHO Copying files...
 ECHO.
 
-copy /y %userprofile%\Desktop\Simple-FIM-RIM_AV-main\v1_0_0b\script.bat %userprofile%\Desktop\FR_AV\
+copy /y %userprofile%\Desktop\Simple-FIM-RIM_AV-main\v1_0_0b\main.bat %userprofile%\Desktop\FR_AV\
 
 copy /y %userprofile%\Desktop\Simple-FIM-RIM_AV-main\LICENSE %userprofile%\Desktop\FR_AV\
 
@@ -168,7 +168,7 @@ if /i "%choice%"=="n" goto py
 :taskCR
 
 :: Creates a new task for FR_AV to run after workstation unlock.
-C:\Windows\System32\schtasks /create /sc onevent /mo "*[System[(EventID=42)]]" /EC System /tn "FR_AV" /tr "%userprofile%\Desktop\FR_AV\script.bat"
+C:\Windows\System32\schtasks /create /sc onevent /mo "*[System[(EventID=42)]]" /EC System /tn "FR_AV" /tr "%userprofile%\Desktop\FR_AV\main.bat"
 
 
 
@@ -179,16 +179,11 @@ C:\Windows\System32\schtasks /create /sc onevent /mo "*[System[(EventID=42)]]" /
 
 :: Creates and Copies the FR_AV .lnk to Startup folder so it can run FR_AV every 
 :: time you're starting Windows. 
-mklink "%userprofile%\Desktop\FR_AV.lnk" "%userprofile%\Desktop\FR_AV\script.bat"
+mklink "%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup\FR_AV.lnk" "%userprofile%\Desktop\FR_AV\main.bat"
 
 
 :: Alternative way to place the .lnk in case it is needed.
-:: copy /y "FR_AV.lnk" "%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\Startup\"
-
-copy /y "FR_AV.lnk" "%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup\"
-
-del FR_AV.lnk
-
+:: "%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\Startup\"
 
 :py
 
