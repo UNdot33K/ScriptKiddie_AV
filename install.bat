@@ -45,7 +45,7 @@ ECHO.
 set /p choice="Please select version, 0 for [0.95.2b] or 1 for [v1.2.1b] or: "
 ECHO.
 if /i "%choice%"=="1" goto v1
-if /i "%choice%"=="0" goto v091
+if /i "%choice%"=="0" goto v095
 
 
 :v1
@@ -117,7 +117,7 @@ IF EXIST %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\WinMerge-2.16.28-Setu
 )
 
 
-:V091
+:V095
 
 set "dir=%userprofile%\Desktop\SFR_AV\Hashes"
 set "files=Hashes_exe.txt Hashes_dll.txt Hashes_bat.txt Hashes_ini.txt Hashes_sys.txt Hashes_reg.txt"
