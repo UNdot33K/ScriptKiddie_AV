@@ -138,16 +138,16 @@ STEPS:
 9. Place there your created lnk.
 
 Note: The install.bat included in the repository does all the above and asks your
-permission in every step, althouh it may or many not be able to donwload the utilities
-and it that case it will notify you so you can do manually that step too.
+permission in every step, although it may or many not be able to download the utilities
+and it that case it will notify you so you can do it manually.
   
 IMPORTANT: run istall.bat using elevated privileges (right click the file and run as
 administrator). When running FIM-RIM_AV for the first time, do the following: click on the
 HashMyFiles.exe utility (or whatever you named it) and from the menu go "options" and
-"hash types" and uncheck every encoding other than CRC32, then run the data.bat and after 
-it finishes, visit the Hashes folder and rename every file in similar way e.g: 
-Hashes_exe0.txt to Hashes_exe.txt (watch out v1.0.0 files must be ranamed from: 
-Hashes_res_exe0.txt to Hashes_res_exe.txt).
+"hash types" and uncheck every encoding other than CRC32.
+
+If you wish to delete from your system the task created by install.bat, open a command
+line as administrator and use: schtasks /delete /tn "FR_AV" /f
 
 
 # Version 1.0.0b 
