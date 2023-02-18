@@ -80,7 +80,8 @@ Although you can use the install.bat for most of the procedure needed, there are
 few steps which should be done manually.
 
 Press the green button which says "code" and download the zip with the files of 
-the repository and unzip the folder on your desktop.
+the repository and unzip the folder on your desktop, right-click the install.bat
+and run as administrator.
 
 You need to have python 3.8 or higher with "pyinstaller" installed, so you can 
 compile the cmp.py (advanced users may use other compilers such as cx_freeze, 
