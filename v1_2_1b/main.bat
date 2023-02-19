@@ -37,6 +37,8 @@ cd %hmf%
 
 if not exist HMF.exe goto err
 if not exist CMP.exe goto err
+if not exist "%userprofile%\Desktop\SFR_AV\Hashes" goto err
+if not exist "%userprofile%\Desktop\SFR_AV\Results" goto err
 
 if not exist initial ( 
    if not exist "%dest%\Hashes_res_exe.txt" (
@@ -46,6 +48,9 @@ if not exist initial (
     goto end
     )
 )
+
+
+:: Main code
 
 for %%f in (%file_types%) do ( 
     echo.
