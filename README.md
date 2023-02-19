@@ -99,20 +99,20 @@ pip. For example in the command prompt Use:
 set path=c:\ your-python-installation-path;set path=c:\ your-python-installation-scripts
 
 After pyinstaller is installed, navigate to your Desktop's folder location, (in the 
-same directory as the one you keep the cmp.py) so you can create the executable and 
+same directory as the one you keep the CMP.py) so you can create the executable and 
 run: 
 
 
 pyinstaller --onefile cmp.py
 
 
-"Build" and "Dist" folders are created, take out the cmp.exe, and place it in the
+"Build" and "Dist" folders are created, take out the CMP.exe and place it in the
 folder named "SFR_AV", if for any reason you can't find the executable you have just 
 created, use windows search for "CMP.exe". After you copy your CMP.exe, python folders 
 "Build" and "Dist" aren't needed and you can delete them.
 
 
-CMP.exe, HashMyFiles.exe (renamed HMF.exe to be more compact and also work with the script) 
+CMP.exe, HashMyFiles.exe (renamed to HMF.exe to be more compact and also work with the script) 
 and the batch file script should be in the same parent folder.
 
 After everything is set, you can automate the process even more, by making it load every 
@@ -170,7 +170,7 @@ larger than the code!! ^^
 
 So what's new: this version makes full use of the "WinMerge" which seems to me it's 
 an amazing tool for the job, you can use it and literally make a manual compare of two 
-files in less than a few seconds!! , (many times faster than the cmp.exe can do).
+files in less than a few seconds!! , (many times faster than the CMP.exe can do).
 
 CMP still is needed, as it informs you if there are any differences for you to check,
 then the script will ask you if you want to see the differences and it will automatically
