@@ -42,6 +42,7 @@ if not exist "%userprofile%\Desktop\SFR_AV\Results" goto err
 
 if not exist initial ( 
    if not exist "%dest%\Hashes_res_exe.txt" (
+:err
     echo.
     echo Please run install.bat using administrative privileges.
     pause
