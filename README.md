@@ -28,9 +28,9 @@ Although there are various similar tools, the highlight of this one is, that it 
 also check the Windows registry. Certain registry hives are considered usual malware 
 target, so it can check and report any changes. On specific days of the month after 
 finishing file & registry integrity checks, it can call the Windows "Malware Removal 
-Tool" (MRT) to scan your hard disk, so also it automates some antivirus security of your 
-system. I couldn't find exactly what i wanted in similar tools so i've made my own in 
-this perspective.
+Tool" (MRT) to scan your hard disk, so also it automates some antivirus security of 
+your system. I couldn't find exactly what i wanted in similar tools so i've made my 
+own in this perspective.
 
 
 # Structure
