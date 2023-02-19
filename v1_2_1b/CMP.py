@@ -36,13 +36,13 @@ def compare_files(file1, file2, outputfile):
         if difference:
             set_color(0x00f0) # white background black letters
             print('\a') # Make a beep sound
-            print("Files are not identical, differences written")
+            print("Integrity: The files are not identical, differences written")
             print(f"to {outputfile}")
             set_color(0x0007) # set to black background grey letters
             with open(outputfile, 'w', encoding='IBM866') as outfile:
                 outfile.writelines(difference)
         else:
-            print('The files are identical.')
+            print('Integrity: The files are identical.')
 
 if __name__ == '__main__':
     if len(sys.argv) != 4:
