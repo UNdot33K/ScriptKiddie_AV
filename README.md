@@ -77,7 +77,7 @@ To combat this, files can be shorted by their $FN created time or $FN MFT entry 
 which are less susceptible to manipulation
 
 **the hash value is calculated based on the file's contents and is unique to that specific 
-  file.
+  file (unless hash collision occurs)
 
 
 # How to use
