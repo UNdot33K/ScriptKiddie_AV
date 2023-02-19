@@ -62,7 +62,7 @@ ECHO.
 ECHO Copying files...
 ECHO.
 
-copy /y %userprofile%\Desktop\Simple-FIM-RIM_AV-main\v1_0_0b\main.bat %userprofile%\Desktop\SFR_AV\
+copy /y %userprofile%\Desktop\Simple-FIM-RIM_AV-main\v1_2_1b\main.bat %userprofile%\Desktop\SFR_AV\
 
 copy /y %userprofile%\Desktop\Simple-FIM-RIM_AV-main\LICENSE %userprofile%\Desktop\SFR_AV\
 
