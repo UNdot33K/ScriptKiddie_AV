@@ -40,16 +40,17 @@ this perspective.
 
 It mainly consists of 3 executables, a batch file which coordinates the procedures, a freeware 
 utility from Nirsoft called "HashMyFiles" which can be found here: 
-https://www.nirsoft.net/utils/hash_my_files.html and it is responsible to create hashes and also 
-provide some other useful features. The other executable "cmp" is written in Python, which compares 
+https://www.nirsoft.net/utils/hash_my_files.html which is responsible to create hashes and also 
+provide some other useful features. The other executable "CMP" is written in Python, it compares 
 the results of the "HashMyFiles" utility and if there are any differences, notifies you with a 
 message and a beep sound and saves the compared hashed files results. Considering there can be 
-also false alarms, often looking at the logs it is not mandatory, unless there's a suspicion, in such 
-case using Winmerge which you can find here: https://www.winmerge.org can make an othewise 
+also false alarms, often looking at the logs it is not mandatory, unless there's a suspicion, in
+such case using Winmerge which you can find here: https://www.winmerge.org can make an othewise 
 dubious procedure... very fun and easy!
 
-The "FR_AV" parent directory contains 2 additional subdirectories, one is called "hashes", where hashed 
-files results are saved and the other is called "Results" where the comparison results are saved.
+The "SFR_AV" parent directory contains 2 additional subdirectories, one is called "hashes", where 
+hashed files results are saved and the other is called "Results" where the comparison results 
+are saved.
 
 -- the batch file should be edited only if you want to use different folder names, in that case
 you can change the paths set at the top of the script and then it is expected to work on
@@ -76,12 +77,12 @@ might send, is appreciated!
 
 # How to use
 
-Although you can use the install.bat for most of the procedure needed, there are
-few steps which should be done manually.
+You can use the install.bat for most of the procedure needed, although there are few 
+steps which should be done manually.
 
-Press the green button which says "code" and download the zip with the files of 
-the repository and unzip the folder on your desktop, right-click the install.bat
-and run as administrator.
+Press the green button which says "code" and download the zip with the files of the 
+repository and unzip the folder on your desktop, right-click the install.bat and run 
+as administrator.
 
 You need to have python 3.8 or higher with "pyinstaller" installed, so you can 
 compile the cmp.py (advanced users may use other compilers such as cx_freeze, 
@@ -106,13 +107,12 @@ pyinstaller --onefile cmp.py
 
 
 "Build" and "Dist" folders are created, take out the cmp.exe, and place it in the
-folder named "FR_AV", if you choose to do everything manually, create two more folders 
-and name them "Hashes" and "Results", if for any reason you can't find the executable 
-you have just created, use windows search for "cmp.exe". After you copy your cmp.exe,
-python folders "Build" and "Dist" aren't needed and you can delete them.
+folder named "SFR_AV", if for any reason you can't find the executable you have just 
+created, use windows search for "cmp.exe". After you copy your cmp.exe, python folders 
+"Build" and "Dist" aren't needed and you can delete them.
 
 
-cmp.exe, HashMyFiles.exe (or HMF.exe it should be renamed to be more compact and also
+cmp.exe, (ashMyFiles.exe renamed HMF.exe it should to be more compact and also
 work with the script) and the batch file script should be in the same parent folder.
 
 After everything is set, you can automate the process even more, by making it load every 
@@ -122,17 +122,17 @@ STEPS:
 
 1. Press Start > search > task scheduler
   
-2. ACTIONS > CREATE TASK [Fill the name "FR_AV"]
+2. ACTIONS > CREATE TASK [Fill the name "SFR_AV"]
   
 3. RUN WITH HIGHEST PRIVILEGES
   
-4. ACTIONS [browse for "script.bat"]
+4. ACTIONS [browse for "main.bat"]
   
 5. TRIGGERS [Start task on workstation unlock]
   
 6. SETTINGS [Allow task run on demand]
   
-7. On the desktop create a shortcut for the "script.bat" 
+7. On the desktop create a shortcut for the "main.bat" 
   
 8. Press Start > search > shell:startup [ENTER]
 
@@ -142,18 +142,18 @@ Note: The install.bat included in the repository does all the above and asks you
 permission in every step, although it may or many not be able to download the utilities
 and it that case it will notify you so you can do it manually.
   
-IMPORTANT: run istall.bat using elevated privileges (right click the file and run as
-administrator). When running FIM-RIM_AV for the first time, do the following: click on the
+IMPORTANT: run istall.bat using elevated privileges (right click on the file and run as
+administrator). When running SFR_AV for the first time, do the following: click on the
 HashMyFiles.exe utility (or whatever you named it) and from the menu go "options" and
 "hash types" and uncheck every encoding other than CRC32.
 
 If you wish to delete from your system the task created by install.bat, open a command
-line as administrator and use: schtasks /delete /tn "FR_AV" /f
+line as administrator and use: schtasks /delete /tn "SFR_AV" /f
 
 
-# Version 1.0.0b 
+# Version 1.2.1b 
 
-There was a major update, so the script jumped from version v0.91.2 to v1.0.0b yay!!
+There was a major update, so the script jumped from version v0.95.2 to v1.2.1b yay!!
 the little code of the script went around 20% larger, still in beta though, meaning 
 still has to be thoroughly tested by more people and still the documentation is
 larger than the code!! ^^
@@ -169,7 +169,7 @@ open for you the files that you should examine.
 - WinMerge it is automatically called and opens the output files with the detected changes.
 - There was a name change for the output files
 - Some code improvements (tweaks).
-
+- Improved CMP.exe
 
 That's all for now i hope you enjoy using it, let me know your comments and or suggestions 
 or code improvments.
