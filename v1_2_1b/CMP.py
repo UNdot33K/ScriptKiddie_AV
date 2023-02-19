@@ -27,7 +27,7 @@ def compare_files(file1, file2, outputfile):
 
 if __name__ == '__main__':
     if len(sys.argv) != 4:
-        print('Compare files: filename1 filename2 outputfile')
+        print('Copyright 2023: UN.33K - Compare files: filename1 filename2 outputfile')
         sys.exit(1)
     compare_files(sys.argv[1], sys.argv[2], sys.argv[3])
 
