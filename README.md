@@ -106,7 +106,7 @@ same directory as the one you keep the CMP.py) so you can create the executable 
 run: 
 
 
-pyinstaller --onefile cmp.py
+pyinstaller --onefile CMP.py
 
 
 "Build" and "Dist" folders are created, take out the CMP.exe and place it in the
