@@ -170,7 +170,7 @@ open for you the files that you should examine.
 - There was a name change, also for the output files
 - Some code improvements (tweaks).
 - Error handling 
-- Improved CMP.exe
+- Improved CMP
 
 That's all for now i hope you enjoy using it, let me know your comments and or suggestions 
 or code improvments.
