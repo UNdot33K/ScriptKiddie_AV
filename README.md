@@ -167,8 +167,9 @@ then the script will ask you if you want to see the differences and it will auto
 open for you the files that you should examine.
 
 - WinMerge it is automatically called and opens the output files with the detected changes.
-- There was a name change for the output files
+- There was a name change, also for the output files
 - Some code improvements (tweaks).
+- Error handling 
 - Improved CMP.exe
 
 That's all for now i hope you enjoy using it, let me know your comments and or suggestions 
