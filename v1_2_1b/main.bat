@@ -50,7 +50,6 @@ if not exist initial (
     )
 )
 
-
 :: Main code
 
 for %%f in (%file_types%) do ( 
@@ -205,7 +204,7 @@ if /I "%day%" == "21" goto MRT
 if /I "%day%" == "24" goto MRT
 if /I "%day%" == "27" goto MRT
 if /I "%day%" == "30" goto MRT
-goto rflag
+goto LoFlag
 
 
 :MRT
@@ -233,7 +232,7 @@ for %%a in (Hashes_res_exe.txt Hashes_res_dll.txt Hashes_res_bat.txt Hashes_res_
   goto end
 )
 
-:rflag
+:LoFlag
 cd %hmf%
 del flag 2>nul
 
