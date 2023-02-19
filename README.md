@@ -56,26 +56,28 @@ the batch file can be edited so you can use different settings, in that case you
 paths set at the top of the script or tweak the Main code and then it is expected to work on 
 Windows 7, 10, 11.
 
-The choice of the file hash utility is not critical, there are many doing similar job or they have 
-more features. You can try implementations using the Windows included utility so you can do the 
-hashes in your own way: "certutil -hashfile (file) SHA1 / MD5 / etc"
+The choice of the file hash utility is not critical, there are many doing similar job, you can 
+try implementations using the Windows included utility so you can do the hashes in your 
+own way: "certutil -hashfile (file) SHA1 / MD5 / etc"
 
 or you can use the "md5deep" or any other utility, although script editing skills are 
 required. Consider though, if the utility you're going to use, meets your expectations, 
-some utilities might be too slow depending the algorithm used, or create hashes without 
-providing any other data to make a more extensive integrity check. Although the hash value 
-of a file, provides a reliable way to verify the file's integrity, (the hash value is 
-calculated based on the file's contents and is unique to that specific file), since 
-the MS-DOS era it is known, that many viruses were also able to modify file attributes, file 
-creation timestamp, as well as the file size, so it can appear normal. In Windows, the 
-NTFS file system uses the Master File Table (MFT) to keep track of all files in a volume, 
-storing metadata such as file names, size, timestamps and file permissions. The MFT contains 
-8 timestamps for each file, divided between standard information($SI) and filename information 
+some utilities depending the algorithm used might be too slow, or create hashes without 
+providing any other data to make a more comprehensive integrity check. Although the hash 
+value of a file, provides a reliable way to verify the file's integrity**, since the 
+MS-DOS era it is known that many viruses were also able to modify file attributes, file 
+creation timestamp, as well as the file size, so it can appear normal. In Windows, the NTFS 
+file system uses the Master File Table (MFT) to keep track of all files in a volume, storing 
+metadata such as file names, size, timestamps and file permissions. The MFT contains 8 
+timestamps for each file, divided between standard information($SI) and filename information 
 ($FN) attributes. The $SI timestamps can be manipulated by attackers using API functions, 
 causing files to appear to be created much earlier.
 
-To combat this, files can be shorted by their $FN Created Time or $FN MFT Entry Modified time, 
-which are less susceptible to manipulation.
+To combat this, files can be shorted by their $FN created time or $FN MFT entry modified time, 
+which are less susceptible to manipulation
+
+**the hash value is calculated based on the file's contents and is unique to that specific 
+  file.
 
 
 # How to use
@@ -88,7 +90,7 @@ repository and unzip the folder on your desktop, right-click the install.bat and
 as administrator.
 
 You need to have python 3.8 or higher with "pyinstaller" installed, so you can 
-compile the cmp.py (advanced users may use other compilers such as cx_freeze, 
+compile the CMP.py (advanced users may use other compilers such as cx_freeze, 
 or any other). After downloading Python from here: https://www.python.org/downloads/ 
 open a command line window with administrative privileges and type:
 
@@ -155,7 +157,7 @@ line as administrator and use: schtasks /delete /tn "SFR_AV" /f
 
 You can customize almost everything to suite your needs, e.g. to reduce false alarms you 
 can decide which file types or registry hives not to check, or you can speed up the scanning 
-by reducing the directory level 1-1000 (infinite) to search for files by editing the 
+by reducing the directory level 1-1000 (infinite) to search for files, by editing the 
 "Main code" of the script. Recommended settings for HMF.exe:
 
 View > Choose Columns > uncheck everything but: "filename, CRC32, Full Path, Modified Time, Entry 
