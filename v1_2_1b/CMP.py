@@ -2,11 +2,12 @@ import sys
 import difflib
 import ctypes
 
+# Function to print color text in the command line
 def set_color(color):
     std_out_handle = ctypes.windll.kernel32.GetStdHandle(-11)
     ctypes.windll.kernel32.SetConsoleTextAttribute(std_out_handle, color)
 
-
+# comparing files using the difflib library
 def compare_files(file1, file2, outputfile):
     with open(file1, 'r', encoding='IBM866') as f1, open(file2, 'r', encoding='IBM866') as f2:
         f1_contents = f1.readlines()
@@ -16,9 +17,9 @@ def compare_files(file1, file2, outputfile):
         if difference:
             set_color(0x00f0) # white background black letters
             print('\a') # Make a beep sound
-            print("Files are not identical, yydifferences written")
+            print("Files are not identical, differences written")
             print(f"to {outputfile}")
-            set_color(0x0007) # reset to black background gray letters
+            set_color(0x0007) # reset to black background grey letters
             with open(outputfile, 'w', encoding='IBM866') as outfile:
                 outfile.writelines(difference)
         else:
