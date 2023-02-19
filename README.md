@@ -10,7 +10,7 @@ My project started while i was studying IT Security, i was in search of a simple
 FIM/RIM that meets my needs. Unfortunately, most of the programs i found either 
 lacked the features i needed or were too complex and geared towards business 
 purposes. That's why i decided to create my own. Now, i want to share it on 
-GitHub so that others can benefit from its functions. 
+GitHub so that others can benefit from its functions.
 
 If anyone wants to take the project to the next level, they are welcome to
 do so. It's a collaborative effort, and together we can enhance its capabilities.
@@ -33,29 +33,28 @@ system. I couldn't find exactly what i wanted in similar tools so i've made my o
 this perspective.
 
 
-
-
 # Structure
 
+It mainly consists of 3 executables: 
 
-It mainly consists of 3 executables, a batch file which coordinates the procedures, a freeware 
-utility from Nirsoft called "HashMyFiles" which can be found here: 
-https://www.nirsoft.net/utils/hash_my_files.html which is responsible to create hashes and also 
-provide some other useful features. The other executable "CMP" is written in Python, it compares 
-the results of the "HashMyFiles" utility and if there are any differences, notifies you with a 
-message and a beep sound and saves the compared hashed files results. Considering there can be 
-also false alarms, often looking at the logs it is not mandatory, unless there's a suspicion, in
-such case using Winmerge which you can find here: https://www.winmerge.org can make an othewise 
-dubious procedure... very fun and easy!
+A batch file which coordinates the procedures.
+A freeware utility from Nirsoft called "HashMyFiles" which can be found here: 
+https://www.nirsoft.net/utils/hash_my_files.html (responsible to create hashes and also 
+provide some other useful features). 
+The "CMP" (it is written in Python, it compares the results of the "HashMyFiles" 
+utility and if there are any differences, notifies you with a message and a beep sound and saves 
+the compared hashed files results). 
+Looking at the logs it's not mandatory, unless there's a suspicion, in such case using Winmerge 
+which you can find here: https://www.winmerge.org can make an othewise dubious procedure... 
+very fun and easy!
 
 The "SFR_AV" parent directory contains 2 additional subdirectories, one is called "hashes", where 
 hashed files results are saved and the other is called "Results" where the comparison results 
 are saved.
 
--- the batch file should be edited only if you want to use different folder names, in that case
-you can change the paths set at the top of the script and then it is expected to work on
-Windows 7, 10, 11. --
-
+the batch file can be edited so you can use different settings, in that case you can change the 
+paths set at the top of the script or tweak the Main code and then it is expected to work on 
+Windows 7, 10, 11.
 
 The choice of the file hash utility is not critical, there are many doing similar job or they have 
 more features. You can try implementations using the Windows included utility so you can do the 
@@ -63,16 +62,17 @@ hashes in your own way "certutil -hashfile (file) SHA1 / MD5 / etc"
 
 or you can use the "md5deep" or any other utility, although script editing skills are required.  
 Consider though, if the utility you're going to use, meets your expectations, some utilities 
-might be too slow depending the algorithm used, or create hashes without providing any other 
-data to make a more extensive integrity check. Since the MS-DOS era, it is known, that many 
-viruses were also able to modify file attributes, file creation timestamp, as well as the file 
-size, so it can appear normal.
+might be too slow depending also depending the algorithm used, or create hashes without providing 
+any other data to make a more extensive integrity check. Since the MS-DOS era, it is known, that 
+many viruses were also able to modify file attributes, file creation timestamp, as well as the file 
+size, so it can appear normal. In Windows, the NTFS file system uses the Master File Table (MFT) 
+to keep track of all files in a volume, storing metadata such as file names, size, timestamps and 
+file permissions. The MFT contains 8 timestamps for each file, divided between $Standard_Information 
+($SI) and $Filename_Information ($FN) attributes. The $SI timestamps can be manipulated by attackers 
+using API functions, causing files to appear to be created much earlier.
 
-** Using Python i tried to create my own file hash utility, but i had issues accessing every 
-file due to windows system restrictions. This is something you could help if you have the 
-right knowledge, but also any proposal for new features or any improvements to the code you 
-might send, is appreciated!
-
+To combat this, files can be shorted by their $FN Created Time or $FN MFT Entry Modified time, 
+which are less susceptible to manipulation.
 
 
 # How to use
@@ -96,7 +96,7 @@ pip install pyinstaller
 Note: the Python directory and the \scripts folder, must be in path, in order to run
 pip. For example in the command prompt Use:
   
-set path=c:\your-python-installation-path;set path=c:\ your-python-installation-scripts-folder
+set path=c:\ your-python-installation-path;set path=c:\ your-python-installation-scripts
 
 After pyinstaller is installed, navigate to your Desktop's folder location, (in the 
 same directory as the one you keep the cmp.py) so you can create the executable and 
@@ -108,12 +108,12 @@ pyinstaller --onefile cmp.py
 
 "Build" and "Dist" folders are created, take out the cmp.exe, and place it in the
 folder named "SFR_AV", if for any reason you can't find the executable you have just 
-created, use windows search for "cmp.exe". After you copy your cmp.exe, python folders 
+created, use windows search for "CMP.exe". After you copy your CMP.exe, python folders 
 "Build" and "Dist" aren't needed and you can delete them.
 
 
-cmp.exe, (ashMyFiles.exe renamed HMF.exe it should to be more compact and also
-work with the script) and the batch file script should be in the same parent folder.
+CMP.exe, HashMyFiles.exe (renamed HMF.exe to be more compact and also work with the script) 
+and the batch file script should be in the same parent folder.
 
 After everything is set, you can automate the process even more, by making it load every 
 time you're starting Windows, by using windows task scheduler:
@@ -139,7 +139,7 @@ STEPS:
 9. Place there your created lnk.
 
 Note: The install.bat included in the repository does all the above and asks your
-permission in every step, although it may or many not be able to download the utilities
+permission in every step, although it may or may not be able to download the utilities
 and it that case it will notify you so you can do it manually. Run install.bat using 
 elevated privileges (right click on the file and run as administrator).
 
@@ -161,8 +161,6 @@ Modified time".
 Options > Hash Types > uncheck everything but: "CRC32".
 
 
-
-
 # Version 1.2.1b 
 
 There was a major update, so the script jumped from version v0.95.2 to v1.2.1b yay!!
@@ -180,7 +178,7 @@ open for you the files that you should examine.
 
 - WinMerge it is automatically called and opens the output files with the detected changes
 - There was a name change, also for the output files
-- Some code improvements (tweaks)
+- Some code improvements
 - Error handling
 - Improved CMP 
 
