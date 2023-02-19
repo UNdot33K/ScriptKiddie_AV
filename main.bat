@@ -54,8 +54,8 @@ if not exist initial (
 :: Main code
 
 for %%f in (%file_types%) do ( 
-    ECHO.
-    ECHO Checking: %%f
+    echo.
+    echo Checking: %%f
     %crc% /wildcard "C:\*.%%f" 2 /CRC32 1 /stext "%dest%\Hashes_%%f0"
     type "%dest%\Hashes_%%f0" > "%dest%\Hashes_%%f0.txt"
     del "%dest%\Hashes_%%f0"
@@ -166,7 +166,7 @@ if /I "%day%" == "21" goto MRT
 if /I "%day%" == "24" goto MRT
 if /I "%day%" == "27" goto MRT
 if /I "%day%" == "30" goto MRT
-goto rflag
+goto LoFlag
 
 :MRT
 
@@ -191,7 +191,7 @@ if not exist flag (
   goto end
 )
 
-:rflag
+:LoFlag
 cd %hmf%
 del flag 2>nul
 
