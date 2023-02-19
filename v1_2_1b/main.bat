@@ -179,7 +179,7 @@ set "filenames=res_exe res_dll res_bat res_sys res_ini res_reg"
 
 for %%n in (%filenames%) do (
   if exist "%%n.txt" (
-    "%WinMerge_Path%" "%dest%\Hashes_%%n0.txt" "%dest%\Hashes_%%n.txt"
+    "%WinMerge_Path%" "%dest%\Hashes_%%n.txt" "%dest%\Hashes_%%n0.txt"
 
   )
 )
