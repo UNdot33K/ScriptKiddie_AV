@@ -140,15 +140,27 @@ STEPS:
 
 Note: The install.bat included in the repository does all the above and asks your
 permission in every step, although it may or many not be able to download the utilities
-and it that case it will notify you so you can do it manually.
-  
-IMPORTANT: run istall.bat using elevated privileges (right click on the file and run as
-administrator). When running SFR_AV for the first time, do the following: click on the
-HashMyFiles.exe utility (or whatever you named it) and from the menu go "options" and
-"hash types" and uncheck every encoding other than CRC32.
+and it that case it will notify you so you can do it manually. Run install.bat using 
+elevated privileges (right click on the file and run as administrator).
 
-If you wish to delete from your system the task created by install.bat, open a command
+Note: if you wish to delete from your system the task created by install.bat, open a command
 line as administrator and use: schtasks /delete /tn "SFR_AV" /f
+
+
+
+# TWEAKING 
+
+You can customize almost everything to suite your needs, e.g. to reduce false alarms you 
+can decide which file types or registry hives not to check, or you can speed up the scanning 
+by reducing the directory level 1-1000 (infinite) to search for files by editing the 
+"Main code" of the script. Recommended settings for HMF.exe:
+
+View > Choose Columns > uncheck everything but: "filename, CRC32, Full Path, Modified Time, Entry 
+Modified time".
+
+Options > Hash Types > uncheck everything but: "CRC32".
+
+
 
 
 # Version 1.2.1b 
