@@ -60,16 +60,19 @@ The choice of the file hash utility is not critical, there are many doing simila
 more features. You can try implementations using the Windows included utility so you can do the 
 hashes in your own way: "certutil -hashfile (file) SHA1 / MD5 / etc"
 
-or you can use the "md5deep" or any other utility, although script editing skills are required.  
-Consider though, if the utility you're going to use, meets your expectations, some utilities 
-might be too slow depending the algorithm used, or create hashes without providing any other data 
-to make a more extensive integrity check. Since the MS-DOS era, it is known, that many viruses 
-were also able to modify file attributes, file creation timestamp, as well as the file size, so 
-it can appear normal. In Windows, the NTFS file system uses the Master File Table (MFT) to keep 
-track of all files in a volume, storing metadata such as file names, size, timestamps and file 
-permissions. The MFT contains 8 timestamps for each file, divided between $Standard_Information 
-($SI) and $Filename_Information ($FN) attributes. The $SI timestamps can be manipulated by 
-attackers using API functions, causing files to appear to be created much earlier.
+or you can use the "md5deep" or any other utility, although script editing skills are 
+required. Consider though, if the utility you're going to use, meets your expectations, 
+some utilities might be too slow depending the algorithm used, or create hashes without 
+providing any other data to make a more extensive integrity check. Although the hash value 
+of a file, provides a reliable way to verify the file's integrity, (the hash value is 
+calculated based on the file's contents and is unique to that specific file), since 
+the MS-DOS era it is known, that many viruses were also able to modify file attributes, file 
+creation timestamp, as well as the file size, so it can appear normal. In Windows, the 
+NTFS file system uses the Master File Table (MFT) to keep track of all files in a volume, 
+storing metadata such as file names, size, timestamps and file permissions. The MFT contains 
+8 timestamps for each file, divided between standard information($SI) and filename information 
+($FN) attributes. The $SI timestamps can be manipulated by attackers using API functions, 
+causing files to appear to be created much earlier.
 
 To combat this, files can be shorted by their $FN Created Time or $FN MFT Entry Modified time, 
 which are less susceptible to manipulation.
