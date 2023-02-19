@@ -19,7 +19,7 @@ def compare_files(file1, file2, outputfile):
             print('\a') # Make a beep sound
             print("Files are not identical, differences written")
             print(f"to {outputfile}")
-            set_color(0x0007) # reset to black background grey letters
+            set_color(0x0007) # set to black background grey letters
             with open(outputfile, 'w', encoding='IBM866') as outfile:
                 outfile.writelines(difference)
         else:
@@ -27,7 +27,7 @@ def compare_files(file1, file2, outputfile):
 
 if __name__ == '__main__':
     if len(sys.argv) != 4:
-        print('Compare files usage: file1 file2 outputfile')
+        print('Compare files: filename1 filename2 outputfile')
         sys.exit(1)
     compare_files(sys.argv[1], sys.argv[2], sys.argv[3])
 
