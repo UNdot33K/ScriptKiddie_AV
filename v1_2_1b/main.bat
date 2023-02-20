@@ -32,7 +32,7 @@ set "crc=%userprofile%\Desktop\SFR_AV\HMF.exe"
 set "comp=%userprofile%\Desktop\SFR_AV\CMP.exe"
 
 
-:: Note scanning ini extension has been excluded from this version to reduce false alarms.
+:: Note, scanning ini extension has been excluded from this version to reduce false alarms.
 :: You can add it back.
 
 
