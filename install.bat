@@ -88,7 +88,7 @@ IF EXIST %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\hashmyfiles-x64.zip (
     copy /y HMF.exe %userprofile%\Desktop\SFR_AV\
 ) ELSE (
     ECHO.
-    ECHO THE FILE WAS NOT DOWNLOADED, YOU MUST DOWNLOAD IT MANUALLY.
+    ECHO -- ERROR: Could not download file, you should download it manually. --
     ECHO https://www.nirsoft.net/utils/
     ECHO.
 )
