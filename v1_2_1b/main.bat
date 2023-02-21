@@ -114,14 +114,16 @@ for %%a in (
 )
 
 
-for %%a in (
-     hivelist 
-     "Session Manager\KnownDLLs" 
-) do (
-    reg export "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\%%~a" temp.tmp /y > nul
-    type temp.tmp >> Hashes_res_reg0.txt
-)
-
+:: You can enable it, although it might increase false alarms.
+:: /---------------------------------------------------------------------------------------------/
+:: for %%a in (
+::     hivelist 
+::     "Session Manager\KnownDLLs" 
+:: ) do (
+::    reg export "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\%%~a" temp.tmp /y > nul
+::    type temp.tmp >> Hashes_res_reg0.txt
+:: )
+:: /--------------------------------------------------------------------------------------------/
 
 for %%a in (
      DomainProfile 
@@ -225,7 +227,7 @@ for %%a in (Hashes_res_exe.txt Hashes_res_dll.txt Hashes_res_bat.txt Hashes_res_
   )
 
   for %%b in (exe dll bat sys ini reg) do (
-    ren Hashes_res_%%b0.txt Hashes_res_%%b.txt
+    ren Hashes_res_%%b0.txt Hashes_res_%%b.txt 2> nul
   )
 
   MRT.EXE /F:Y
