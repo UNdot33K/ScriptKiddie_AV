@@ -70,14 +70,12 @@ creation timestamp, as well as the file size, so it can appear normal. In Window
 file system uses the Master File Table (MFT) to keep track of all files in a volume, storing 
 metadata such as file names, size, timestamps and file permissions. The MFT contains 8 
 timestamps for each file, divided between standard information($SI) and filename information 
-($FN) attributes. The $SI timestamps can be manipulated by attackers using API functions, 
-causing files to appear to be created much earlier.
-
-To combat this, files can be shorted by their $FN created time or $FN MFT entry modified time, 
-which are less susceptible to manipulation
+($FN) attributes. The $SI timestamps can be manipulated using API functions, causing files to 
+appear to be created much earlier. To combat this, files can be shorted by their $FN created 
+time or $FN MFT entry modified time, which are less susceptible to manipulation
 
 **the hash value is calculated based on the file's contents and is unique to that specific 
-  file (unless hash collision occurs)
+  file (unless hash collision occurs).
 
 
 # How to use
@@ -158,7 +156,7 @@ line as administrator and use: schtasks /delete /tn "SFR_AV" /f
 You can customize almost everything to suite your needs, e.g. to reduce false alarms you 
 can decide which file types or registry hives not to check, or you can speed up the scanning 
 by reducing the directory level 1-1000 (infinite) to search for files, by editing the 
-"Main code" of the script. Recommended settings for HMF.exe:
+"Main code" of the script. Run HMF.EXE and try the following recommended settings:
 
 View > Choose Columns > uncheck everything but: "filename, CRC32, Full Path, Modified Time, Entry 
 Modified time".
