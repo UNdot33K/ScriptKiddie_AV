@@ -113,7 +113,6 @@ for %%a in (
       type temp.tmp >> Hashes_res_reg0.txt
 )
 
-
 :: You can enable it, although it might increase false alarms.
 :: /---------------------------------------------------------------------------------------------/
 :: for %%a in (
