@@ -1,4 +1,4 @@
-:: Copyright (c) 2023 Un.33k (www.github.com/UNdot33K)
+ :: Copyright (c) 2023 Un.33k (www.github.com/UNdot33K)
 
 :: Permission is hereby granted, free of charge, to any person obtaining a copy 
 :: of this software and associated documentation files (the "Software"), to deal 
@@ -26,6 +26,15 @@
 @CLS
 @ECHO OFF
 
+@echo off
+net session >nul 2>&1
+if not %errorlevel% == 0 (
+    echo Please run install with administrative privileges.
+    echo.
+    goto end
+)
+
+
 ECHO.
 ECHO Creating directory structure...
 ECHO.
@@ -40,6 +49,8 @@ md  %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP 2>nul
 
 CD %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\
 
+echo initialization > %userprofile%\Desktop\SFR_AV\initial
+
  
 ECHO.
 set /p choice="Please select version, 0 for [0.95.2b] or 1 for [v1.2.1b] or: "
@@ -49,14 +60,6 @@ if /i "%choice%"=="0" goto v095
 
 
 :v1
-
-:: Creates initialization files to avoid cmp errors.
-
-set "dir=%userprofile%\Desktop\SFR_AV\Hashes"
-set "files=Hashes_res_exe.txt Hashes_res_dll.txt Hashes_res_bat.txt Hashes_res_ini.txt Hashes_res_sys.txt Hashes_res_reg.txt"
-echo initialization > %userprofile%\Desktop\SFR_AV\initial
-for %%f in (%files%) do echo initialization > "%dir%\%%f"
-
 
 ECHO.
 ECHO Copying files...
@@ -71,31 +74,11 @@ copy /y %userprofile%\Desktop\Simple-FIM-RIM_AV-main\README.md %userprofile%\Des
 ECHO.
 set /p choice="Try to download and Install HashMyFiles? (y/n) "
 
-if /i "%choice%"=="y" goto hsINS
-if /i "%choice%"=="n" goto WmINS
+if /i "%choice%"=="y" call :dw
+if /i "%choice%"=="n" goto WM
 
 
-:hsINS
-
-bitsadmin /transfer HashMyFilesDownload /priority normal https://www.nirsoft.net/utils/hashmyfiles-x64.zip %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\hashmyfiles-x64.zip
-
-
-IF EXIST %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\hashmyfiles-x64.zip (
-    ECHO.
-    ECHO Please extract in the same folder the downloaded zip: "%userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\".
-    pause
-    ren HashMyFiles.exe HMF.exe
-    copy /y HMF.exe %userprofile%\Desktop\SFR_AV\
-) ELSE (
-    ECHO.
-    ECHO -- ERROR: Could not download file, you should download it manually. --
-    ECHO https://www.nirsoft.net/utils/
-    ECHO.
-)
-
-
-:WmINS
-
+:WM
 
 ECHO.
 set /p choice="Try to download and install WinMerge? (y/n) "
@@ -105,7 +88,7 @@ if /i "%choice%"=="n" goto taskQ
 
 :inst
 
-bitsadmin /transfer WinMergeDownload /priority normal https://github.com/WinMerge/winmerge/releases/download/v2.16.28/WinMerge-2.16.28-Setup.exe %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\WinMerge-2.16.28-Setup.exe
+bitsadmin /transfer WinMergeDownload /priority normal http://github.com/WinMerge/winmerge/releases/download/v2.16.28/WinMerge-2.16.28-Setup.exe %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\WinMerge-2.16.28-Setup.exe
 
 IF EXIST %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\WinMerge-2.16.28-Setup.exe (
     WinMerge-2.16.28-Setup.exe
@@ -117,12 +100,10 @@ IF EXIST %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\WinMerge-2.16.28-Setu
 )
 
 
-:V095
+goto taskQ
 
-set "dir=%userprofile%\Desktop\SFR_AV\Hashes"
-set "files=Hashes_exe.txt Hashes_dll.txt Hashes_bat.txt Hashes_ini.txt Hashes_sys.txt Hashes_reg.txt"
-echo initialization > %userprofile%\Desktop\SFR_AV\initial
-for %%f in (%files%) do echo initialization > "%dir%\%%f"
+
+:v095
 
 ECHO.
 ECHO Copying files...
@@ -132,26 +113,8 @@ copy /y %userprofile%\Desktop\Simple-FIM-RIM_AV-main\*.* %userprofile%\Desktop\S
 ECHO.
 set /p choice="Try to download and install HashMyFiles? (y/n) "
 
-if /i "%choice%"=="y" goto HMF
+if /i "%choice%"=="y" call :dw
 if /i "%choice%"=="n" goto taskQ
-
-
-:HMF
-
-bitsadmin /transfer HashMyFilesDownload /priority normal https://www.nirsoft.net/utils/hashmyfiles-x64.zip %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\hashmyfiles-x64.zip
-
-IF EXIST %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\hashmyfiles-x64.zip  (
-    ECHO.
-    ECHO Please extract in the same folder the downloaded zip: "%userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\".
-    pause
-    ren HashMyFiles.exe HMF.exe
-    copy /y HMF.exe %userprofile%\Desktop\SFR_AV\
-) ELSE (
-    ECHO.
-    ECHO  -- ERROR: Could not download file, you should download it manually. --
-    ECHO     https://www.nirsoft.net/utils/ 
-    ECHO.
-)
 
  
 :taskQ
@@ -194,19 +157,64 @@ ECHO **                                                                       **
 ECHO ** To compile cmp.py you must install python 3.8 (or above)              **
 ECHO ** and Pyinstaller, visit: https://www.python.org/downloads/             **
 ECHO **                                                                       **
-ECHO ** You should also set the correct path to Python and \scripts           **
-ECHO ** installation. Open a command line window using administrative         ** 
-ECHO ** privileges and set the path:                                          **
-ECHO **                                                                       **
-ECHO ** Set path=c:\ enter-your-Python-installation-path ; set path=c:\ enter **
-ECHO ** -Python-installation-scripts-path                                     **
-ECHO **                                                                       **
-ECHO ** After setting the correct path you can run: pip install pyinstaller   **
-ECHO ** then you can compile the CMP.py using:                                **
-ECHO ** pyinstaller --onefile CMP.py                                          **
+ECHO ** 1. Installation: check the box "Add Python to PATH"                   **
+ECHO ** 2. When complete, open a command line window using administrative     ** 
+ECHO **    privileges and type:  pip install pyinstaller                      ** 
+ECHO ** 3. Then you can compile the CMP.py using:                             **
+ECHO **    pyinstaller --onefile CMP.py                                       **
 ECHO **                                                                       **
 ECHO **          -- CMP.exe must be placed in the FR_AV folder. --            **
 ECHO **                                                                       **
 ECHO ***************************************************************************
-
 pause
+
+goto end
+
+:DW
+
+bitsadmin /transfer HashMyFilesDownload /priority normal https://www.nirsoft.net/utils/hashmyfiles-x64.zip %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\hashmyfiles-x64.zip
+IF EXIST %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\hashmyfiles-x64.zip (
+    reg query "HKLM\Software\Microsoft\Windows NT\CurrentVersion" /v ProductName | find "Microsoft Windows 7" >nul 2>nul
+    if %ERRORLEVEL% EQU 0 (
+        goto check_hmf_file
+    ) else (
+        reg query "HKLM\Software\Microsoft\Windows NT\CurrentVersion" /v ProductName | find "Microsoft Windows 10" >nul 2>nul
+        if %ERRORLEVEL% EQU 0 (
+            expand %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\hashmyfiles-x64.zip -f:* %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\
+            goto check_hmf_file
+        ) else (
+            reg query "HKLM\Software\Microsoft\Windows NT\CurrentVersion" /v ProductName | find "Microsoft Windows 11" >nul 2>nul
+            if %ERRORLEVEL% EQU 0 (
+                expand %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\hashmyfiles-x64.zip -f:* %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\
+                goto check_hmf_file
+            )
+        )
+    )
+) else (
+    ECHO.
+    ECHO -- ERROR: Could not download file, you should download it manually. --
+    ECHO    https://www.nirsoft.net/utils/
+    ECHO.
+    goto end
+)
+
+:check_hmf_file
+IF NOT EXIST %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\hashmyfiles.exe goto re
+ren hashmyfiles.exe HMF.exe 2> nul
+copy /y HMF.exe %userprofile%\Desktop\SFR_AV\
+goto end
+
+:re
+rundll32.exe zipfldr.dll,RouteTheCall hashmyfiles-x64.zip
+ECHO.
+ECHO Please copy the files from the downloaded zip to: 
+ECHO "%userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\".
+ECHO.
+pause
+goto check_hmf_file
+
+:end
+
+
+:end
+exit /b
