@@ -1,4 +1,4 @@
- :: Copyright (c) 2023 Un.33k (www.github.com/UNdot33K)
+:: Copyright (c) 2023 Un.33k (www.github.com/UNdot33K)
 
 :: Permission is hereby granted, free of charge, to any person obtaining a copy 
 :: of this software and associated documentation files (the "Software"), to deal 
@@ -160,7 +160,7 @@ ECHO **    privileges and type:  pip install pyinstaller                      **
 ECHO ** 3. Then you can compile the CMP.py using:                             **
 ECHO **    pyinstaller --onefile CMP.py                                       **
 ECHO **                                                                       **
-ECHO **          -- CMP.exe must be placed in the FR_AV folder. --            **
+ECHO **          -- CMP.exe must be placed in the SFR_AV folder. --           **
 ECHO **                                                                       **
 ECHO ***************************************************************************
 pause
