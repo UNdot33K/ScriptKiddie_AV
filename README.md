@@ -97,9 +97,7 @@ pip install pyinstaller
 
 
 Note: the Python directory and the \scripts folder, must be in path, in order to run
-pip. For example in the command prompt Use:
-  
-set path=c:\ your-python-installation-path;set path=c:\ your-python-installation-scripts
+pip, check the box "Add Python to PATH".
 
 After pyinstaller is installed, navigate to your Desktop's folder location, (in the 
 same directory as the one you keep the CMP.py) so you can create the executable and 
