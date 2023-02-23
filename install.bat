@@ -214,7 +214,4 @@ pause
 goto check_hmf_file
 
 :end
-
-
-:end
 exit /b
