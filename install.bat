@@ -29,6 +29,7 @@ net session >nul 2>&1
 if not %errorlevel% == 0 (
     echo Please run install with administrative privileges.
     echo.
+    pause
     goto end
 )
 
