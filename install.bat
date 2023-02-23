@@ -17,9 +17,7 @@
 :: OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE 
 :: SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-
 :: Installer - Task Scheduler Script
-:: Run this using administrative priviledges!! 
 :: to remove task: schtasks /delete /tn "SFR_AV" /f
 
 
@@ -99,7 +97,6 @@ IF EXIST %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\WinMerge-2.16.28-Setu
     ECHO.
 )
 
-
 goto taskQ
 
 
@@ -171,7 +168,6 @@ pause
 goto end
 
 :DW
-
 bitsadmin /transfer HashMyFilesDownload /priority normal https://www.nirsoft.net/utils/hashmyfiles-x64.zip %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\hashmyfiles-x64.zip
 IF EXIST %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\hashmyfiles-x64.zip (
     reg query "HKLM\Software\Microsoft\Windows NT\CurrentVersion" /v ProductName | find "Microsoft Windows 7" >nul 2>nul
@@ -195,6 +191,7 @@ IF EXIST %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\hashmyfiles-x64.zip (
     ECHO -- ERROR: Could not download file, you should download it manually. --
     ECHO    https://www.nirsoft.net/utils/
     ECHO.
+    pause
     goto end
 )
 
