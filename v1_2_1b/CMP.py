@@ -27,7 +27,7 @@ def set_color(color):
     std_out_handle = ctypes.windll.kernel32.GetStdHandle(-11)
     ctypes.windll.kernel32.SetConsoleTextAttribute(std_out_handle, color)
 
-# comparing files using the difflib library. Encoding: just leave like that, it should work
+# comparing files using the difflib library. Encoding: just leave it like that, it should work,
 # it's a complicated matter that i couldn't solve.
 
 def compare_files(file1, file2, outputfile):
