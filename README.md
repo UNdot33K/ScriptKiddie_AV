@@ -52,7 +52,7 @@ The "SFR_AV" parent directory contains 2 additional subdirectories, one is calle
 hashed files results are saved and the other is called "Results" where the comparison results 
 are saved.
 
-the batch file can be edited so you can use different settings, in that case you can change the 
+The batch file can be edited so you can use different settings, in that case you can change the 
 paths set at the top of the script or tweak the Main code and then it is expected to work on 
 Windows 7, 10, 11.
 
@@ -74,7 +74,7 @@ timestamps for each file, divided between standard information($SI) and filename
 appear to be created much earlier. To combat this, files can be shorted by their $FN created 
 time or $FN MFT entry modified time, which are less susceptible to manipulation
 
-**the hash value is calculated based on the file's contents and is unique to that specific 
+**The hash value is calculated based on the file's contents and is unique to that specific 
   file (unless hash collision occurs).
 
 
