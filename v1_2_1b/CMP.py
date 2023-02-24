@@ -22,11 +22,14 @@ import difflib
 import ctypes
 
 # Function to print color text in the command line
+
 def set_color(color):
     std_out_handle = ctypes.windll.kernel32.GetStdHandle(-11)
     ctypes.windll.kernel32.SetConsoleTextAttribute(std_out_handle, color)
 
-# comparing files using the difflib library
+# comparing files using the difflib library. Encoding: just leave like that, it should work
+# it's a complicated matter that i couldn't solve.
+
 def compare_files(file1, file2, outputfile):
     with open(file1, 'r', encoding='IBM866') as f1, open(file2, 'r', encoding='IBM866') as f2:
         f1_contents = f1.readlines()
