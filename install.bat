@@ -20,11 +20,9 @@
 :: Installer - Task Scheduler Script
 :: to remove task: schtasks /delete /tn "SFR_AV" /f
 
-
-@CLS
-@ECHO OFF
-
+@cls
 @echo off
+
 net session >nul 2>&1
 if not %errorlevel% == 0 (
     echo Please run install with administrative privileges.
@@ -34,9 +32,9 @@ if not %errorlevel% == 0 (
 )
 
 
-ECHO.
-ECHO Creating directory structure...
-ECHO.
+echo.
+echo Creating directory structure...
+echo.
 
 md  %userprofile%\Desktop\SFR_AV 2>nul
 
@@ -51,18 +49,18 @@ CD %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\
 echo initialization > %userprofile%\Desktop\SFR_AV\initial
 
  
-ECHO.
+echo.
 set /p choice="Please select version, 0 for [0.95.2b] or 1 for [v1.2.1b] or: "
-ECHO.
+echo.
 if /i "%choice%"=="1" goto v1
 if /i "%choice%"=="0" goto v095
 
 
 :v1
 
-ECHO.
-ECHO Copying files...
-ECHO.
+echo.
+echo Copying files...
+echo.
 
 copy /y %userprofile%\Desktop\Simple-FIM-RIM_AV-main\v1_2_1b\main.bat %userprofile%\Desktop\SFR_AV\
 
@@ -70,7 +68,7 @@ copy /y %userprofile%\Desktop\Simple-FIM-RIM_AV-main\LICENSE %userprofile%\Deskt
 
 copy /y %userprofile%\Desktop\Simple-FIM-RIM_AV-main\README.md %userprofile%\Desktop\SFR_AV\
 
-ECHO.
+echo.
 set /p choice="Try to download and Install HashMyFiles? (y/n) "
 
 if /i "%choice%"=="y" call :dw
@@ -79,7 +77,7 @@ if /i "%choice%"=="n" goto WM
 
 :WM
 
-ECHO.
+echo.
 set /p choice="Try to download and install WinMerge? (y/n) "
 
 if /i "%choice%"=="y" goto inst
@@ -89,13 +87,13 @@ if /i "%choice%"=="n" goto taskQ
 
 bitsadmin /transfer WinMergeDownload /priority normal http://github.com/WinMerge/winmerge/releases/download/v2.16.28/WinMerge-2.16.28-Setup.exe %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\WinMerge-2.16.28-Setup.exe
 
-IF EXIST %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\WinMerge-2.16.28-Setup.exe (
+if exist %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\WinMerge-2.16.28-Setup.exe (
     WinMerge-2.16.28-Setup.exe
-) ELSE (
-    ECHO.
-    ECHO  -- ERROR: Could not download file, you should download it manually. --
-    ECHO     https://www.WinMerge.org/
-    ECHO.
+) else (
+    echo.
+    echo  -- ERROR: Could not download file, you should download it manually. --
+    echo     https://www.WinMerge.org/
+    echo.
 )
 
 goto taskQ
@@ -103,12 +101,12 @@ goto taskQ
 
 :v095
 
-ECHO.
-ECHO Copying files...
-ECHO.
+echo.
+echo Copying files...
+echo.
 copy /y %userprofile%\Desktop\Simple-FIM-RIM_AV-main\*.* %userprofile%\Desktop\SFR_AV\ >nul
 
-ECHO.
+echo.
 set /p choice="Try to download and install HashMyFiles? (y/n) "
 
 if /i "%choice%"=="y" call :dw
@@ -117,7 +115,7 @@ if /i "%choice%"=="n" goto taskQ
  
 :taskQ
 
-ECHO.
+echo.
 set /p choice="Create a task and place .lnk to StartUp, to automatically begin FR_AV? (y/n) "
 
 if /i "%choice%"=="y" goto taskCR
@@ -146,31 +144,31 @@ mklink "%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup\SFR_AV.lnk" "%us
 
 :py
 
-@CLS
-ECHO ***************************************************************************
-ECHO **                                                                       **
-ECHO ** To avoid unexpected errors, the following steps should                **
-ECHO ** be done manually.                                                     **
-ECHO **                                                                       **
-ECHO ** To compile cmp.py you must install python 3.8 (or above)              **
-ECHO ** and Pyinstaller, visit: https://www.python.org/downloads/             **
-ECHO **                                                                       **
-ECHO ** 1. Installation: check the box "Add Python to PATH"                   **
-ECHO ** 2. When complete, open a command line window using administrative     ** 
-ECHO **    privileges and type:  pip install pyinstaller                      ** 
-ECHO ** 3. Then you can compile the CMP.py using:                             **
-ECHO **    pyinstaller --onefile CMP.py                                       **
-ECHO **                                                                       **
-ECHO **          -- CMP.exe must be placed in the SFR_AV folder. --           **
-ECHO **                                                                       **
-ECHO ***************************************************************************
+@cls
+echo ***************************************************************************
+echo **                                                                       **
+echo ** To avoid unexpected errors, the following steps should                **
+echo ** be done manually.                                                     **
+echo **                                                                       **
+echo ** To compile cmp.py you must install python 3.8 (or above)              **
+echo ** and Pyinstaller, visit: https://www.python.org/downloads/             **
+echo **                                                                       **
+echo ** 1. Installation: check the box "Add Python to PATH"                   **
+echo ** 2. When complete, open a command line window using administrative     ** 
+echo **    privileges and type:  pip install pyinstaller                      ** 
+echo ** 3. Then you can compile the CMP.py using:                             **
+echo **    pyinstaller --onefile CMP.py                                       **
+echo **                                                                       **
+echo **          -- CMP.exe must be placed in the SFR_AV folder. --           **
+echo **                                                                       **
+echo ***************************************************************************
 pause
 
 goto end
 
 :DW
 bitsadmin /transfer HashMyFilesDownload /priority normal https://www.nirsoft.net/utils/hashmyfiles-x64.zip %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\hashmyfiles-x64.zip
-IF EXIST %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\hashmyfiles-x64.zip (
+if exist %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\hashmyfiles-x64.zip (
     reg query "HKLM\Software\Microsoft\Windows NT\CurrentVersion" /v ProductName | find "Microsoft Windows 7" >nul 2>nul
     if %ERRORLEVEL% EQU 0 (
         goto check_hmf_file
@@ -188,26 +186,26 @@ IF EXIST %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\hashmyfiles-x64.zip (
         )
     )
 ) else (
-    ECHO.
-    ECHO -- ERROR: Could not download file, you should download it manually. --
-    ECHO    https://www.nirsoft.net/utils/
-    ECHO.
+    echo.
+    echo -- ERROR: Could not download file, you should download it manually. --
+    echo    https://www.nirsoft.net/utils/
+    echo.
     pause
     goto end
 )
 
 :check_hmf_file
-IF NOT EXIST %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\hashmyfiles.exe goto re
+if not exist %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\hashmyfiles.exe goto re
 ren hashmyfiles.exe HMF.exe 2> nul
 copy /y HMF.exe %userprofile%\Desktop\SFR_AV\
 goto end
 
 :re
 rundll32.exe zipfldr.dll,RouteTheCall hashmyfiles-x64.zip
-ECHO.
-ECHO Please copy the files from the downloaded zip to: 
-ECHO "%userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\".
-ECHO.
+echo.
+echo Please copy the files from the downloaded zip to: 
+echo "%userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\".
+echo.
 pause
 goto check_hmf_file
 
