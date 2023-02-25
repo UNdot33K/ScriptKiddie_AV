@@ -167,21 +167,31 @@ pause
 goto end
 
 :DW
+
 bitsadmin /transfer HashMyFilesDownload /priority normal https://www.nirsoft.net/utils/hashmyfiles-x64.zip %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\hashmyfiles-x64.zip
 if exist %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\hashmyfiles-x64.zip (
-    reg query "HKLM\Software\Microsoft\Windows NT\CurrentVersion" /v ProductName | find "Microsoft Windows 7" >nul 2>nul
-    if %ERRORLEVEL% EQU 0 (
+    setlocal enabledelayedexpansion
+    reg query "HKLM\Software\Microsoft\Windows NT\CurrentVersion" /v ProductName | find "Windows 7" >nul 2>nul
+    if !ERRORLEVEL! EQU 0 (
         goto check_hmf_file
     ) else (
-        reg query "HKLM\Software\Microsoft\Windows NT\CurrentVersion" /v ProductName | find "Microsoft Windows 10" >nul 2>nul
-        if %ERRORLEVEL% EQU 0 (
+        reg query "HKLM\Software\Microsoft\Windows NT\CurrentVersion" /v ProductName | find "Windows 8" >nul 2>nul
+        if !ERRORLEVEL! EQU 0 (
             expand %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\hashmyfiles-x64.zip -f:* %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\
             goto check_hmf_file
         ) else (
-            reg query "HKLM\Software\Microsoft\Windows NT\CurrentVersion" /v ProductName | find "Microsoft Windows 11" >nul 2>nul
-            if %ERRORLEVEL% EQU 0 (
+            reg query "HKLM\Software\Microsoft\Windows NT\CurrentVersion" /v ProductName | find "Windows 10" >nul 2>nul
+            if !ERRORLEVEL! EQU 0 (
                 expand %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\hashmyfiles-x64.zip -f:* %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\
                 goto check_hmf_file
+
+            ) else (
+                reg query "HKLM\Software\Microsoft\Windows NT\CurrentVersion" /v ProductName | find "Windows 11" >nul 2>nul
+            if !ERRORLEVEL! EQU 0 (
+                expand %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\hashmyfiles-x64.zip -f:* %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\
+                goto check_hmf_file
+
+               )
             )
         )
     )
@@ -198,7 +208,8 @@ if exist %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\hashmyfiles-x64.zip (
 if not exist %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\hashmyfiles.exe goto re
 ren hashmyfiles.exe HMF.exe 2> nul
 copy /y HMF.exe %userprofile%\Desktop\SFR_AV\
-goto end
+setlocal DisableDelayedExpansion
+exit /b
 
 :re
 rundll32.exe zipfldr.dll,RouteTheCall hashmyfiles-x64.zip
@@ -210,4 +221,3 @@ pause
 goto check_hmf_file
 
 :end
-exit /b
