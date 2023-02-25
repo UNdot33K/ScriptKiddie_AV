@@ -147,7 +147,7 @@ elevated privileges (right click on the file and run as administrator).
 
 Note: if you wish to delete from your system the task created by install.bat, open a command
 line as administrator and use: schtasks /delete /tn "SFR_AV" /f (to delete the .lnk placed in 
-the StartUp folder: Start > search > shell:startup).  
+the StartUp folder: Start > search > shell:startup).
 
 
 
