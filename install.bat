@@ -258,6 +258,7 @@ echo >>"%userprofile%\Desktop\Simple-FIM-RIM_AV-main\z_script.vbs" Set targetFol
 echo >>"%userprofile%\Desktop\Simple-FIM-RIM_AV-main\z_script.vbs" Set objShell = Nothing
 
 cscript.exe "%userprofile%\Desktop\Simple-FIM-RIM_AV-main\z_script.vbs" "%zipFilePath%" "%destinationPath%"
+del "%userprofile%\Desktop\Simple-FIM-RIM_AV-main\z_script.vbs"
 echo.
 echo Zip file successfully extracted.
 
