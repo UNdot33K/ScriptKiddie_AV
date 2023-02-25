@@ -20,7 +20,6 @@
 :: Installer - Task Scheduler Script
 :: to remove task: schtasks /delete /tn "SFR_AV" /f
 
-@cls
 @echo off
 
 net session >nul 2>&1
@@ -31,6 +30,20 @@ if not %errorlevel% == 0 (
     goto end
 )
 
+if "%1"=="/u" (
+     echo.
+     set /p choice="Are you sure you want to uninstall? (y/n):"
+     echo.
+     if /i "%choice%"=="y" goto rr
+     if /i "%choice%"=="n" goto start
+:rr
+     del "%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup\SFR_AV.lnk"
+     schtasks /delete /tn "SFR_AV" /f 
+     rd /S /Q "%userprofile%\Desktop\SFR_AV\"
+     goto end
+)
+
+:start
 
 echo.
 echo Creating directory structure...
@@ -212,12 +225,43 @@ setlocal DisableDelayedExpansion
 exit /b
 
 :re
-rundll32.exe zipfldr.dll,RouteTheCall hashmyfiles-x64.zip
+
+setlocal
+
+set zipFilePath="%userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\hashmyfiles-x64.zip"
+set destinationPath="%userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\"
+
+if not exist "%zipFilePath%" (
+  echo Error: Zip file does not exist.
+  goto :eof
+)
+
+if not exist "%destinationPath%" (
+  echo Error: Destination path does not exist.
+  goto :eof
+)
+
+echo Extracting files from zip archive...
 echo.
-echo Please copy the files from the downloaded zip to: 
-echo "%userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\".
+
+:: Use the Send To feature of Windows Explorer to extract the files
+echo >"%userprofile%\Desktop\Simple-FIM-RIM_AV-main\zip_extract.vbs" Set objArgs = WScript.Arguments
+echo >>"%userprofile%\Desktop\Simple-FIM-RIM_AV-main\zip_extract.vbs" InputZip = objArgs(0)
+echo >>"%userprofile%\Desktop\Simple-FIM-RIM_AV-main\zip_extract.vbs" DestFolder = objArgs(1)
+echo >>"%userprofile%\Desktop\Simple-FIM-RIM_AV-main\zip_extract.vbs" Set objShell = CreateObject("Shell.Application")
+echo >>"%userprofile%\Desktop\Simple-FIM-RIM_AV-main\zip_extract.vbs" Set sourceZip = objShell.NameSpace(InputZip).Items
+echo >>"%userprofile%\Desktop\Simple-FIM-RIM_AV-main\zip_extract.vbs" Set targetFolder = objShell.NameSpace(DestFolder)
+echo >>"%userprofile%\Desktop\Simple-FIM-RIM_AV-main\zip_extract.vbs" targetFolder.CopyHere sourceZip, 16
+echo >>"%userprofile%\Desktop\Simple-FIM-RIM_AV-main\zip_extract.vbs" Set sourceZip = Nothing
+echo >>"%userprofile%\Desktop\Simple-FIM-RIM_AV-main\zip_extract.vbs" Set targetFolder = Nothing
+echo >>"%userprofile%\Desktop\Simple-FIM-RIM_AV-main\zip_extract.vbs" Set objShell = Nothing
+
+cscript.exe "%userprofile%\Desktop\Simple-FIM-RIM_AV-main\zip_extract.vbs" "%zipFilePath%" "%destinationPath%"
+
 echo.
-pause
+echo Zip file successfully extracted.
+
+endlocal
 goto check_hmf_file
 
 :end
