@@ -64,10 +64,6 @@ echo Initialization File > %userprofile%\Desktop\SFR_AV\initial
 del %userprofile%\Desktop\SFR_AV\flag 2>nul
 
 echo.
-echo Done!
-
- 
-echo.
 set /p choice="Please select version, 0 for [0.95.2b] or 1 for [v1.2.1b] or: "
 echo.
 if /i "%choice%"=="1" goto v1
