@@ -227,7 +227,6 @@ exit /b
 :re
 
 setlocal
-
 set zipFilePath="%userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\hashmyfiles-x64.zip"
 set destinationPath="%userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\"
 
@@ -241,6 +240,7 @@ if not exist "%destinationPath%" (
   goto :eof
 )
 
+echo.
 echo Extracting files from zip archive...
 echo.
 
@@ -257,7 +257,6 @@ echo >>"%userprofile%\Desktop\Simple-FIM-RIM_AV-main\z_script.vbs" Set targetFol
 echo >>"%userprofile%\Desktop\Simple-FIM-RIM_AV-main\z_script.vbs" Set objShell = Nothing
 
 cscript.exe "%userprofile%\Desktop\Simple-FIM-RIM_AV-main\z_script.vbs" "%zipFilePath%" "%destinationPath%"
-
 echo.
 echo Zip file successfully extracted.
 
