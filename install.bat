@@ -244,7 +244,7 @@ if not exist "%destinationPath%" (
 echo Extracting files from zip archive...
 echo.
 
-:: Use the Send To feature of Windows Explorer to extract the files
+:: Use the "Send To" feature of Windows Explorer to extract the files
 echo >"%userprofile%\Desktop\Simple-FIM-RIM_AV-main\zip_extract.vbs" Set objArgs = WScript.Arguments
 echo >>"%userprofile%\Desktop\Simple-FIM-RIM_AV-main\zip_extract.vbs" InputZip = objArgs(0)
 echo >>"%userprofile%\Desktop\Simple-FIM-RIM_AV-main\zip_extract.vbs" DestFolder = objArgs(1)
