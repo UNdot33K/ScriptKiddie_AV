@@ -245,18 +245,18 @@ echo Extracting files from zip archive...
 echo.
 
 :: Use the "Send To" feature of Windows Explorer to extract the files
-echo >"%userprofile%\Desktop\Simple-FIM-RIM_AV-main\zip_extract.vbs" Set objArgs = WScript.Arguments
-echo >>"%userprofile%\Desktop\Simple-FIM-RIM_AV-main\zip_extract.vbs" InputZip = objArgs(0)
-echo >>"%userprofile%\Desktop\Simple-FIM-RIM_AV-main\zip_extract.vbs" DestFolder = objArgs(1)
-echo >>"%userprofile%\Desktop\Simple-FIM-RIM_AV-main\zip_extract.vbs" Set objShell = CreateObject("Shell.Application")
-echo >>"%userprofile%\Desktop\Simple-FIM-RIM_AV-main\zip_extract.vbs" Set sourceZip = objShell.NameSpace(InputZip).Items
-echo >>"%userprofile%\Desktop\Simple-FIM-RIM_AV-main\zip_extract.vbs" Set targetFolder = objShell.NameSpace(DestFolder)
-echo >>"%userprofile%\Desktop\Simple-FIM-RIM_AV-main\zip_extract.vbs" targetFolder.CopyHere sourceZip, 16
-echo >>"%userprofile%\Desktop\Simple-FIM-RIM_AV-main\zip_extract.vbs" Set sourceZip = Nothing
-echo >>"%userprofile%\Desktop\Simple-FIM-RIM_AV-main\zip_extract.vbs" Set targetFolder = Nothing
-echo >>"%userprofile%\Desktop\Simple-FIM-RIM_AV-main\zip_extract.vbs" Set objShell = Nothing
+echo >"%userprofile%\Desktop\Simple-FIM-RIM_AV-main\z_script.vbs" Set objArgs = WScript.Arguments
+echo >>"%userprofile%\Desktop\Simple-FIM-RIM_AV-main\z_script.vbs" InputZip = objArgs(0)
+echo >>"%userprofile%\Desktop\Simple-FIM-RIM_AV-main\z_script.vbs" DestFolder = objArgs(1)
+echo >>"%userprofile%\Desktop\Simple-FIM-RIM_AV-main\z_script.vbs" Set objShell = CreateObject("Shell.Application")
+echo >>"%userprofile%\Desktop\Simple-FIM-RIM_AV-main\z_script.vbs" Set sourceZip = objShell.NameSpace(InputZip).Items
+echo >>"%userprofile%\Desktop\Simple-FIM-RIM_AV-main\z_script.vbs" Set targetFolder = objShell.NameSpace(DestFolder)
+echo >>"%userprofile%\Desktop\Simple-FIM-RIM_AV-main\z_script.vbs" targetFolder.CopyHere sourceZip, 16
+echo >>"%userprofile%\Desktop\Simple-FIM-RIM_AV-main\z_script.vbs" Set sourceZip = Nothing
+echo >>"%userprofile%\Desktop\Simple-FIM-RIM_AV-main\z_script.vbs" Set targetFolder = Nothing
+echo >>"%userprofile%\Desktop\Simple-FIM-RIM_AV-main\z_script.vbs" Set objShell = Nothing
 
-cscript.exe "%userprofile%\Desktop\Simple-FIM-RIM_AV-main\zip_extract.vbs" "%zipFilePath%" "%destinationPath%"
+cscript.exe "%userprofile%\Desktop\Simple-FIM-RIM_AV-main\z_script.vbs" "%zipFilePath%" "%destinationPath%"
 
 echo.
 echo Zip file successfully extracted.
