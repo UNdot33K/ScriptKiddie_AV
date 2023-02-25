@@ -59,7 +59,12 @@ md  %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP 2>nul
 
 CD %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\
 
-echo initialization > %userprofile%\Desktop\SFR_AV\initial
+echo Initialization File > %userprofile%\Desktop\SFR_AV\initial
+
+del %userprofile%\Desktop\SFR_AV\flag 2>nul
+
+echo.
+echo Done!
 
  
 echo.
