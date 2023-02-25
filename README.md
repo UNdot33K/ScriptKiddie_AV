@@ -140,10 +140,10 @@ STEPS:
 9. Place there your created lnk.
 
 Note: The install.bat included in the repository does all the above and asks your
-permission in every step, although it may or may not be able to download the utilities
-(usually due to missing Transport Layer Security (TLS) 1.2 on older Windows such as win7).
-and it that case it will notify you so you can do it manually. Run install.bat using 
-elevated privileges (right click on the file and run as administrator).
+permission in every step, although it may or may not be able to download the utilities,
+(usually due to a missing Transport Layer Security (TLS) 1.2 update, on older Windows such 
+as win7) and it that case it will notify you so you can do it manually. Run install.bat 
+using elevated privileges (right click on the file and run as administrator).
 
 Note: if you wish to delete from your system the task created by install.bat, open a command
 line as administrator and use: schtasks /delete /tn "SFR_AV" /f (to delete the .lnk placed in 
