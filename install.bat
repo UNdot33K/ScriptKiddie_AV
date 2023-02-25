@@ -177,18 +177,18 @@ if exist %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\hashmyfiles-x64.zip (
     ) else (
         reg query "HKLM\Software\Microsoft\Windows NT\CurrentVersion" /v ProductName | find "Windows 8" >nul 2>nul
         if !ERRORLEVEL! EQU 0 (
-            expand %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\hashmyfiles-x64.zip -f:* %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\
+            Powershell Expand-Archive -Force -Path %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\hashmyfiles-x64.zip -DestinationPath %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\
             goto check_hmf_file
         ) else (
             reg query "HKLM\Software\Microsoft\Windows NT\CurrentVersion" /v ProductName | find "Windows 10" >nul 2>nul
             if !ERRORLEVEL! EQU 0 (
-                expand %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\hashmyfiles-x64.zip -f:* %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\
+                Powershell Expand-Archive -Force -Path %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\hashmyfiles-x64.zip -DestinationPath %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\
                 goto check_hmf_file
 
             ) else (
                 reg query "HKLM\Software\Microsoft\Windows NT\CurrentVersion" /v ProductName | find "Windows 11" >nul 2>nul
             if !ERRORLEVEL! EQU 0 (
-                expand %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\hashmyfiles-x64.zip -f:* %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\
+                Powershell Expand-Archive -Force -Path %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\hashmyfiles-x64.zip -DestinationPath %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\
                 goto check_hmf_file
 
                )
