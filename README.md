@@ -41,7 +41,7 @@ A batch file which coordinates the procedures.
 A freeware utility from Nirsoft called "HashMyFiles" which can be found here: 
 https://www.nirsoft.net/utils/hash_my_files.html (responsible to create hashes and also 
 provide some other useful features). 
-The "CMP" (it is written in Python, compares the output of the "HashMyFiles" 
+The "CMP" (it is written in Python and VBScript, it compares the output of the "HashMyFiles" 
 utility and if there are any differences, notifies you with a message and a beep sound and saves 
 the compared hashed files results). 
 Looking at the logs it's not mandatory, unless there's a suspicion, in such case using Winmerge 
@@ -80,8 +80,8 @@ time or $FN MFT entry modified time, which are less susceptible to manipulation
 
 # How to use
 
-You can use the install.bat for most of the procedure needed, although there are few 
-steps which should be done manually.
+You can use the install.bat for most of the procedure needed, although installing version
+1.2.1b there are few steps which should be done manually.
 
 Press the green button which says "code" and download the zip with the files of the 
 repository and unzip the folder on your desktop, right-click the install.bat and run 
