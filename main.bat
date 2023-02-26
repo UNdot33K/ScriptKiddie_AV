@@ -29,14 +29,14 @@ set "dest=%userprofile%\Desktop\SFR_AV\Hashes"
 set "hmf=%userprofile%\Desktop\SFR_AV\"
 set "results=%userprofile%\Desktop\SFR_AV\Results"
 set "crc=%userprofile%\Desktop\SFR_AV\HMF.exe"
-set "comp=%userprofile%\Desktop\SFR_AV\CMP.exe"
+set "comp=cscript //NoLogo %userprofile%\Desktop\SFR_AV\CMP.vbs"
 
 :: Check if there are any installation issues
 
 cd %hmf%
 
 if not exist HMF.exe goto err
-if not exist CMP.exe goto err
+if not exist CMP.vbs goto err
 if not exist "%userprofile%\Desktop\SFR_AV\Hashes" goto err
 if not exist "%userprofile%\Desktop\SFR_AV\Results" goto err
 
