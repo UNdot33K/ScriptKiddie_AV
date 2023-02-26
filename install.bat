@@ -118,7 +118,7 @@ goto taskQ
 echo.
 echo Copying files...
 echo.
-copy /y %userprofile%\Desktop\Simple-FIM-RIM_AV-main\*.* %userprofile%\Desktop\SFR_AV\ >nul
+copy /y %userprofile%\Desktop\Simple-FIM-RIM_AV-main\*.* %userprofile%\Desktop\SFR_AV\
 
 echo.
 set /p choice="Try to download and install HashMyFiles? (y/n) "
