@@ -57,11 +57,13 @@ md  %userprofile%\Desktop\SFR_AV\Results 2>nul
 
 md  %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP 2>nul
 
-cd %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\
-
 echo Initialization File > %userprofile%\Desktop\SFR_AV\initial
 
 del %userprofile%\Desktop\SFR_AV\flag 2>nul
+
+cd %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\
+
+
 
 echo.
 set /p choice="Please select version, 0 for [0.95.2b] or 1 for [v1.2.1b] or: "
