@@ -211,8 +211,6 @@ if %errorlevel% equ 0 (
 
 
 :noid
-setlocal EnableDelayedExpansion
-
 for /F "tokens=1,2 delims=#" %%a in ('"prompt #$H#$E# & echo on & for %%b in (1) do rem"') do (
   set "DEL=%%a"
 )
@@ -222,12 +220,12 @@ echo.
 echo differences written to: %results%"
 echo.
 setlocal DisableDelayedExpansion
-goto :EOF
+exit /b
 
 :colorEcho
 <nul set /p ".=%DEL%" > "%~2"
 findstr /v /a:%1 /R "^$" "%~2" nul
 del "%~2" > nul
-goto :EOF
+exit /b
 
 :end
