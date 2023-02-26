@@ -57,7 +57,7 @@ md  %userprofile%\Desktop\SFR_AV\Results 2>nul
 
 md  %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP 2>nul
 
-CD %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\
+cd %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\
 
 echo Initialization File > %userprofile%\Desktop\SFR_AV\initial
 
