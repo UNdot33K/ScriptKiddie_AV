@@ -164,8 +164,9 @@ echo **                                                                       **
 echo ** To avoid unexpected errors, the following steps should                **
 echo ** be done manually.                                                     **
 echo **                                                                       **
-echo ** To compile cmp.py you must install python 3.8 (or above)              **
-echo ** and Pyinstaller, visit: https://www.python.org/downloads/             **
+echo ** Version 1.2.1b requires to compile CMP. In order to                   **
+echo ** do that, you must install python 3.8 (or above) and                   **
+echo ** Pyinstaller, visit: https://www.python.org/downloads/                 **
 echo **                                                                       **
 echo ** 1. Installation: check the box "Add Python to PATH"                   **
 echo ** 2. When complete, open a command line window using administrative     ** 
