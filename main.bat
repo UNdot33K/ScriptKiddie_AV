@@ -19,29 +19,34 @@
 
 @echo off
 
-ECHO ********************************************************************
-ECHO [Simple FIM-RIM_AV] v0.95.2 (pre-release) Is Running, Please Wait...
+ECHO ******************************************************
+ECHO [Simple FIM-RIM_AV] v1.2.1b Is Running, Please Wait...
 ECHO Copyright (c) 2023 --Un.33K--
-ECHO ********************************************************************
+ECHO ******************************************************
 
-set "file_types=exe dll bat sys ini"
+set "file_types=exe dll bat sys"
 set "dest=%userprofile%\Desktop\SFR_AV\Hashes"
 set "hmf=%userprofile%\Desktop\SFR_AV\"
 set "results=%userprofile%\Desktop\SFR_AV\Results"
 set "crc=%userprofile%\Desktop\SFR_AV\HMF.exe"
-set "comp=cscript //NoLogo %userprofile%\Desktop\SFR_AV\CMP.vbs"
+set "comp=cscript //NoLogo %userprofile%\Desktop\SFR_AV\cmp.vbs"
+
+
+:: Note, scanning ini extension has been excluded from this version to reduce false alarms.
+:: You can add it back.
+
 
 :: Check if there are any installation issues
 
 cd %hmf%
 
 if not exist HMF.exe goto err
-if not exist CMP.vbs goto err
+if not exist cmp.vbs goto err
 if not exist "%userprofile%\Desktop\SFR_AV\Hashes" goto err
 if not exist "%userprofile%\Desktop\SFR_AV\Results" goto err
 
 if not exist initial ( 
-   if not exist "%dest%\Hashes_exe.txt" (
+   if not exist "%dest%\Hashes_res_exe.txt" (
 :err
     echo.
     echo Please run install.bat using administrative privileges.
@@ -50,19 +55,18 @@ if not exist initial (
     )
 )
 
-
 :: Main code
 
 for %%f in (%file_types%) do ( 
     echo.
     echo Checking: %%f
-    %crc% /wildcard "C:\*.%%f" 3 /CRC32 1 /stext "%dest%\Hashes_%%f0"
-    type "%dest%\Hashes_%%f0" > "%dest%\Hashes_%%f0.txt"
-    del "%dest%\Hashes_%%f0"
+    %crc% /wildcard "C:\*.%%f" 2 /CRC32 1 /stext "%dest%\Hashes_res_%%f0"
+    type "%dest%\Hashes_res_%%f0" > "%dest%\Hashes_res_%%f0.txt"
+    del "%dest%\Hashes_res_%%f0"
     if not exist initial (
-    %comp% "%dest%\Hashes_%%f.txt" "%dest%\Hashes_%%f0.txt" "%results%\res_%%f.txt"
+    %comp% "%dest%\Hashes_res_%%f.txt" "%dest%\Hashes_res_%%f0.txt" "%results%\res_%%f.txt"
+    call :res
     )
-
 )
 
 cd %dest%\
@@ -194,5 +198,36 @@ if not exist flag (
 :LoFlag
 cd %hmf%
 del flag 2>nul
+goto end
+
+:res
+
+if %errorlevel% equ 0 (
+    echo [Integrity] - The Files Are Identical.
+
+) else (
+    goto noid
+)
+
+
+:noid
+setlocal EnableDelayedExpansion
+
+for /F "tokens=1,2 delims=#" %%a in ('"prompt #$H#$E# & echo on & for %%b in (1) do rem"') do (
+  set "DEL=%%a"
+)
+
+call :colorEcho 70 "[Integrity] - The Files Are Not Identical,"
+echo.
+echo differences written to: %results%"
+echo.
+setlocal DisableDelayedExpansion
+goto :EOF
+
+:colorEcho
+<nul set /p ".=%DEL%" > "%~2"
+findstr /v /a:%1 /R "^$" "%~2" nul
+del "%~2" > nul
+goto :EOF
 
 :end
