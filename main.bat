@@ -56,7 +56,7 @@ if not exist initial (
 for %%f in (%file_types%) do ( 
     echo.
     echo Checking: %%f
-    %crc% /wildcard "C:\*.%%f" 2 /CRC32 1 /stext "%dest%\Hashes_%%f0"
+    %crc% /wildcard "C:\*.%%f" 3 /CRC32 1 /stext "%dest%\Hashes_%%f0"
     type "%dest%\Hashes_%%f0" > "%dest%\Hashes_%%f0.txt"
     del "%dest%\Hashes_%%f0"
     if not exist initial (
