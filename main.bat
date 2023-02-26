@@ -209,7 +209,6 @@ if %errorlevel% equ 0 (
     goto noid
 )
 
-
 :noid
 for /F "tokens=1,2 delims=#" %%a in ('"prompt #$H#$E# & echo on & for %%b in (1) do rem"') do (
   set "DEL=%%a"
@@ -219,7 +218,6 @@ call :colorEcho 70 "[Integrity] - The Files Are Not Identical,"
 echo.
 echo differences written to: %results%"
 echo.
-setlocal DisableDelayedExpansion
 exit /b
 
 :colorEcho
