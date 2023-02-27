@@ -82,7 +82,7 @@ time or $FN MFT entry modified time, which are less susceptible to manipulation
 # How to use
 
 You can use the install.bat for most of the procedure needed, although installing version
-1.2.1b there are few steps which should be done manually.
+1.2.5b there are few steps which at the current state they should be done manually.
 
 Press the green button which says "code" and download the zip with the files of the 
 repository and unzip the folder on your desktop, right-click the install.bat and run 
