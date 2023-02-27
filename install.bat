@@ -64,16 +64,12 @@ del %userprofile%\Desktop\SC_AV\flag 2>nul
 cd %userprofile%\Desktop\\ScriptKiddie_AV-main\TEMP\
 
 
-
+echo.
+echo Note: to try-out, version 0.95.4b currently is more simple to run, 
+echo (no code compiling is required), while version 1.2.5b is slightly more
+echo advanced. The choice is yours! ^^
 echo.
 set /p choice="Please select version, 0 for [0.95.4b] or 1 for [v1.2.5b]: "
-
-color 06
-echo Note: to try-out, currently version 0.95.4b is more simple to run, 
-echo (no code compiling is required), while version 1.2.5b has more advanced
-echo characteristics.
-echo.
-color 0F
 if /i "%choice%"=="1" goto v1
 if /i "%choice%"=="0" goto v095
 
@@ -169,20 +165,20 @@ mklink "%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup\SC_AV.lnk" "%use
 @cls
 echo ***************************************************************************
 echo **                                                                       **
-echo ** To avoid unexpected errors, the following steps should                **
-echo ** be done manually.                                                     **
+echo **       To avoid unexpected errors, the following steps should          **
+echo **       be done manually.                                               **
 echo **                                                                       **
-echo ** Version 1.2.1b requires to compile CMP. In order to                   **
-echo ** do that, you must install python 3.8 (or above) and                   **
-echo ** Pyinstaller, visit: https://www.python.org/downloads/                 **
+echo **       Version 1.2.1b requires to compile CMP. In order to             **
+echo **       do that, you must install python 3.8 (or above) and             **
+echo **       Pyinstaller, visit: https://www.python.org/downloads/           **
 echo **                                                                       **
-echo ** 1. Installation: check the box "Add Python to PATH"                   **
-echo ** 2. When complete, open a command line window using administrative     ** 
-echo **    privileges and type:  pip install pyinstaller                      ** 
-echo ** 3. Then you can compile the CMP.py using:                             **
-echo **    pyinstaller --onefile CMP.py                                       **
+echo **    1. Installation: check the box "Add Python to PATH"                **
+echo **    2. When complete, open a command line window using                 ** 
+echo **       administrative privileges and type: pip install pyinstaller     ** 
+echo **    3. Then you can compile the CMP.py using:                          **
+echo **       pyinstaller --onefile CMP.py                                    **
 echo **                                                                       **
-echo **          -- CMP.exe must be placed in the SC_AV folder. --           **
+echo **          -- CMP.exe must be placed in the SC_AV folder. --            **
 echo **                                                                       **
 echo ***************************************************************************
 pause
