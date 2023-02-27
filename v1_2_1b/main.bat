@@ -20,14 +20,14 @@
 @echo off
 
 ECHO ******************************************************
-ECHO [Simple FIM-RIM_AV] v1.2.1b Is Running, Please Wait...
+ECHO [Simple FIM-RIM_AV] v1.2.5b Is Running, Please Wait...
 ECHO Copyright (c) 2023 --Un.33K--
 ECHO ******************************************************
 
 set "file_types=exe dll bat sys"
 set "dest=%userprofile%\Desktop\SFR_AV\Hashes"
 set "hmf=%userprofile%\Desktop\SFR_AV\"
-set "results=%userprofile%\Desktop\SFR_AV\Results"
+set "logs=%userprofile%\Desktop\SFR_AV\Logs"
 set "crc=%userprofile%\Desktop\SFR_AV\HMF.exe"
 set "comp=%userprofile%\Desktop\SFR_AV\CMP.exe"
 
@@ -43,7 +43,7 @@ cd %hmf%
 if not exist HMF.exe goto err
 if not exist CMP.exe goto err
 if not exist "%userprofile%\Desktop\SFR_AV\Hashes" goto err
-if not exist "%userprofile%\Desktop\SFR_AV\Results" goto err
+if not exist "%userprofile%\Desktop\SFR_AV\Logs" goto err
 
 if not exist initial ( 
    if not exist "%dest%\Hashes_res_exe.txt" (
@@ -64,7 +64,7 @@ for %%f in (%file_types%) do (
     type "%dest%\Hashes_res_%%f0" > "%dest%\Hashes_res_%%f0.txt"
     del "%dest%\Hashes_res_%%f0"
     if not exist initial (
-    %comp% "%dest%\Hashes_res_%%f.txt" "%dest%\Hashes_res_%%f0.txt" "%results%\res_%%f.txt"
+    %comp% "%dest%\Hashes_res_%%f.txt" "%dest%\Hashes_res_%%f0.txt" "%Logs%\log_%%f.txt"
     )
 
 )
@@ -155,14 +155,14 @@ echo File integrity check successfully completed.
 
 timeout /t 5 >nul
 
-cd %Results%
+cd %Logs%
 
-if exist res_exe.txt goto mcheck
-if exist res_dll.txt goto mcheck
-if exist res_bat.txt goto mcheck
-if exist res_sys.txt goto mcheck
-if exist res_ini.txt goto mcheck
-if exist res_reg.txt goto mcheck
+if exist log_exe.txt goto mcheck
+if exist log_dll.txt goto mcheck
+if exist log_bat.txt goto mcheck
+if exist log_sys.txt goto mcheck
+if exist log_ini.txt goto mcheck
+if exist log_reg.txt goto mcheck
 goto qt 
 
 :: Manual check of the hash results
@@ -180,7 +180,7 @@ if /i "%choice%"=="n" goto qt
 
 :cp
 
-set "filenames=res_exe res_dll res_bat res_sys res_ini res_reg"
+set "filenames=log_exe log_dll log_bat log_sys log_ini log_reg"
 
 for %%n in (%filenames%) do (
   if exist "%%n.txt" (
