@@ -80,7 +80,7 @@ echo.
 echo Copying files...
 echo.
 
-copy /y %userprofile%\Desktop\ScriptKiddie_AV-main\v1_2_1b\main.bat %userprofile%\Desktop\SC_AV\
+copy /y %userprofile%\Desktop\ScriptKiddie_AV-main\v1_2_5b\main.bat %userprofile%\Desktop\SC_AV\
 
 copy /y %userprofile%\Desktop\ScriptKiddie_AV-main\LICENSE %userprofile%\Desktop\SC_AV\
 
