@@ -69,8 +69,8 @@ echo.
 set /p choice="Please select version, 0 for [0.95.4b] or 1 for [v1.2.5b]: "
 
 color 06
-echo For try-out use, currently version 0.95.4b is more simple to run 
-echo (no code compiling is required) while version 1.2.5b has more advanced
+echo Note: to try-out, currently version 0.95.4b is more simple to run, 
+echo (no code compiling is required), while version 1.2.5b has more advanced
 echo characteristics.
 echo.
 color 0F
