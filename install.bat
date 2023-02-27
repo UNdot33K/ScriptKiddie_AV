@@ -67,7 +67,7 @@ cd %userprofile%\Desktop\\ScriptKiddie_AV-main\TEMP\
 echo.
 echo Note: to try-out, version 0.95.4b currently it's more simple to run, 
 echo (no code compiling is required), while version 1.2.5b is slightly
-echo more advanced. The choice is yours! :-)
+echo more advanced. The choice is yours!
 echo.
 set /p choice="Please select version, 0 for [0.95.4b] or 1 for [v1.2.5b]: "
 if /i "%choice%"=="1" goto v1
