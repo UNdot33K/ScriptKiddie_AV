@@ -20,16 +20,16 @@
 @echo off
 
 ECHO ******************************************************
-ECHO [Simple FIM-RIM_AV] v1.2.5b Is Running, Please Wait...
+ECHO [Script Kiddie_AV] v1.2.5b Is Running, Please Wait...
 ECHO Copyright (c) 2023 --Un.33K--
 ECHO ******************************************************
 
 set "file_types=exe dll bat sys"
-set "dest=%userprofile%\Desktop\SFR_AV\Hashes"
-set "hmf=%userprofile%\Desktop\SFR_AV\"
-set "logs=%userprofile%\Desktop\SFR_AV\Logs"
-set "crc=%userprofile%\Desktop\SFR_AV\HMF.exe"
-set "comp=%userprofile%\Desktop\SFR_AV\CMP.exe"
+set "dest=%userprofile%\Desktop\SC_AV\Hashes"
+set "hmf=%userprofile%\Desktop\SC_AV\"
+set "logs=%userprofile%\Desktop\SC_AV\Logs"
+set "crc=%userprofile%\Desktop\SC_AV\HMF.exe"
+set "comp=%userprofile%\Desktop\SC_AV\CMP.exe"
 
 
 :: Note, scanning ini extension has been excluded from this version to reduce false alarms.
@@ -42,8 +42,8 @@ cd %hmf%
 
 if not exist HMF.exe goto err
 if not exist CMP.exe goto err
-if not exist "%userprofile%\Desktop\SFR_AV\Hashes" goto err
-if not exist "%userprofile%\Desktop\SFR_AV\Logs" goto err
+if not exist "%userprofile%\Desktop\SC_AV\Hashes" goto err
+if not exist "%userprofile%\Desktop\SC_AV\Logs" goto err
 
 if not exist initial ( 
    if not exist "%dest%\Hashes_res_exe.txt" (
