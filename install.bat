@@ -37,9 +37,9 @@ if "%1"=="/u" (
      if /i "%choice%"=="y" goto rr
      if /i "%choice%"=="n" goto start
 :rr
-     del "%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup\SFR_AV.lnk"
-     schtasks /delete /tn "SFR_AV" /f 
-     rd /S /Q "%userprofile%\Desktop\SFR_AV\"
+     del "%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup\SC_AV.lnk"
+     schtasks /delete /tn "SC_AV" /f 
+     rd /S /Q "%userprofile%\Desktop\SC_AV\"
      goto end
 )
 
@@ -49,24 +49,24 @@ echo.
 echo Creating directory structure...
 echo.
 
-md  %userprofile%\Desktop\SFR_AV 2>nul
+md  %userprofile%\Desktop\SC_AV 2>nul
 
-md  %userprofile%\Desktop\SFR_AV\Hashes 2>nul
+md  %userprofile%\Desktop\SC_AV\Hashes 2>nul
 
-md  %userprofile%\Desktop\SFR_AV\Logs 2>nul
+md  %userprofile%\Desktop\SC_AV\Logs 2>nul
 
-md  %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP 2>nul
+md  %userprofile%\Desktop\ScriptKiddie_AV-main\TEMP 2>nul
 
-echo Initialization File > %userprofile%\Desktop\SFR_AV\initial
+echo Initialization File > %userprofile%\Desktop\SC_AV\initial
 
-del %userprofile%\Desktop\SFR_AV\flag 2>nul
+del %userprofile%\Desktop\SC_AV\flag 2>nul
 
-cd %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\
+cd %userprofile%\Desktop\\ScriptKiddie_AV-main\TEMP\
 
 
 
 echo.
-set /p choice="Please select version, 0 for [0.95.4b] or 1 for [v1.2.5b] or: "
+set /p choice="Please select version, 0 for [0.95.4b] or 1 for [v1.2.5b]: "
 echo.
 if /i "%choice%"=="1" goto v1
 if /i "%choice%"=="0" goto v095
@@ -78,11 +78,11 @@ echo.
 echo Copying files...
 echo.
 
-copy /y %userprofile%\Desktop\Simple-FIM-RIM_AV-main\v1_2_1b\main.bat %userprofile%\Desktop\SFR_AV\
+copy /y %userprofile%\Desktop\ScriptKiddie_AV-main\v1_2_1b\main.bat %userprofile%\Desktop\SC_AV\
 
-copy /y %userprofile%\Desktop\Simple-FIM-RIM_AV-main\LICENSE %userprofile%\Desktop\SFR_AV\
+copy /y %userprofile%\Desktop\ScriptKiddie_AV-main\LICENSE %userprofile%\Desktop\SC_AV\
 
-copy /y %userprofile%\Desktop\Simple-FIM-RIM_AV-main\README.md %userprofile%\Desktop\SFR_AV\
+copy /y %userprofile%\Desktop\ScriptKiddie_AV-main\README.md %userprofile%\Desktop\SC_AV\
 
 echo.
 set /p choice="Try to download and Install HashMyFiles? (y/n) "
@@ -103,7 +103,7 @@ if /i "%choice%"=="n" goto taskQ
 
 bitsadmin /transfer WinMergeDownload /priority normal http://github.com/WinMerge/winmerge/releases/download/v2.16.28/WinMerge-2.16.28-Setup.exe %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\WinMerge-2.16.28-Setup.exe
 
-if exist %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\WinMerge-2.16.28-Setup.exe (
+if exist %userprofile%\Desktop\ScriptKiddie_AV-main\TEMP\WinMerge-2.16.28-Setup.exe (
     WinMerge-2.16.28-Setup.exe
 ) else (
     echo.
@@ -120,7 +120,7 @@ goto taskQ
 echo.
 echo Copying files...
 echo.
-copy /y %userprofile%\Desktop\Simple-FIM-RIM_AV-main\*.* %userprofile%\Desktop\SFR_AV\
+copy /y %userprofile%\Desktop\ScriptKiddie_AV-main\*.* %userprofile%\Desktop\SC_AV\
 
 echo.
 set /p choice="Try to download and install HashMyFiles? (y/n) "
@@ -132,7 +132,7 @@ if /i "%choice%"=="n" goto taskQ
 :taskQ
 
 echo.
-set /p choice="Create a task and place .lnk to StartUp, to automatically begin FR_AV? (y/n) "
+set /p choice="Create a task and place .lnk to StartUp, to automatically begin SC_AV? (y/n) "
 
 if /i "%choice%"=="y" goto taskCR
 if /i "%choice%"=="n" goto py
@@ -140,19 +140,19 @@ if /i "%choice%"=="n" goto py
 
 :taskCR
 
-:: Creates a new task for SFR_AV to run after workstation unlock.
-C:\Windows\System32\schtasks /create /sc onevent /mo "*[System[(EventID=42)]]" /EC System /tn "SFR_AV" /tr "%userprofile%\Desktop\FR_AV\main.bat"
+:: Creates a new task for SC_AV to run after workstation unlock.
+C:\Windows\System32\schtasks /create /sc onevent /mo "*[System[(EventID=42)]]" /EC System /tn "SC_AV" /tr "%userprofile%\Desktop\SC_AV\main.bat"
 
 
 
 :: Alternative way in case the first one doesn't work.
-:: C:\Windows\System32\schtasks /Create /SC ONEVENT /MO "*[System[(EventID=4624)]] and  *[EventData[Data[9]="7"]]" /EC Security /TN "SFR_AV" /TR "\"%userprofile%\Desktop\FR_AV\script.bat"\" /F
+:: C:\Windows\System32\schtasks /Create /SC ONEVENT /MO "*[System[(EventID=4624)]] and  *[EventData[Data[9]="7"]]" /EC Security /TN "SC_AV" /TR "\"%userprofile%\Desktop\SC_AV\main.bat"\" /F
 
 
 
-:: Creates and Copies the SFR_AV .lnk to Startup folder so it can run SFR_AV every 
+:: Creates and Copies the SC_AV .lnk to Startup folder so it can run SC_AV every 
 :: time you're starting Windows. 
-mklink "%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup\SFR_AV.lnk" "%userprofile%\Desktop\SFR_AV\main.bat"
+mklink "%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup\SC_AV.lnk" "%userprofile%\Desktop\SC_AV\main.bat"
 
 
 :: Alternative way to place the .lnk in case it is needed.
@@ -176,7 +176,7 @@ echo **    privileges and type:  pip install pyinstaller                      **
 echo ** 3. Then you can compile the CMP.py using:                             **
 echo **    pyinstaller --onefile CMP.py                                       **
 echo **                                                                       **
-echo **          -- CMP.exe must be placed in the SFR_AV folder. --           **
+echo **          -- CMP.exe must be placed in the SC_AV folder. --           **
 echo **                                                                       **
 echo ***************************************************************************
 pause
@@ -185,8 +185,8 @@ goto end
 
 :DW
 
-bitsadmin /transfer HashMyFilesDownload /priority normal https://www.nirsoft.net/utils/hashmyfiles-x64.zip %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\hashmyfiles-x64.zip
-if exist %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\hashmyfiles-x64.zip (
+bitsadmin /transfer HashMyFilesDownload /priority normal https://www.nirsoft.net/utils/hashmyfiles-x64.zip %userprofile%\Desktop\ScriptKiddie_AV-main\TEMP\hashmyfiles-x64.zip
+if exist %userprofile%\Desktop\ScriptKiddie_AV-main\TEMP\hashmyfiles-x64.zip (
     setlocal enabledelayedexpansion
     reg query "HKLM\Software\Microsoft\Windows NT\CurrentVersion" /v ProductName | find "Windows 7" >nul 2>nul
     if !ERRORLEVEL! EQU 0 (
@@ -194,18 +194,18 @@ if exist %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\hashmyfiles-x64.zip (
     ) else (
         reg query "HKLM\Software\Microsoft\Windows NT\CurrentVersion" /v ProductName | find "Windows 8" >nul 2>nul
         if !ERRORLEVEL! EQU 0 (
-            Powershell Expand-Archive -Force -Path %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\hashmyfiles-x64.zip -DestinationPath %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\
+            Powershell Expand-Archive -Force -Path %userprofile%\Desktop\ScriptKiddie_AV-main\TEMP\hashmyfiles-x64.zip -DestinationPath %userprofile%\Desktop\ScriptKiddie_AV-main\TEMP\
             goto check_hmf_file
         ) else (
             reg query "HKLM\Software\Microsoft\Windows NT\CurrentVersion" /v ProductName | find "Windows 10" >nul 2>nul
             if !ERRORLEVEL! EQU 0 (
-                Powershell Expand-Archive -Force -Path %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\hashmyfiles-x64.zip -DestinationPath %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\
+                Powershell Expand-Archive -Force -Path %userprofile%\Desktop\ScriptKiddie_AV-main\TEMP\hashmyfiles-x64.zip -DestinationPath %userprofile%\Desktop\ScriptKiddie_AV-main\TEMP\
                 goto check_hmf_file
 
             ) else (
                 reg query "HKLM\Software\Microsoft\Windows NT\CurrentVersion" /v ProductName | find "Windows 11" >nul 2>nul
             if !ERRORLEVEL! EQU 0 (
-                Powershell Expand-Archive -Force -Path %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\hashmyfiles-x64.zip -DestinationPath %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\
+                Powershell Expand-Archive -Force -Path %userprofile%\Desktop\ScriptKiddie_AV-main\TEMP\hashmyfiles-x64.zip -DestinationPath %userprofile%\Desktop\ScriptKiddie_AV-main\TEMP\
                 goto check_hmf_file
 
                )
@@ -222,17 +222,17 @@ if exist %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\hashmyfiles-x64.zip (
 )
 
 :check_hmf_file
-if not exist %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\hashmyfiles.exe goto re
+if not exist %userprofile%\Desktop\ScriptKiddie_AV-main\TEMP\hashmyfiles.exe goto re
 ren hashmyfiles.exe HMF.exe 2> nul
-copy /y HMF.exe %userprofile%\Desktop\SFR_AV\
+copy /y HMF.exe %userprofile%\Desktop\SC_AV\
 setlocal DisableDelayedExpansion
 exit /b
 
 :re
 
 setlocal
-set zipFilePath="%userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\hashmyfiles-x64.zip"
-set destinationPath="%userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\"
+set zipFilePath="%userprofile%\Desktop\ScriptKiddie_AV-main\TEMP\hashmyfiles-x64.zip"
+set destinationPath="%userprofile%\Desktop\ScriptKiddie_AV-main\TEMP\"
 
 if not exist "%zipFilePath%" (
   echo Error: Zip file does not exist.
@@ -249,19 +249,19 @@ echo Extracting files from zip archive...
 echo.
 
 :: Use the "Send To" feature of Windows Explorer to extract the files
-echo >"%userprofile%\Desktop\Simple-FIM-RIM_AV-main\z_script.vbs" Set objArgs = WScript.Arguments
-echo >>"%userprofile%\Desktop\Simple-FIM-RIM_AV-main\z_script.vbs" InputZip = objArgs(0)
-echo >>"%userprofile%\Desktop\Simple-FIM-RIM_AV-main\z_script.vbs" DestFolder = objArgs(1)
-echo >>"%userprofile%\Desktop\Simple-FIM-RIM_AV-main\z_script.vbs" Set objShell = CreateObject("Shell.Application")
-echo >>"%userprofile%\Desktop\Simple-FIM-RIM_AV-main\z_script.vbs" Set sourceZip = objShell.NameSpace(InputZip).Items
-echo >>"%userprofile%\Desktop\Simple-FIM-RIM_AV-main\z_script.vbs" Set targetFolder = objShell.NameSpace(DestFolder)
-echo >>"%userprofile%\Desktop\Simple-FIM-RIM_AV-main\z_script.vbs" targetFolder.CopyHere sourceZip, 16
-echo >>"%userprofile%\Desktop\Simple-FIM-RIM_AV-main\z_script.vbs" Set sourceZip = Nothing
-echo >>"%userprofile%\Desktop\Simple-FIM-RIM_AV-main\z_script.vbs" Set targetFolder = Nothing
-echo >>"%userprofile%\Desktop\Simple-FIM-RIM_AV-main\z_script.vbs" Set objShell = Nothing
+echo >"%userprofile%\Desktop\ScriptKiddie_AV-main\z_script.vbs" Set objArgs = WScript.Arguments
+echo >>"%userprofile%\Desktop\ScriptKiddie_AV-main\z_script.vbs" InputZip = objArgs(0)
+echo >>"%userprofile%\Desktop\ScriptKiddie_AV-main\z_script.vbs" DestFolder = objArgs(1)
+echo >>"%userprofile%\Desktop\ScriptKiddie_AV-main\z_script.vbs" Set objShell = CreateObject("Shell.Application")
+echo >>"%userprofile%\Desktop\ScriptKiddie_AV-main\z_script.vbs" Set sourceZip = objShell.NameSpace(InputZip).Items
+echo >>"%userprofile%\Desktop\ScriptKiddie_AV-main\z_script.vbs" Set targetFolder = objShell.NameSpace(DestFolder)
+echo >>"%userprofile%\Desktop\ScriptKiddie_AV-main\z_script.vbs" targetFolder.CopyHere sourceZip, 16
+echo >>"%userprofile%\Desktop\ScriptKiddie_AV-main\z_script.vbs" Set sourceZip = Nothing
+echo >>"%userprofile%\Desktop\ScriptKiddie_AV-main\z_script.vbs" Set targetFolder = Nothing
+echo >>"%userprofile%\Desktop\ScriptKiddie_AV-main\z_script.vbs" Set objShell = Nothing
 
-cscript.exe "%userprofile%\Desktop\Simple-FIM-RIM_AV-main\z_script.vbs" "%zipFilePath%" "%destinationPath%"
-del "%userprofile%\Desktop\Simple-FIM-RIM_AV-main\z_script.vbs"
+cscript.exe "%userprofile%\Desktop\ScriptKiddie_AV-main\z_script.vbs" "%zipFilePath%" "%destinationPath%"
+del "%userprofile%\Desktop\ScriptKiddie_AV-main\z_script.vbs"
 echo.
 echo Zip file successfully extracted.
 
