@@ -49,7 +49,7 @@ Looking at the logs it's not mandatory, unless there's a suspicion, in such case
 which you can find here: https://www.winmerge.org can make an othewise dubious procedure... 
 very fun and easy!
 
-The "SFR_AV" parent directory contains 2 additional subdirectories, one is called "hashes", where 
+The "SC_AV" parent directory contains 2 additional subdirectories, one is called "Hashes", where 
 hashed files results are saved and the other is called "Logs" where the comparison results 
 are saved.
 
