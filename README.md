@@ -49,7 +49,7 @@ which you can find here: https://www.winmerge.org can make an othewise dubious p
 very fun and easy!
 
 The "SFR_AV" parent directory contains 2 additional subdirectories, one is called "hashes", where 
-hashed files results are saved and the other is called "Results" where the comparison results 
+hashed files results are saved and the other is called "Logs" where the comparison results 
 are saved.
 
 The batch file can be edited so you can use different settings, in that case you can change the 
@@ -166,7 +166,7 @@ Modified time".
 Options > Hash Types > uncheck everything but: "CRC32".
 
 
-# Version 1.2.1b 
+# Version 1.2.5b 
 
 There was a major update, so the script jumped from version v0.95.2 to v1.2.1b yay!!
 the little code of the script went around 20% larger, still in beta though, meaning 
