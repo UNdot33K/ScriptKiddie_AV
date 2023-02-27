@@ -19,17 +19,17 @@
 
 @echo off
 
-ECHO ******************************************************
-ECHO [Simple FIM-RIM_AV] v0.95.4b Is Running, Please Wait...
+ECHO ********************************************************
+ECHO [Script Kiddie_AV] v0.95.4b Is Running, Please Wait...
 ECHO Copyright (c) 2023 --Un.33K--
-ECHO ******************************************************
+ECHO ********************************************************
 
 set "file_types=exe dll bat sys ini"
-set "dest=%userprofile%\Desktop\SFR_AV\Hashes"
-set "hmf=%userprofile%\Desktop\SFR_AV\"
-set "logs=%userprofile%\Desktop\SFR_AV\Logs"
-set "crc=%userprofile%\Desktop\SFR_AV\HMF.exe"
-set "comp=cscript //NoLogo %userprofile%\Desktop\SFR_AV\cmp.vbs"
+set "dest=%userprofile%\Desktop\SC_AV\Hashes"
+set "hmf=%userprofile%\Desktop\SC_AV\"
+set "logs=%userprofile%\Desktop\SC_AV\Logs"
+set "crc=%userprofile%\Desktop\SC_AV\HMF.exe"
+set "comp=cscript //NoLogo %userprofile%\Desktop\SFC_AV\cmp.vbs"
 
 :: Check if there are any installation issues
 
@@ -37,8 +37,8 @@ cd %hmf%
 
 if not exist HMF.exe goto err
 if not exist cmp.vbs goto err
-if not exist "%userprofile%\Desktop\SFR_AV\Hashes" goto err
-if not exist "%userprofile%\Desktop\SFR_AV\Logs" goto err
+if not exist "%userprofile%\Desktop\SC_AV\Hashes" goto err
+if not exist "%userprofile%\Desktop\SC_AV\Logs" goto err
 
 if not exist initial ( 
    if not exist "%dest%\Hashes_exe.txt" (
