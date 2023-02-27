@@ -143,12 +143,15 @@ echo Checking: Registry
 
 cd %hmf%
 
+if not exist initial (
+    %comp% "%dest%\Hashes_res_reg.txt" "%dest%\Hashes_res_reg0.txt" "%results%\res_reg.txt"
+    call :res
+)
+
 if exist initial ( 
    del initial
    goto MRT
 )
-
-%comp% "%dest%\Hashes_res_reg.txt" "%dest%\Hashes_res_reg0.txt" "%results%\res_reg.txt"
 
 echo.				
 echo File integrity check successfully completed.
