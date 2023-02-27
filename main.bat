@@ -29,7 +29,7 @@ set "dest=%userprofile%\Desktop\SC_AV\Hashes"
 set "hmf=%userprofile%\Desktop\SC_AV\"
 set "logs=%userprofile%\Desktop\SC_AV\Logs"
 set "crc=%userprofile%\Desktop\SC_AV\HMF.exe"
-set "comp=cscript //NoLogo %userprofile%\Desktop\SFC_AV\cmp.vbs"
+set "comp=cscript //NoLogo %userprofile%\Desktop\SC_AV\cmp.vbs"
 
 :: Check if there are any installation issues
 
