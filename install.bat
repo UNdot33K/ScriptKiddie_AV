@@ -66,7 +66,7 @@ cd %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\
 
 
 echo.
-set /p choice="Please select version, 0 for [0.95.2b] or 1 for [v1.2.1b] or: "
+set /p choice="Please select version, 0 for [0.95.4b] or 1 for [v1.2.5b] or: "
 echo.
 if /i "%choice%"=="1" goto v1
 if /i "%choice%"=="0" goto v095
