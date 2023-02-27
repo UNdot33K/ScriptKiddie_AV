@@ -146,9 +146,9 @@ permission in every step, although it may or may not be able to download the uti
 as win7) or due to broken links and it that case it will notify you so you can do it manually. 
 Run install.bat using elevated privileges (right click on the file and run as administrator).
 
-If you wish to delete from your system the SFR_AV you can run in a command line window (CMD) 
+If you wish to delete from your system the SC_AV you can run in a command line window (CMD) 
 using admin privileges: "install /u", or if you only want to remove the task created by 
-install.bat, open a command line as administrator and use: schtasks /delete /tn "SFR_AV" /f 
+install.bat, open a command line as administrator and use: schtasks /delete /tn "SC_AV" /f 
 you should also delete the .lnk placed in the StartUp folder in that case: 
 Start > search > shell:startup.
 
