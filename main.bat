@@ -24,17 +24,12 @@ ECHO [Simple FIM-RIM_AV] v0.95.4b Is Running, Please Wait...
 ECHO Copyright (c) 2023 --Un.33K--
 ECHO ******************************************************
 
-set "file_types=exe dll bat sys"
+set "file_types=exe dll bat sys ini"
 set "dest=%userprofile%\Desktop\SFR_AV\Hashes"
 set "hmf=%userprofile%\Desktop\SFR_AV\"
 set "logs=%userprofile%\Desktop\SFR_AV\Logs"
 set "crc=%userprofile%\Desktop\SFR_AV\HMF.exe"
 set "comp=cscript //NoLogo %userprofile%\Desktop\SFR_AV\cmp.vbs"
-
-
-
-:: Note, scanning ini extension has been excluded from this version to reduce false alarms.
-:: You can add it back.
 
 :: Check if there are any installation issues
 
