@@ -20,10 +20,10 @@ do so. It's a collaborative effort, and together we can enhance its capabilities
 # Functions
 
 
-Script Kiddie_AV is a simple but effective, FIM-RIM (File Integrity Monitoring - Registry 
-Integrity Monitoring) "tool", or more precisely it's a batch file script which can automate 
-checks for file integrity issues and it can also be used alongside with any antivirus to 
-enhance system protection.
+Script Kiddie_AV is a simple but effective, FIM-RIM (File Integrity Monitoring - 
+Registry Integrity Monitoring) "tool", or more precisely it's a batch file script 
+which can automate checks for file integrity issues and it can also be used alongside 
+with any antivirus to enhance system protection.
 
 Although there are various similar tools, the highlight of this one is, that it can
 also check the Windows registry. Certain registry hives are considered usual malware 
