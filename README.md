@@ -1,4 +1,4 @@
-# Simple FIM-RIM_AV
+# Script Kiddie FIM-RIM_AV
 
 ## Files & Windows registry integrity checker, to use alongside with your antivirus program. 
 
@@ -20,9 +20,10 @@ do so. It's a collaborative effort, and together we can enhance its capabilities
 # Functions
 
 
-Simple FR_AV (File Integrity Monitoring - Registry Integrity Monitoring), is a "tool" 
-or more precisely it's a batch file script which can automate checks for file integrity 
-issues and it can also be used alongside with any antivirus to enhance system protection.
+Script Kiddie_AV is a simple FIM-RIM (File Integrity Monitoring - Registry Integrity 
+Monitoring) "tool", or more precisely it's a batch file script which can automate checks 
+for file integrity issues and it can also be used alongside with any antivirus to enhance 
+system protection.
 
 Although there are various similar tools, the highlight of this one is, that it can
 also check the Windows registry. Certain registry hives are considered usual malware 
@@ -168,7 +169,7 @@ Options > Hash Types > uncheck everything but: "CRC32".
 
 # Version 1.2.5b 
 
-There was a major update, so the script jumped from version v0.95.2 to v1.2.1b yay!!
+There was a major update, so the script jumped from version v0.95.4 to v1.2.5b yay!!
 the little code of the script went around 20% larger, still in beta though, meaning 
 still has to be thoroughly tested by more people and still the documentation is
 larger than the code!! ^^
