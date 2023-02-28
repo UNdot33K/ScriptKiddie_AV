@@ -18,7 +18,7 @@
 :: SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 :: Installer - Task Scheduler Script
-:: to remove task: schtasks /delete /tn "SFR_AV" /f
+:: to remove task: schtasks /delete /tn "SC_AV" /f
 
 @echo off
 
@@ -65,7 +65,7 @@ cd %userprofile%\Desktop\\ScriptKiddie_AV-main\TEMP\
 
 
 echo.
-echo Note: to try-out, version 0.95.4b currently it's more simple to run, 
+echo Note: to try-out, currently version 0.95.4b is more simple to run, 
 echo (no code compiling is required), while version 1.2.5b is slightly
 echo more advanced. The choice is yours!
 echo.
