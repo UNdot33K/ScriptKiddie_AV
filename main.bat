@@ -143,7 +143,7 @@ echo Checking: Registry
 cd %hmf%
 
 if not exist initial (
-    %comp% "%dest%\Hashes_reg.txt" "%dest%\Hashes_reg0.txt" "%results%\log_reg.txt"
+    %comp% "%dest%\Hashes_reg.txt" "%dest%\Hashes_reg0.txt" "%Logs%\log_reg.txt"
     call :res
     )
 
