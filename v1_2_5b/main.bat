@@ -144,7 +144,7 @@ echo Checking: Registry
 cd %hmf%
 
 if not exist initial (
-    %comp% "%dest%\Hashes_res_reg.txt" "%dest%\Hashes_res_reg0.txt" "%results%\res_reg.txt"
+    %comp% "%dest%\Hashes_res_reg.txt" "%dest%\Hashes_res_reg0.txt" "%Logs%\log_reg.txt"
 )
 
 if exist initial ( 
