@@ -26,7 +26,7 @@ which can automate checks for file integrity issues and it can also be used alon
 with any antivirus to enhance system protection.
 
 Although there are various similar tools, the highlight of this one is, that it can
-also check the Windows registry. Certain registry hives are considered usual malware 
+also check the Windows registry. Certain registry keys are considered usual malware 
 target, so it can check and report any changes. On specific days of the month after 
 finishing file & registry integrity checks, it can call the Windows "Malware Removal 
 Tool" (MRT) to scan your hard disk, so also it automates some antivirus security of 
