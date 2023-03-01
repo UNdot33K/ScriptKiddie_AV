@@ -161,8 +161,8 @@ can decide which file types or registry hives not to check, or you can speed up 
 by reducing the directory level 1-1000 (infinite) to search for files, by editing the 
 "Main code" of the script. Run HMF.EXE and try the following recommended settings:
 
-View > Choose Columns > uncheck everything but: "Filename, CRC32 Full Path, Created Time, 
-Entry Modified Time, File Size.
+View > Choose Columns > uncheck everything but: "Filename, CRC32 Full Path, Created Time,
+File Size.
 
 Options > Hash Types > uncheck everything but: "CRC32".
 
