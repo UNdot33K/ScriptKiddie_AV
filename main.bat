@@ -60,7 +60,7 @@ for %%f in (%file_types%) do (
     del "%dest%\Hashes_%%f0" 
     if not exist initial (
        setlocal EnableDelayedExpansion
-:: set %errorlevel%=1, should decide if it accepts 0 and 1 values or strings or both.   
+::     set %errorlevel%=1 to fix some issues in some weird cases. 
        %comp% "%dest%\Hashes_%%f.txt" "%dest%\Hashes_%%f0.txt" "%logs%\log_%%f.txt"
        call :res
        setlocal DisableDelayedExpansion
