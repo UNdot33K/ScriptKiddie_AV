@@ -186,7 +186,7 @@ set "filenames=log_exe log_dll log_bat log_sys log_ini log_reg"
 
 for %%n in (%filenames%) do (
   if exist "%%n.txt" (
-    "%WinMerge_Path%" "%dest%\Hashes_res_%%n.txt" "%dest%\Hashes_res_%%n0.txt"
+    "%WinMerge_Path%" "%dest%\Hashes_%%n.txt" "%dest%\Hashes_%%n0.txt"
 
   )
 )
