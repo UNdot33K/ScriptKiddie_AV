@@ -59,11 +59,10 @@ for %%f in (%file_types%) do (
     type "%dest%\Hashes_%%f0" > "%dest%\Hashes_%%f0.txt" 
     del "%dest%\Hashes_%%f0" 
     if not exist initial (
-       setlocal EnableDelayedExpansion
-::     set %errorlevel%=1 to fix some issues in some weird cases. 
+:: to troubleshoot an issue in some weird cases.    
+       set %errorlevel%=1 
        %comp% "%dest%\Hashes_%%f.txt" "%dest%\Hashes_%%f0.txt" "%logs%\log_%%f.txt"
        call :res
-       setlocal DisableDelayedExpansion
     )
 )
 
