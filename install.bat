@@ -18,7 +18,7 @@
 :: SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 :: Installer - Task Scheduler Script
-:: to remove task: schtasks /delete /tn "SC_AV" /f
+:: to remove task manually: schtasks /delete /tn "SC_AV" /f
 
 @echo off
 
@@ -66,8 +66,7 @@ cd %userprofile%\Desktop\\ScriptKiddie_AV-main\TEMP\
 
 echo.
 echo Note: to try-out, currently version 0.95.4b is more simple to run, 
-echo (no code compiling is required), while version 1.2.5b is slightly
-echo more advanced. The choice is yours!
+echo while version 1.2.5b is slightly more advanced. The choice is yours!
 echo.
 set /p choice="Please select version, 0 for [0.95.4b] or 1 for [v1.2.5b]: "
 if /i "%choice%"=="1" goto v1
@@ -81,6 +80,8 @@ echo Copying files...
 echo.
 
 copy /y %userprofile%\Desktop\ScriptKiddie_AV-main\v1_2_5b\main.bat %userprofile%\Desktop\SC_AV\
+
+copy /y %userprofile%\Desktop\ScriptKiddie_AV-main\v1_2_5b\cmp.vbs %userprofile%\Desktop\SC_AV\
 
 copy /y %userprofile%\Desktop\ScriptKiddie_AV-main\LICENSE %userprofile%\Desktop\SC_AV\
 
@@ -160,29 +161,11 @@ mklink "%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup\SC_AV.lnk" "%use
 :: Alternative way to place the .lnk in case it is needed.
 :: "%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\Startup\"
 
+
 :py
-
-@cls
-echo ***************************************************************************
-echo **                                                                       **
-echo **       To avoid unexpected errors, the following steps should          **
-echo **       be done manually.                                               **
-echo **                                                                       **
-echo **       Version 1.2.5b requires to compile CMP. In order to             **
-echo **       do that, you must install python 3.8 (or above) and             **
-echo **       Pyinstaller, visit: https://www.python.org/downloads/           **
-echo **                                                                       **
-echo **    1. Installation: check the box "Add Python to PATH"                **
-echo **    2. When complete, open a command line window using                 ** 
-echo **       administrative privileges and type: pip install pyinstaller     ** 
-echo **    3. Then you can compile the CMP.py using:                          **
-echo **       pyinstaller --onefile CMP.py                                    **
-echo **                                                                       **
-echo **          -- CMP.exe must be placed in the SC_AV folder. --            **
-echo **                                                                       **
-echo ***************************************************************************
-pause
-
+echo.
+echo Installation complete.
+echo.
 goto end
 
 :DW
