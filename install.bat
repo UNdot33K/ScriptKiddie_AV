@@ -35,7 +35,7 @@ if "%1"=="/u" (
      set /p choice="Are you sure you want to uninstall? (y/n):"
      echo.
      if /i "%choice%"=="y" goto rr
-     if /i "%choice%"=="n" goto start
+     if /i "%choice%"=="n" goto end
 :rr
      del "%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup\SC_AV.lnk"
      schtasks /delete /tn "SC_AV" /f 
