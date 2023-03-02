@@ -122,8 +122,8 @@ Run install.bat using elevated privileges (right click on the file and run as ad
 If you wish to delete from your system the SC_AV you can run in a command line window (CMD) 
 using admin privileges: "install /u", or if you only want to remove the task created by 
 install.bat, open a command line as administrator and use: schtasks /delete /tn "SC_AV" /f 
-you should also delete the .lnk placed in the StartUp folder in that case: 
-Start > search > shell:startup.
+you should also delete the .lnk placed in the StartUp folder in that case: Start > search > 
+shell:startup.
 
 
 
