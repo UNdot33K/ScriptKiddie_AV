@@ -42,8 +42,8 @@ A batch file which coordinates the procedures.
 A freeware utility from Nirsoft called "HashMyFiles" which can be found here: 
 https://www.nirsoft.net/utils/hash_my_files.html (responsible to create hashes and also 
 provide some other useful features). 
-The "CMP" (it is written in Python and VBScript, it compares the output of the "HashMyFiles" 
-utility and if there are any differences, notifies you with a message and a beep sound and saves 
+The "CMP" (it is written in VBScript, it compares the output of the "HashMyFiles" utility 
+and if there are any differences, notifies you with a message and a beep sound and saves 
 the compared hashed files results). 
 Looking at the logs it's not mandatory, unless there's a suspicion, in such case using Winmerge 
 which you can find here: https://www.winmerge.org can make an othewise dubious procedure... 
@@ -81,38 +81,11 @@ time or $FN MFT entry modified time, which are less susceptible to manipulation
 
 # How to use
 
-You can use the install.bat for most of the procedure needed, although installing version
-1.2.5b there are few steps which at the current state they should be done manually.
+You can use the install.bat or you can do manually the procedure needed.
 
 Press the green button which says "code" and download the zip with the files of the 
 repository and unzip the folder on your desktop, right-click the install.bat and run 
 as administrator.
-
-You need to have python 3.8 or higher with "pyinstaller" installed, so you can 
-compile the CMP.py (advanced users may use other compilers such as cx_freeze, 
-or any other). After downloading Python from here: https://www.python.org/downloads/ 
-open a command line window with administrative privileges and type:
-
-
-pip install pyinstaller
-
-
-Note: the Python directory and the \scripts folder, must be in path, in order to run
-pip, check the box "Add Python to PATH".
-
-After pyinstaller is installed, navigate to your Desktop's folder location, (in the 
-same directory as the one you keep the CMP.py) so you can create the executable and 
-run: 
-
-
-pyinstaller --onefile CMP.py
-
-
-"Build" and "Dist" folders are created, take out the CMP.exe and place it in the
-folder named "SFR_AV", if for any reason you can't find the executable you have just 
-created, use windows search for "CMP.exe". After you copy your CMP.exe, python folders 
-"Build" and "Dist" aren't needed and you can delete them.
-
 
 CMP.exe, HashMyFiles.exe (renamed to HMF.exe to be more compact and also work with the script) 
 and the batch file script should be in the same parent folder.
