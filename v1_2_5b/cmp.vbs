@@ -55,29 +55,3 @@ End If
 
 ' Calling the comparison function with the parameters from the command line.
 CompareFiles WScript.Arguments(0), WScript.Arguments(1), WScript.Arguments(2)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
