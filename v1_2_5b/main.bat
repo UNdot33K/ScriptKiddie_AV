@@ -144,7 +144,7 @@ cd %hmf%
 
 if not exist initial (
     %comp% "%dest%\Hashes_res_reg.txt" "%dest%\Hashes_res_reg0.txt" "%Logs%\log_reg.txt"
-    call :reg
+    call :res
 )
 
 if exist initial ( 
