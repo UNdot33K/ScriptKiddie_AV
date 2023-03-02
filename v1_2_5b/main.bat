@@ -37,7 +37,7 @@ set "comp=cscript //NoLogo %userprofile%\Desktop\SC_AV\cmp.vbs"
 cd %hmf%
 
 if not exist HMF.exe goto err
-if not exist CMP.exe goto err
+if not exist cmp.vbs goto err
 if not exist "%userprofile%\Desktop\SC_AV\Hashes" goto err
 if not exist "%userprofile%\Desktop\SC_AV\Logs" goto err
 
