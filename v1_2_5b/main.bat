@@ -60,6 +60,7 @@ for %%f in (%file_types%) do (
     type "%dest%\Hashes_res_%%f0" > "%dest%\Hashes_res_%%f0.txt"
     del "%dest%\Hashes_res_%%f0"
     if not exist initial (
+:: to troubleshoot an issue in some weird cases.     
        set %errorlevel%=1    
        %comp% "%dest%\Hashes_res_%%f.txt" "%dest%\Hashes_res_%%f0.txt" "%Logs%\log_%%f.txt"
        call :res
