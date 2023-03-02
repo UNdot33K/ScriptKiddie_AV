@@ -87,7 +87,7 @@ Press the green button which says "code" and download the zip with the files of 
 repository and unzip the folder on your desktop, right-click the install.bat and run 
 as administrator.
 
-CMP.exe, HashMyFiles.exe (renamed to HMF.exe to be more compact and also work with the script) 
+cmp.vbs, HashMyFiles.exe (renamed to HMF.exe to be more compact and also work with the script) 
 and the batch file script should be in the same parent folder.
 
 After everything is set, you can automate the process even more, by making it load every 
