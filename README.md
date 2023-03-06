@@ -88,7 +88,7 @@ repository and unzip the folder on your desktop, right-click the install.bat and
 as administrator.
 
 cmp.vbs, HashMyFiles.exe (renamed to HMF.exe to be more compact and also work with the script) 
-and main.bat (the batch file script should be in the same parent folder).
+and main.bat (the batch file script) should be in the same parent folder.
 
 After everything is set, you can automate the process even more, by making it load every 
 time you're starting Windows, by using windows task scheduler:
