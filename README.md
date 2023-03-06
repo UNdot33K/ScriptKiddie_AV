@@ -97,17 +97,17 @@ STEPS:
 
 1. Press Start > search > task scheduler
   
-2. ACTIONS > CREATE TASK [Fill the name "SFR_AV"]
+2. ACTIONS > CREATE TASK [Fill the name 'SC_AV']
   
 3. RUN WITH HIGHEST PRIVILEGES
   
-4. ACTIONS [browse for "main.bat"]
+4. ACTIONS [browse for 'main.bat']
   
 5. TRIGGERS [Start task on workstation unlock]
   
 6. SETTINGS [Allow task run on demand]
   
-7. On the desktop create a shortcut for the "main.bat" 
+7. On the desktop create a shortcut for the 'main.bat' 
   
 8. Press Start > search > shell:startup [ENTER]
 
