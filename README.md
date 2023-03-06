@@ -42,14 +42,14 @@ A batch file which coordinates the procedures.
 A freeware utility from Nirsoft called 'HashMyFiles' which can be found here: 
 https://www.nirsoft.net/utils/hash_my_files.html (responsible to create hashes and also 
 provide some other useful features). 
-The "CMP" (it is written in VBScript, it compares the output of the 'HashMyFiles' utility 
+The 'CMP' (it is written in VBScript, it compares the output of the 'HashMyFiles' utility 
 and if there are any differences, notifies you with a message and a beep sound and saves 
 the compared hashed files results). 
 Looking at the logs it's not mandatory, unless there's a suspicion, in such case using Winmerge 
 which you can find here: https://www.winmerge.org can make an othewise dubious procedure... 
 very fun and easy!
 
-The "SC_AV" parent directory contains 2 additional subdirectories, one is called 'Hashes', where 
+The 'SC_AV' parent directory contains 2 additional subdirectories, one is called 'Hashes', where 
 hashed files results are saved and the other is called 'Logs' where the comparison results 
 are saved.
 
@@ -59,7 +59,7 @@ Windows 7, 10, 11.
 
 The choice of the file hash utility is not critical, there are many doing similar job, you can 
 try implementations using the Windows included utility so you can do the hashes in your 
-own way: "certutil -hashfile (file) SHA1 / MD5 / etc"
+own way: 'certutil -hashfile (file) SHA1 / MD5 / etc'
 
 or you can use the "md5deep" or any other utility, although script editing skills are 
 required. Consider though, if the utility you're going to use, meets your expectations, 
