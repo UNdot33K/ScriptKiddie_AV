@@ -139,6 +139,23 @@ File Size".
 
 Options > Hash Types > uncheck everything but: "CRC32".
 
+# Q & A
+
+(currently i haven't received many questions to be answered, Q&A will expand
+if there are more questions from you). 
+
+Q. is it better than other antivirus programs?
+
+A. It's not a 'tranditional antivirus' to be compared as such, although it combines some features 
+of an antivirus and it is good idea to be used together for an all around protection.
+
+
+Q. Why use this instead of something else e.g more professional software?
+
+A. Because it's simple and transparent on what it does, you can see the code, 
+you can easily modify the code and it's yours.
+
+
 
 # Version 1.2.5b 
 
