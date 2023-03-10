@@ -104,7 +104,7 @@ if /i "%choice%"=="n" goto taskQ
 
 :inst
 
-bitsadmin /transfer WinMergeDownload /priority normal http://github.com/WinMerge/winmerge/releases/download/v2.16.28/WinMerge-2.16.28-Setup.exe %userprofile%\Desktop\Simple-FIM-RIM_AV-main\TEMP\WinMerge-2.16.28-Setup.exe
+bitsadmin /transfer WinMergeDownload /priority normal http://github.com/WinMerge/winmerge/releases/download/v2.16.28/WinMerge-2.16.28-Setup.exe %userprofile%\Desktop\ScriptKiddie_AV-main\TEMP\WinMerge-2.16.28-Setup.exe
 
 if exist %userprofile%\Desktop\ScriptKiddie_AV-main\TEMP\WinMerge-2.16.28-Setup.exe (
     WinMerge-2.16.28-Setup.exe
