@@ -61,7 +61,7 @@ echo Initialization File > %userprofile%\Desktop\SC_AV\initial
 
 del %userprofile%\Desktop\SC_AV\flag 2>nul
 
-cd %userprofile%\Desktop\\ScriptKiddie_AV-main\TEMP\
+cd %userprofile%\Desktop\ScriptKiddie_AV-main\TEMP\
 
 
 echo.
