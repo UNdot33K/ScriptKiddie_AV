@@ -135,7 +135,7 @@ can decide which file types or registry hives not to check, or you can speed up 
 by reducing the directory level 1-1000 (infinite) to search for files, by editing the 
 'Main code' of the script. Run HMF.EXE and try the following recommended settings:
 
-View > Choose Columns > uncheck everything but: "CRC32 Full Path, Created Time,
+View > Choose Columns > uncheck everything but: "CRC32, Full Path, Created Time,
 File Size".
 
 Options > Hash Types > uncheck everything but: "CRC32".
@@ -149,8 +149,9 @@ Q. is it better than other antivirus programs?
 
 A. It's not a 'tranditional antivirus' to be compared as such, although it combines 
 some features of an antivirus and it is good idea to be used together for an all 
-around protection, running the script alone it can easily be disabled by many 
-malware, e.g ransomware.
+around protection. Running the ScriptKiddie alone it can easily be disabled by many 
+malware, e.g ransomware. There are some free (open source) command line and GUI 
+antiviruses which i think they fit fine with Scriptkiddie and compliment each other.
 
 
 Q. Why use this instead of something else e.g more professional software?
