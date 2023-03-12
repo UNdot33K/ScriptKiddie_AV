@@ -140,6 +140,13 @@ File Size".
 
 Options > Hash Types > uncheck everything but: "CRC32".
 
+If you wish to further extend file checking i would recommend adding the following
+file types 'VBS', 'JS', 'PS1'. These file types sometimes can be used to execute malicious 
+code, if ScriptKiddie indicates them as new files on your system and you aren't aware of their 
+origin, it's a good practice to avoid running them or delete them if they are not
+part of software that you installed.
+
+
 # Q & A
 
 (currently i haven't received many questions to be answered, Q&A will expand
