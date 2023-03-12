@@ -26,13 +26,13 @@ which can automate checks for file integrity issues and it can also be used alon
 with any antivirus to enhance system protection.
 
 Although there are various similar tools, the highlight of this one is, that it can
-also check the 'Task Scheduler', malware can create hidden tasks to gain persistance
-on the system. It can also check the Windows registry since certain registry keys are 
-considered usual malware target, so it can check and report any changes. On specific 
-days of the month after finishing file & registry integrity checks, it can call the 
-Windows 'Malware Removal Tool' (MRT) to scan your hard disk, so also it automates some 
-antivirus security of your system. I couldn't find exactly what i wanted in similar 
-tools so i've made my own in this perspective.
+also check the 'Task Scheduler' and  Windows registry. Malware can create hidden tasks 
+to gain persistance on the system an also certain registry keys are considered usual 
+malware target, so it can check and report any changes. On specific days of the month 
+after finishing file & registry integrity checks, it can call the Windows 'Malware Removal 
+Tool' (MRT) to scan your hard disk, so also it automates some antivirus security of your 
+system. I couldn't find exactly what i wanted in similar tools so i've made my own in 
+this perspective.
 
 
 # Structure
@@ -149,7 +149,8 @@ Q. is it better than other antivirus programs?
 
 A. It's not a 'tranditional antivirus' to be compared as such, although it combines 
 some features of an antivirus and it is good idea to be used together for an all 
-around protection.
+around protection, running the script alone it can easily be disabled by many 
+malware, e.g ransomware.
 
 
 Q. Why use this instead of something else e.g more professional software?
