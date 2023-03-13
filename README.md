@@ -28,12 +28,11 @@ with any antivirus to enhance system protection.
 Although there are various similar tools, the highlight of this one is, that it can
 also check the 'Task Scheduler' and  Windows registry. Malware can create hidden tasks 
 to gain persistance on the system and also certain registry keys are considered usual 
-malware target, which it can check and report any changes. On specific days of the month 
-after finishing file & registry integrity checks, it can call the Windows 'Malware Removal 
-Tool' (MRT) to scan your hard disk, so also it automates some antivirus security of your 
-system. I couldn't find exactly what i wanted in similar tools so i've made my own in 
-this perspective which could be helpful for a multi layered approach to antivirus 
-security.
+malware target. On specific days of the month after finishing file & registry integrity 
+checks, it can call the Windows 'Malware Removal Tool' (MRT) to scan your hard disk, so 
+also it automates some antivirus security of your system. I couldn't find exactly what 
+i wanted in similar tools so i've made my own in this perspective which could be helpful 
+for a multi layered approach to antivirus security.
 
 
 # Structure
@@ -144,7 +143,7 @@ Options > Hash Types > uncheck everything but: "CRC32".
 If you wish to further extend file checking i would recommend adding the following
 file types 'VBS', 'JS', 'PS1'. These file types sometimes can be used to execute malicious 
 code, if ScriptKiddie indicates them as new files on your system and you don't recognize
-them, it's a good practice to avoid running and possibly delete, if you are certain 
+them, it's a good practice to avoid running and possibly delete if you are certain 
 they are not part of a software that you installed or related to your system.
 
 
