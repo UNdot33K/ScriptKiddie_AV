@@ -32,7 +32,8 @@ malware target, which it can check and report any changes. On specific days of t
 after finishing file & registry integrity checks, it can call the Windows 'Malware Removal 
 Tool' (MRT) to scan your hard disk, so also it automates some antivirus security of your 
 system. I couldn't find exactly what i wanted in similar tools so i've made my own in 
-this perspective.
+this perspective which could be helful for a multi layered approach to antivirus 
+security.
 
 
 # Structure
@@ -143,8 +144,8 @@ Options > Hash Types > uncheck everything but: "CRC32".
 If you wish to further extend file checking i would recommend adding the following
 file types 'VBS', 'JS', 'PS1'. These file types sometimes can be used to execute malicious 
 code, if ScriptKiddie indicates them as new files on your system and you don't recognize
-them, it's a good practice to avoid running them and maybe delete them if you are certain 
-they are not part of a software that you installed.
+them, it's a good practice to avoid running and possibly delete, if you are certain 
+they are not part of a software that you installed or related to your system.
 
 
 # Q & A
