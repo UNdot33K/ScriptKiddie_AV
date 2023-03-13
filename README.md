@@ -32,7 +32,7 @@ malware target, which it can check and report any changes. On specific days of t
 after finishing file & registry integrity checks, it can call the Windows 'Malware Removal 
 Tool' (MRT) to scan your hard disk, so also it automates some antivirus security of your 
 system. I couldn't find exactly what i wanted in similar tools so i've made my own in 
-this perspective which could be helful for a multi layered approach to antivirus 
+this perspective which could be helpful for a multi layered approach to antivirus 
 security.
 
 
