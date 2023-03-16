@@ -55,8 +55,8 @@ hashed files results are saved and the other is called 'Logs' where the comparis
 are saved.
 
 The batch file can be edited so you can use different settings, in that case you can change the 
-paths set at the top of the script or tweak the Main code and then it is expected to work on 
-Windows 7, 10, 11.
+paths hard coded at the top of the script or tweak the 'Main Code' and then it is expected to work 
+on Windows 7, 8, 10, 11.
 
 The choice of the file hash utility is not critical, there are many doing similar job, you can 
 try implementations using the Windows included utility so you can do the hashes in your 
@@ -133,7 +133,7 @@ shell:startup.
 You can customize almost everything to suite your needs, e.g. to reduce false alarms you 
 can decide which file types or registry hives not to check, or you can speed up the scanning 
 by reducing the directory level 1-1000 (infinite) to search for files, by editing the 
-'Main code' of the script. Run HMF.EXE and try the following recommended settings:
+'Main Code' of the script. Run HMF.EXE and try the following recommended settings:
 
 View > Choose Columns > uncheck everything but: "CRC32, Full Path, Created Time,
 File Size".
