@@ -33,7 +33,8 @@ malware target. On specific days of the month after finishing file & registry in
 checks, it can call the Windows 'Malware Removal Tool' (MRT) to scan your hard disk, so 
 also it automates some antivirus security of your system. I couldn't find exactly what 
 i wanted in similar tools so i've made my own in this perspective which could be helpful 
-for a multi layered approach to antivirus security.
+to introduce one more layer of protection, on a multi layered approach to antivirus 
+security.
 
 
 # Structure
