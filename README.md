@@ -13,8 +13,8 @@ purposes. That's why i decided to create my own. Now, i want to share it on
 GitHub so that others can benefit from its functions.
 
 If anyone wants to take the project to the next level, they are welcome to
-do so. It's a collaborative effort and as a foundation, it could be improved 
-more.
+do so. It's a collaborative effort and it might be a good  'foundation', for
+something better.
 
 
 
@@ -163,7 +163,7 @@ some features of an antivirus and it is good idea to be used together for an all
 around protection. Running the ScriptKiddie alone it can easily be disabled by many 
 malware, e.g ransomware. There are some free (open source) command line and GUI 
 antiviruses which i think they fit well with Scriptkiddie and compliment each other.
-Choicing one which can also offer 'real time protection' is highly recommended.
+Choosing one which can also offer 'real time protection' is highly recommended.
 
 
 Q. Why use this instead of something else e.g more professional software?
