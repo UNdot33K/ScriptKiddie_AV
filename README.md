@@ -7,13 +7,13 @@
 
 
 My project started while i was studying IT Security, i was in search of a simple 
-FIM/RIM that meets my needs. Unfortunately, most of the programs i found either 
-lacked the features i needed or were too complex and geared towards business 
+FIM/RIM that meets my needs. Unfortunately, most of the programs i found, either 
+lacked the features i needed, or were too complex and geared towards business 
 purposes. That's why i decided to create my own. Now, i want to share it on 
 GitHub so that others can benefit from its functions.
 
 If anyone wants to take the project to the next level, they are welcome to
-do so. It's a collaborative effort and it might be a good  'foundation', for
+do so. It's a collaborative effort and maybe a good  'foundation', for
 something better.
 
 
@@ -23,8 +23,8 @@ something better.
 
 Script Kiddie_AV is a simple FIM-RIM (File Integrity Monitoring - Registry Integrity 
 Monitoring) and as such, it can be an effective 'tool', (or more precisely a batch file 
-script), which automates checks for file integrity issues to be used alongside with any 
-antivirus as a system protection enhancement.
+script), which automates checks for file integrity issues and can be used alongside with 
+any antivirus, as a system protection enhancement.
 
 Although there are various similar tools, the highlight of this one is, that it can
 also check the 'Task Scheduler' and  Windows registry. Malware can create hidden tasks 
