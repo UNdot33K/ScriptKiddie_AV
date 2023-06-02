@@ -62,21 +62,20 @@ on Windows 7, 8, 10, 11.
 
 The choice of the file hash utility is not critical, there are many doing similar job, you can 
 try implementations using the Windows included utility so you can do the hashes in your 
-own way: 'certutil -hashfile (file) SHA1 / MD5 / etc'
+own way e.g : 'certutil -hashfile (file) SHA1 / MD5 / etc'
 
-or you can use the "md5deep" or any other utility, although script editing skills are 
-required. Consider though, if the utility you're going to use, meets your expectations, 
-some utilities depending the algorithm used might be too slow, or create hashes without 
-providing any other data to make a more comprehensive integrity check. Although the hash 
-value of a file, provides a reliable way to verify the file's integrity**, since the 
-MS-DOS era it is known that many viruses were also able to modify file attributes, file 
-creation timestamp, as well as the file size, so it can appear normal. In Windows, the NTFS 
-file system uses the Master File Table (MFT) to keep track of all files in a volume, storing 
-metadata such as file names, size, timestamps and file permissions. The MFT contains 8 
-timestamps for each file, divided between standard information($SI) and filename information 
-($FN) attributes. The $SI timestamps can be manipulated using API functions, causing files to 
-appear to be created much earlier. To combat this, files can be shorted by their $FN created 
-time or $FN MFT entry modified time, which are less susceptible to manipulation.
+Consider though, if the utility you're going to use, meets your expectations, some utilities 
+depending the algorithm used might be too slow, or create hashes without providing any other 
+data to make a more comprehensive integrity check. Although the hash value of a file, provides 
+a reliable way to verify the file's integrity**, since the MS-DOS era it is known that many 
+viruses were also able to modify file attributes, file creation timestamp, as well as the file 
+size, so it can appear normal. In Windows, the NTFS file system uses the Master File Table (MFT) 
+to keep track of all files in a volume, storing metadata such as file names, size, timestamps and 
+file permissions. The MFT contains 8 timestamps for each file, divided between standard 
+information($SI) and filename information ($FN) attributes. The $SI timestamps can be manipulated 
+using API functions, causing files to appear to be created much earlier. To combat this, files can 
+be shorted by their $FN created time or $FN MFT entry modified time, which are less susceptible to 
+manipulation.
 
 **The hash value is calculated based on the file's contents and is unique to that specific 
   file (unless hash collision occurs).
@@ -92,29 +91,6 @@ as administrator.
 
 cmp.vbs, HashMyFiles.exe (renamed to HMF.exe to be more compact and also work with the script) 
 and main.bat (the batch file script) should be in the same parent folder.
-
-After everything is set, you can automate the process even more, by making it load every 
-time you're starting Windows, by using windows task scheduler:
-
-STEPS:
-
-1. Press Start > search > task scheduler
-  
-2. ACTIONS > CREATE TASK [Fill the name 'SC_AV']
-  
-3. RUN WITH HIGHEST PRIVILEGES
-  
-4. ACTIONS [browse for 'main.bat']
-  
-5. TRIGGERS [Start task on workstation unlock]
-  
-6. SETTINGS [Allow task run on demand]
-  
-7. On the desktop create a shortcut for the 'main.bat' 
-  
-8. Press Start > search > shell:startup [ENTER]
-
-9. Place there your created lnk.
 
 Note: The install.bat included in the repository does all the above and asks your
 permission in every step, although it may or may not be able to download the utilities,
