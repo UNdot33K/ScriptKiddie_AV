@@ -122,7 +122,7 @@ Options > Hash Types > uncheck everything but: "CRC32".
 
 If you wish to further extend file checking i would recommend adding the following
 file types 'VBS', 'JS', 'PS1'. These file types sometimes can be used to execute malicious 
-code, if ScriptKiddie indicates them as new files on your system and you don't recognize
+code, if SC_AV indicates them as new files on your system and you don't recognize
 them, it's a good practice to avoid running and possibly delete if you are certain 
 they are not part of a software that you installed or related to your system. Another
 implementation could be the search for "Alternate Data Stream files", ADS can be
