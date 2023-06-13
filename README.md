@@ -109,7 +109,7 @@ shell:startup.
 
 You can customize almost everything to suite your needs and i do recommend to customize 
 everything (other than the 'LICENSE' texts you are not entitled to do so), one reason is 
-variability might be halpful since malware can try to detect AVs. Also you might want to 
+variability might be helpful since malware can try to detect AVs. Also you might want to 
 reduce false alarms, you can decide which file types or registry hives not to check, or you 
 can speed up the scanning by reducing the directory level 1-1000 (infinite) to search for 
 files, by editing the 'Main Code' of the script. Run HMF.EXE and try the following 
