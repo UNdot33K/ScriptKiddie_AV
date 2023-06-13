@@ -139,9 +139,9 @@ Q. is it better than other antivirus programs?
 
 A. It's not a 'tranditional antivirus' to be compared as such, although it combines 
 some features of an antivirus and it is good idea to be used together for an all 
-around protection. Running the ScriptKiddie alone it can easily be disabled by many 
+around protection. Running the SC_AV alone it can easily be disabled by many 
 file destructive malware, e.g ransomware. There are some free (open source) command 
-line and GUI antiviruses which i think they fit well with Scriptkiddie and compliment 
+line and GUI antiviruses which i think they fit well with SC_AV and compliment 
 each other.Choosing one which can also offer 'real time protection' is highly 
 recommended.
 
