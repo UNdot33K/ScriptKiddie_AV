@@ -125,9 +125,9 @@ file types 'VBS', 'JS', 'PS1'. These file types sometimes can be used to execute
 code, if ScriptKiddie indicates them as new files on your system and you don't recognize
 them, it's a good practice to avoid running and possibly delete if you are certain 
 they are not part of a software that you installed or related to your system. Another
-implementation could be the search for "Alternate Data Stream files (ADS)", which can be
-used by malware to hide file in a NTFS volume, although implementing it, requires more
-testing in case it produces false alarms which might add up to the total.
+implementation could be the search for "Alternate Data Stream files", ADS can be
+used by malware to hide file in a NTFS volume, although implementing it requires more
+testing, in case it produces false alarms which might add up to the total.
 
 
 # Q & A
