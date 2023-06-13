@@ -20,7 +20,7 @@
 @echo off
 
 ECHO ********************************************************
-ECHO [Script Kiddie_AV] v0.95.4b Is Running, Please Wait...
+ECHO [SC_AV] v0.95.4b Is Running, Please Wait...
 ECHO Copyright (c) 2023 --Un.33K--
 ECHO ********************************************************
 
