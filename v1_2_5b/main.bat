@@ -155,6 +155,7 @@ findstr /R /C:"^[A-Z]:\\[^\\]*\\[^\\]*\\[^\\]*\\[^\\]*$" "%dest%\output.txt" >> 
 findstr /R /C:"^[A-Z]:\\[^\\]*\\[^\\]*\\[^\\]*\\[^\\]*\\[^\\]*$" "%dest%\output.txt" >> "%dest%\Hashes_log_dir0.txt"
 
 del %dest%\output.txt 2> nul
+del %Logs%\log_dir.txt 2> nul
 
 if not exist initial (
     %comp% "%dest%\Hashes_log_dir.txt" "%dest%\Hashes_log_dir0.txt" "%Logs%\log_dir.txt"
