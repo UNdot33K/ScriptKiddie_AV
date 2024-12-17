@@ -76,10 +76,10 @@ file permissions. The MFT contains 8 timestamps for each file, divided between s
 information($SI) and filename information ($FN) attributes. The $SI timestamps are mainly updated 
 and can also be manipulated using API functions, causing files to appear to be created much earlier. 
 To combat this, files can be shorted by their $FN created time or $FN entry modified time, which is 
-less susceptible to manipulation, comparison can give some indication of a possible file alteration.
+less susceptible to manipulation, a comparison can give some indication of a possible file alteration.
 
-**The hash value is calculated based on the file's contents and is unique to that specific 
-  file (unless hash collision occurs).
+**The hash value is calculated based on the file's contents and is unique to that specific file (unless 
+hash collision occurs).
 
 
 # How to use
