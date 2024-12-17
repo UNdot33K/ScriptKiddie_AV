@@ -12,9 +12,9 @@ lacked the features i needed, or were too complex and geared towards business
 purposes. That's why i decided to create my own. Now, i want to share it on 
 GitHub so that others can benefit from its functions.
 
-If anyone wants to take the project to the next level, they are welcome to
+** If anyone wants to take the project to the next level, they are welcome to
 do so. It's a collaborative effort and maybe a good 'foundation', for
-something better.
+something better. **
 
 
 
