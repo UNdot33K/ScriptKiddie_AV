@@ -49,7 +49,7 @@ The 'CMP' (it is written in VBScript, it compares the output of the 'HashMyFiles
 and if there are any differences, notifies you with a message and a beep sound and saves 
 the compared hashed files results). 
 Looking at the logs it's not mandatory, unless there's a suspicion, in such case using Winmerge 
-which you can find here: https://www.winmerge.org can make an othewise dubious procedure... 
+which you can find here: https://www.winmerge.org can make an othewise tedious procedure... 
 very fun and easy!
 
 The 'SC_AV' parent directory contains 2 additional subdirectories, one is called 'Hashes', where 
