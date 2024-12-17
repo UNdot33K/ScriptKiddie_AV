@@ -302,10 +302,14 @@ for %%a in (Hashes_log_exe.txt Hashes_log_dll.txt Hashes_log_bat.txt Hashes_log_
 if exist flag goto end
 MRT.EXE /F:Y
 cd %hmf%
+echo.
+echo Elevating privileges...
+echo Set UAC = CreateObject^("Shell.Application"^) > "uac.vbs" 
+echo UAC.ShellExecute "cmd.exe", "/c sfc /scannow", "", "runas", 1 >> "uac.vbs"
+cscript //nologo "uac.vbs"
+del "uac.vbs"
 echo > flag
 goto end
-
-
 
 ) else (
   goto end
