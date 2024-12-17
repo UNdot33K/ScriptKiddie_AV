@@ -74,7 +74,7 @@ to keep track of all files in a volume, storing metadata such as file names, siz
 file permissions. The MFT contains 8 timestamps for each file, divided between standard 
 information($SI) and filename information ($FN) attributes. The $SI timestamps are mainly updated 
 and can also be manipulated using API functions, causing files to appear to be created much earlier. 
-To combat this, files can be shorted by their $FN created time or $FN entry modified time, which are 
+To combat this, files can be shorted by their $FN created time or $FN entry modified time, which is 
 less susceptible to manipulation, comparison can give some indication of a possible file alteration.
 
 **The hash value is calculated based on the file's contents and is unique to that specific 
