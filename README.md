@@ -172,6 +172,7 @@ them some other time.
 
 - WinMerge it is automatically called and opens the output files with the detected changes
 - There was a name change, also for the output files
+- SFC (System File Checker) call, included
 - Some code improvements
 - Error handling
 - Improved CMP 
