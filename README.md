@@ -31,10 +31,11 @@ also check the 'Task Scheduler' and  Windows registry. Malware can create hidden
 to gain persistance on the system they are infecting and also certain registry keys are 
 considered usual malware target. On specific days of the month after finishing file 
 & registry integrity checks, it can call the Windows 'Malware Removal Tool' (MRT) and the 
-SFC (System File Checker) to scan your hard disk, so also it automates some antivirus and file 
-security of your system. I couldn't find exactly what i wanted in similar tools so i've made my 
-own in this perspective which could be helpful to introduce one more layer of protection, on a 
-multi layered approach to antivirus security.
+SFC (System File Checker) to scan your hard disk, so also it automates some antivirus and 
+file security of your system. Maybe it sounds like a "Swiss army knife", that's because i 
+couldn't find exactly what i wanted in similar tools so i've made my own in this perspective 
+which could be helpful to introduce one more layer of protection, on a multi layered approach 
+to antivirus security.
 
 
 # Structure
