@@ -66,12 +66,30 @@ cd %userprofile%\Desktop\ScriptKiddie_AV-main\TEMP\
 
 echo.
 echo Note: to try-out, version 0.95.4b is very simple presenting the concept's 
-echo basic functionality, version 1.2.5b is more advanced. The choice is yours!
+echo basic functionality, version 1.2.5b is more advanced. Version 2.1b
+echo the most recent and advanced version. The choice is yours!
 echo.
-set /p choice="Please select version, 0 for [0.95.4b] or 1 for [v1.2.5b]: "
+set /p choice="Please select version, 0 for [0.95.4b], 1 for [v1.2.5b], 2 for [v2.1b]: "
+if /i "%choice%"=="1" goto v2
 if /i "%choice%"=="1" goto v1
 if /i "%choice%"=="0" goto v095
 
+
+:v2
+
+echo.
+echo Copying files...
+echo.
+
+copy /y %userprofile%\Desktop\ScriptKiddie_AV-main\v2.1b\main.bat %userprofile%\Desktop\SC_AV\
+
+copy /y %userprofile%\Desktop\ScriptKiddie_AV-main\v2.1b\cmp.vbs %userprofile%\Desktop\SC_AV\
+
+copy /y %userprofile%\Desktop\ScriptKiddie_AV-main\LICENSE %userprofile%\Desktop\SC_AV\
+
+copy /y %userprofile%\Desktop\ScriptKiddie_AV-main\README.md %userprofile%\Desktop\SC_AV\
+
+goto HMF
 
 :v1
 
@@ -87,6 +105,7 @@ copy /y %userprofile%\Desktop\ScriptKiddie_AV-main\LICENSE %userprofile%\Desktop
 
 copy /y %userprofile%\Desktop\ScriptKiddie_AV-main\README.md %userprofile%\Desktop\SC_AV\
 
+:HMF
 echo.
 set /p choice="Try to download and Install HashMyFiles? (y/n) "
 
