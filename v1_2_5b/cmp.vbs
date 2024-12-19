@@ -49,7 +49,7 @@ End Sub
 
 ' Check if parameters have been passed to the command line.
 If WScript.Arguments.Count <> 3 Then
-    WScript.Echo "Copyright (c) 2023 --Un.33k -- Compare Files  File1 File2 Outputfile"
+    WScript.Echo "Copyright (c) 2022 --Un.33k -- Compare Files  File1 File2 Outputfile"
     WScript.Quit 1
 End If
 
