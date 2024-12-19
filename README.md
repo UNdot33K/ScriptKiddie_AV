@@ -156,7 +156,7 @@ you can easily modify the code and it's yours.
 
 Additional features were added, now the script calls the Windows SFC (System File 
 Checker) which is useful to check and resolve issues with corrupt system files, 
-SFC is called along with MRT (Malware Removal Total).
+SFC is called along with MRT (Malware Removal Tool).
 
 ADS - Alternate Data Streams scanning, has been added, this function further 
 extends the ability of the tool to spot abnormalities or potentially dangerous files, 
