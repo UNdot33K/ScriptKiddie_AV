@@ -181,7 +181,6 @@ if not exist initial (
 echo.
 echo Checking: Alternate Data Streams
 for /r "%userprofile%\" %%F in (*) do (
-    ::echo Scanning: %%F
     for /f "tokens=3,1 delims= " %%S in ('dir /r "%%F" 2^>nul ^| findstr /i "$DATA"2^>nul') do (
         if %%S gtr 250 (
             echo Potentially harmful file: %%F ADS Size: %%S
