@@ -127,8 +127,7 @@ code, if SC_AV indicates them as new files on your system and you don't recogniz
 them, it's a good practice to avoid running and possibly delete if you are certain 
 they are not part of a software that you installed or related to your system. Another
 implementation could be the search for "Alternate Data Stream files", ADS can be
-used by malware to hide files in a NTFS volume, although implementing it requires more
-testing, in case it produces false alarms which might add up to the total.
+used by malware to hide files in a NTFS volume.
 
 
 # Q & A
@@ -153,6 +152,22 @@ A. Because it's simple and transparent on what it does, you can see the code,
 you can easily modify the code and it's yours.
 
 
+# Version 2.1b
+
+Additional features were added, now the script calls the Windows SFC (System File 
+Checker) which is useful to check and resolve issues with corrupt system files, 
+SFC is called along with MRT (Malware Removal Total).
+
+ADS - Alternate Data Streams scanning, has been added, this function further 
+extends the ability of the tool to spot abnormalities or potentially dangerous files, 
+although ADS scanning can be slow and prone to false alarms! (i recommend 
+tweaking the path, so it can be more specific on where to search and also faster. 
+In case of false alarms edit the main.bat and change the gtr 250 to a greater 
+number (350-400) can make it more silent.
+
+- SFC (System File Checker) call, included
+- ADS (Alternate Data Streams) scanning, included
+
 
 # Version 1.2.5b 
 
@@ -173,7 +188,6 @@ them some other time.
 
 - WinMerge it is automatically called and opens the output files with the detected changes
 - There was a name change, also for the output files
-- SFC (System File Checker) call, included
 - Some code improvements
 - Error handling
 - Improved CMP 
