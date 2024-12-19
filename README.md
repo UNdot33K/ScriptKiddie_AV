@@ -22,7 +22,7 @@ something better. **
 
 
 SC_AV is a simple FIM-RIM (File Integrity Monitoring - Registry Integrity 
-Monitoring) and as such, it can be an effective 'tool', (or more precisely a batch file 
+Monitoring) and as such, it can be an effective tool, (or more precisely a batch file 
 script), which automates checks for file integrity issues and can be used alongside with 
 any antivirus, as a system protection enhancement.
 
