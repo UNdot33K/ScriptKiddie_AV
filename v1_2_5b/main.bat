@@ -21,7 +21,7 @@
 
 ECHO ******************************************************
 ECHO [SC_AV] v1.2.5b Is Running, Please Wait...
-ECHO Copyright (c) 2023 --Un.33K--
+ECHO Copyright (c) 2022 --Un.33K--
 ECHO ******************************************************
 
 set "file_types=exe dll bat sys ini"
