@@ -1,4 +1,4 @@
-' Copyright (c) 2023 Un.33k (www.github.com/UNdot33K)
+' Copyright (c) 2022 Un.33k (www.github.com/UNdot33K)
 
 ' Permission is hereby granted, free of charge, to any person obtaining a copy 
 ' of this software and associated documentation files (the "Software"), to deal 
@@ -61,7 +61,7 @@ End Sub
 
 ' Check if the correct number of command-line arguments were provided
 If WScript.Arguments.Count <> 3 then
-    WScript.Echo "Copyright (c) 2023: UN.33K - Compare files: filename1 filename2 outputfile"
+    WScript.Echo "Copyright (c) 2022: UN.33K - Compare files: filename1 filename2 outputfile"
     WScript.Quit 1
 End If
 
