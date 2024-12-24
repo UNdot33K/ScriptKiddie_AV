@@ -65,8 +65,8 @@ cd %userprofile%\Desktop\ScriptKiddie_AV-main\TEMP\
 
 
 echo.
-echo Note: to try-out, version 0.95.4b is very simple (basic functionality)
-echo version 1.2.5b is more advanced, Version 2.1b is the most recent and
+echo Note: to try-out, version 0.95.4b: basic functionality,
+echo version 1.2.5b: more advanced, Version 2.1b: the most recent and
 echo advanced version. The choice is yours!
 echo.
 set /p choice="Please select version, 0 for [0.95.4b], 1 for [v1.2.5b], 2 for [v2.1b]: "
