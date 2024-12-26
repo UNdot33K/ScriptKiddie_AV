@@ -194,7 +194,7 @@ if exist "%logs%\ADS.txt" (
     echo.
     echo Possible threats has been found! calling Malware Removal Tool...
     MRT.EXE /F:Y
-    del /Q "%logs%"
+    del %logs%\ADS.txt 2>nul
 )
 
 
